@@ -1,16 +1,583 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parham Hajzavar | Product Management & Solutions Engineering</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+      background-color: #0f172a;
+      color: #f8fafc;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #38bdf8 0%, #818cf8 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gradient-bg {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
+
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    }
+
+    .skill-pill {
+      transition: all 0.2s ease;
+    }
+
+    .skill-pill:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+    }
+
+    .hero-blob {
+      position: absolute;
+      top: 20%;
+      right: 10%;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, rgba(56, 189, 248, 0.15), rgba(129, 140, 248, 0.15));
+      filter: blur(80px);
+      z-index: 0;
+    }
+
+    .nav-link {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #38bdf8 0%, #818cf8 100%);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .timeline {
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 16px;
+      width: 4px;
+      background: linear-gradient(to bottom, #38bdf8, #818cf8);
+      border-radius: 4px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+      padding-left: 2.5rem;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 36px;
+      height: 36px;
+      background: #0f172a;
+      border: 4px solid #38bdf8;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+    }
+
+    .mouse-scroll {
+      width: 30px;
+      height: 50px;
+      border: 2px solid #f8fafc;
+      border-radius: 20px;
+      position: relative;
+    }
+
+    .mouse-scroll::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 6px;
+      background: #f8fafc;
+      border-radius: 50%;
+      animation: scroll 2s infinite;
+    }
+
+    @keyframes scroll {
+      0% {
+        top: 10px;
+        opacity: 1;
+      }
+
+      100% {
+        top: 30px;
+        opacity: 0;
+      }
+    }
+
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    .glassmorphism {
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .project-card {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .project-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0), rgba(15, 23, 42, 0.9));
+      opacity: 0;
+      transition: all 0.4s ease;
+    }
+
+    .project-card:hover .project-overlay {
+      opacity: 1;
+    }
+
+    .project-content {
+      position: absolute;
+      bottom: -100px;
+      left: 0;
+      width: 100%;
+      padding: 1.5rem;
+      transition: all 0.4s ease;
+    }
+
+    .project-card:hover .project-content {
+      bottom: 0;
+    }
+  </style>
 </head>
 
 <body>
-  Hello world
-  <script src="script.js"></script>
-</body>
+  <!-- Fixed Navbar -->
+  <header class="fixed top-0 left-0 w-full z-50 glassmorphism transition-all duration-300 py-4">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <a href="#" class="text-xl font-bold gradient-text">PH</a>
+      <nav class="hidden md:flex items-center space-x-10">
+        <a href="#about" class="nav-link text-gray-300 hover:text-white">About</a>
+        <a href="#experience" class="nav-link text-gray-300 hover:text-white">Experience</a>
+        <a href="#projects" class="nav-link text-gray-300 hover:text-white">Projects</a>
+        <a href="#skills" class="nav-link text-gray-300 hover:text-white">Skills</a>
+        <a href="#contact"
+          class="py-2 px-5 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full text-white font-medium hover:shadow-lg hover:from-blue-500 hover:to-indigo-600 transition-all duration-300">Contact</a>
+      </nav>
+      <button class="md:hidden text-white focus:outline-none">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+  </header>
 
-</html>
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen flex items-center relative overflow-hidden pt-20">
+    <div class="hero-blob"></div>
+    <div class="hero-blob"
+      style="left: 10%; top: 50%; background: linear-gradient(45deg, rgba(129, 140, 248, 0.1), rgba(56, 189, 248, 0.1));">
+    </div>
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-10 md:mb-0">
+          <h4 class="text-blue-400 font-medium mb-2">Hi there, I'm</h4>
+          <h1 class="text-5xl md:text-7xl font-bold mb-4">
+            Parham <span class="gradient-text">Hajzavar</span>
+          </h1>
+          <h2 class="text-xl md:text-2xl font-light mb-6 text-gray-300">Implementation Consultant | Future Product
+            Manager</h2>
+          <p class="text-lg mb-8 text-gray-400 max-w-lg">
+            Bridging the gap between technology and business needs. Currently pursuing MS in Information Systems at the
+            University of Washington.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#about"
+              class="py-3 px-8 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full text-white font-medium hover:shadow-lg hover:from-blue-500 hover:to-indigo-600 transition-all duration-300">
+              Learn More
+            </a>
+            <a href="#contact"
+              class="py-3 px-8 border-2 border-blue-400 text-blue-400 rounded-full font-medium hover:bg-blue-400 hover:text-white transition-all duration-300">
+              Get In Touch
+            </a>
+          </div>
+        </div>
+        <div class="md:w-1/2 flex justify-center animate-float">
+          <div class="relative">
+            <div
+              class="w-64 h-64 rounded-full bg-gradient-to-r from-blue-400 to-indigo-500 absolute -inset-1 blur-md opacity-75">
+            </div>
+            <img src="/api/placeholder/400/400" alt="Parham Hajzavar"
+              class="w-64 h-64 object-cover rounded-full border-4 border-white relative z-10">
+          </div>
+        </div>
+      </div>
+      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+        <p class="text-sm text-gray-400 mb-2">Scroll down</p>
+        <div class="mouse-scroll"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-24 gradient-bg">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-start">
+        <div class="md:w-1/3 mb-10 md:mb-0">
+          <h2 class="text-4xl font-bold mb-2">About <span class="gradient-text">Me</span></h2>
+          <div class="h-1 w-20 bg-gradient-to-r from-blue-400 to-indigo-500 mb-8"></div>
+          <div class="bg-gray-900 p-6 rounded-xl shadow-xl">
+            <h3 class="text-xl font-semibold mb-4 gradient-text">Quick Facts</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <span class="text-blue-400 mr-3"><i class="fas fa-map-marker-alt"></i></span>
+                <span>Seattle, Washington</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-400 mr-3"><i class="fas fa-graduation-cap"></i></span>
+                <span>MS in Information Systems, UW Foster (2024-2025)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-400 mr-3"><i class="fas fa-briefcase"></i></span>
+                <span>Former Implementation Consultant & Team Manager at FAST Enterprises</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-400 mr-3"><i class="fas fa-trophy"></i></span>
+                <span>1st Place, UCLA Anderson Innovation Challenge</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-400 mr-3"><i class="fas fa-language"></i></span>
+                <span>English, Persian, French</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-400 mr-3"><i class="fas fa-globe"></i></span>
+                <span>Visited 14 countries</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="md:w-2/3 md:pl-12">
+          <p class="text-xl text-gray-300 mb-6 leading-relaxed">
+            I'm a results-driven professional with expertise in leading teams, developing software solutions, and
+            navigating complex stakeholder relationships. My journey has taken me from modernizing government systems to
+            creating innovative healthcare solutions using generative AI.
+          </p>
+          <p class="text-xl text-gray-300 mb-6 leading-relaxed">
+            With experience leading a team responsible for Iowa's taxpayer portal serving 1.5 million customers
+            annually, I've developed expertise in requirement analysis, end-to-end product development, and stakeholder
+            management. I excel at bridging the gap between technical teams and business stakeholders, ensuring
+            alignment and successful product delivery.
+          </p>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            As I approach graduation in June 2025, I'm seeking opportunities in product management and solutions
+            engineering where I can leverage my technical background and business acumen to create meaningful impact.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="https://www.linkedin.com/in/pzavar/" target="_blank"
+              class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-800 text-white hover:bg-blue-600 transition-colors duration-300">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/" target="_blank"
+              class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-colors duration-300">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:parham.zavar@gmail.com"
+              class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-800 text-white hover:bg-red-500 transition-colors duration-300">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="py-24 bg-gray-900">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-2 text-center">Work <span class="gradient-text">Experience</span></h2>
+      <div class="h-1 w-20 bg-gradient-to-r from-blue-400 to-indigo-500 mx-auto mb-16"></div>
+
+      <div class="max-w-4xl mx-auto timeline">
+        <!-- FAST Enterprises -->
+        <div class="timeline-item">
+          <div class="timeline-dot">
+            <i class="fas fa-briefcase text-blue-400"></i>
+          </div>
+          <div class="bg-gray-800 p-6 rounded-xl shadow-xl card-hover">
+            <div class="flex flex-wrap justify-between items-start mb-4">
+              <div>
+                <h3 class="text-xl font-bold gradient-text">Implementation Consultant, Team Manager</h3>
+                <p class="text-gray-400">FAST Enterprises LLC</p>
+              </div>
+              <div class="mt-2 md:mt-0">
+                <span class="bg-blue-900 text-blue-300 text-sm font-medium px-3 py-1 rounded-full">Sept 2021 - May
+                  2024</span>
+              </div>
+            </div>
+            <p class="text-gray-300 italic mb-4">"A software company providing integrated software solutions to
+              modernize government systems & operations."</p>
+            <ul class="space-y-3 list-disc list-outside pl-5 text-gray-300">
+              <li>Led team of 4 implementation consultants driving the end-to-end delivery of new features on Iowa
+                Department of Revenue's <strong class="text-blue-400">govconnect.iowa.gov</strong>, serving 1.5 million
+                customers annually.</li>
+              <li>Launched the "Where's My Refund?" feature, used by 750,000+ taxpayers annually to get refund statuses.
+              </li>
+              <li>Saved customers 24-48 hours each time they requested account access by integrating Fast Identity
+                Verification Service into Logon and Account request.</li>
+              <li>Improved the customer experience by partnering with UX expert Cory Lebson to design and implement a
+                usability study, lowering abandonment rate by over 20%.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Associate Product Manager -->
+        <div class="timeline-item">
+          <div class="timeline-dot">
+            <i class="fas fa-film text-blue-400"></i>
+          </div>
+          <div class="bg-gray-800 p-6 rounded-xl shadow-xl card-hover">
+            <div class="flex flex-wrap justify-between items-start mb-4">
+              <div>
+                <h3 class="text-xl font-bold gradient-text">Associate Product Manager</h3>
+                <p class="text-gray-400">Bookscribs.com</p>
+              </div>
+              <div class="mt-2 md:mt-0">
+                <span class="bg-blue-900 text-blue-300 text-sm font-medium px-3 py-1 rounded-full">May 2021 - August
+                  2021</span>
+              </div>
+            </div>
+            <p class="text-gray-300 italic mb-4">"A startup disrupting the movie-production industry using AI to drive
+              story discovery and adaptation to film."</p>
+            <ul class="space-y-3 list-disc list-outside pl-5 text-gray-300">
+              <li>Served as the company's first product manager, bridging the gap between 2 web developers, 3 data
+                scientists, QA, and 4 designers.</li>
+              <li>Managed team's biweekly sprints using Agile methodologies and Asana.</li>
+              <li>Presented monthly competitor and customer analysis reports to the company's CEO and CTO.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- UCLA Innovation Challenge -->
+        <div class="timeline-item">
+          <div class="timeline-dot">
+            <i class="fas fa-trophy text-blue-400"></i>
+          </div>
+          <div class="bg-gray-800 p-6 rounded-xl shadow-xl card-hover">
+            <div class="flex flex-wrap justify-between items-start mb-4">
+              <div>
+                <h3 class="text-xl font-bold gradient-text">1st Place, UCLA Anderson Innovation Challenge</h3>
+                <p class="text-gray-400">Healthcare Track</p>
+              </div>
+              <div class="mt-2 md:mt-0">
+                <span class="bg-blue-900 text-blue-300 text-sm font-medium px-3 py-1 rounded-full">April 2021</span>
+              </div>
+            </div>
+            <p class="text-gray-300 mb-4">We prototyped AnonNet, a safe and more accessible marketplace for synthetic
+              medical data using Generative AI.</p>
+            <ul class="space-y-3 list-disc list-outside pl-5 text-gray-300">
+              <li>Presented the competition-winning live pitch to a panel of VCs, CEOs, VPs, and UCLA MBA Professors.
+              </li>
+              <li>Personally led 40+ strategy and customer interviews to understand pain points and opportunities.</li>
+              <li>Co-authored the Business Plan and pitch deck (sections: Product, Market, and Development &
+                Operations).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-24 gradient-bg">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-2 text-center">Featured <span class="gradient-text">Projects</span></h2>
+      <div class="h-1 w-20 bg-gradient-to-r from-blue-400 to-indigo-500 mx-auto mb-16"></div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- AnonNet -->
+        <div class="project-card rounded-xl overflow-hidden card-hover relative h-80">
+          <img src="/api/placeholder/400/320" alt="AnonNet" class="w-full h-full object-cover">
+          <div class="project-overlay">
+            <div class="project-content">
+              <h3 class="text-xl font-bold text-white mb-2">AnonNet</h3>
+              <p class="text-gray-300 mb-4">A synthetic data generation platform that mimics the statistical
+                characteristics of raw patient data, enabling secure data sharing with privacy protection.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="text-xs font-medium bg-blue-900 text-blue-300 rounded-full px-3 py-1">Healthcare
+                  Tech</span>
+                <span class="text-xs font-medium bg-indigo-900 text-indigo-300 rounded-full px-3 py-1">Generative
+                  AI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GrubMatch -->
+        <div class="project-card rounded-xl overflow-hidden card-hover relative h-80">
+          <img src="/api/placeholder/400/320" alt="GrubMatch" class="w-full h-full object-cover">
+          <div class="project-overlay">
+            <div class="project-content">
+              <h3 class="text-xl font-bold text-white mb-2">GrubMatch</h3>
+              <p class="text-gray-300 mb-4">A restaurant finding mobile app designed for those eating with friends or
+                their significant other, who struggle to find new places everyone can agree on.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="text-xs font-medium bg-blue-900 text-blue-300 rounded-full px-3 py-1">Mobile App</span>
+                <span class="text-xs font-medium bg-green-900 text-green-300 rounded-full px-3 py-1">Food Tech</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PoolChemist -->
+        <div class="project-card rounded-xl overflow-hidden card-hover relative h-80">
+          <img src="/api/placeholder/400/320" alt="PoolChemist" class="w-full h-full object-cover">
+          <div class="project-overlay">
+            <div class="project-content">
+              <h3 class="text-xl font-bold text-white mb-2">PoolChemist</h3>
+              <p class="text-gray-300 mb-4">A robot that lives on the side of your pool and takes measurements in
+                real-time, independently dispensing chemicals as needed and reordering supplies automatically.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="text-xs font-medium bg-blue-900 text-blue-300 rounded-full px-3 py-1">IoT</span>
+                <span class="text-xs font-medium bg-purple-900 text-purple-300 rounded-full px-3 py-1">People's Choice
+                  Award</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-24 bg-gray-900">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-2 text-center">Skills & <span class="gradient-text">Expertise</span></h2>
+      <div class="h-1 w-20 bg-gradient-to-r from-blue-400 to-indigo-500 mx-auto mb-16"></div>
+
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <!-- Technical Skills -->
+          <div class="bg-gray-800 p-8 rounded-xl shadow-xl">
+            <h3 class="text-2xl font-bold gradient-text mb-6">Technical Skills</h3>
+            <div class="flex flex-wrap gap-3">
+              <span
+                class="skill-pill bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 rounded-full text-sm">C#</span>
+              <span
+                class="skill-pill bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 rounded-full text-sm">SQL</span>
+              <span
+                class="skill-pill bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 rounded-full text-sm">Python</span>
+              <span
+                class="skill-pill bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 rounded-full text-sm">VB.NET</span>
+              <span
+                class="skill-pill bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 rounded-full text-sm">C/C++</span>
+              <span
+                class="skill-pill bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 rounded-full text-sm">REST
+                APIs</span>
+              <span
+                class="skill-pill bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 rounded-full text-sm">XML/XSD</span>
+              <span
+                class="skill-pill bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 rounded-full text-sm">Web
+                Development</span>
+              <span
+                class="skill-pill bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 rounded-full text-sm">GenTax</span>
+              <span
+                class="skill-pill bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 rounded-full text-sm">Prompt
+                Engineering</span>
+            </div>
+          </div>
+
+          <!-- Soft Skills -->
+          <div class="bg-gray-800 p-8 rounded-xl shadow-xl">
+            <h3 class="text-2xl font-bold gradient-text mb-6">Business Skills</h3>
+            <div class="flex flex-wrap gap-3">
+              <span
+                class="skill-pill bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm">Requirements
+                Analysis</span>
+              <span
+                class="skill-pill bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm">Customer
+                Interviewing</span>
+              <span
+                class="skill-pill bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm">Product
+                Scoping</span>
+              <span
+                class="skill-pill bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm">Cross-functional
+                Leadership</span>
+              <span
+                class="skill-pill bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm">Stakeholder
+                Management</span>
+              <span
+                class="skill-pill bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm">Agile
+                Development</span>
+              <span
+                class="skill-pill bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm">Team
+                Management</span>
+              <span
+                class="skill-pill bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm">Change
+                Management</span>
+              <span
+                class="skill-pill bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm">Product
+                Design</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="mt-12 bg-gray-800 p-8 rounded-xl shadow-xl">
+          <h3 class="text-2xl font-bold gradient-text mb-6">Certifications</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-gray-700 p-4 rounded-lg hover:bg-gray-600
