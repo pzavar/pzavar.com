@@ -35,6 +35,8 @@ html {
 body {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+  font-family: 'Lato', sans-serif;
+  scroll-behavior: smooth;
 }
 
 @keyframes skillAnimation {
@@ -354,3 +356,5 @@ body {
 .book-card:hover img {
   transform: scale(1.05);
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
