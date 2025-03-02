@@ -1,4 +1,32 @@
 
+// Mobile menu functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const closeMenuButton = document.getElementById('close-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
+  
+  // Toggle mobile menu
+  mobileMenuButton.addEventListener('click', function() {
+    mobileMenu.classList.toggle('translate-x-full');
+    document.body.classList.toggle('overflow-hidden');
+  });
+  
+  // Close menu
+  closeMenuButton.addEventListener('click', function() {
+    mobileMenu.classList.add('translate-x-full');
+    document.body.classList.remove('overflow-hidden');
+  });
+  
+  // Close menu when clicking on links
+  mobileMenuLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      mobileMenu.classList.add('translate-x-full');
+      document.body.classList.remove('overflow-hidden');
+    });
+  });
+});
+
 // Modal functionality
 function openModal(modalId) {
   console.log("Opening modal:", modalId); // Debug log
