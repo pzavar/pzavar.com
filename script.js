@@ -53,15 +53,32 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Add visual feedback for clickable project cards
+  // Add visual feedback and click handlers for project cards
   const projectCards = document.querySelectorAll('.project-card');
   projectCards.forEach(card => {
+    // Add scale effect on hover
     card.addEventListener('mouseenter', () => {
       card.classList.add('hover:scale-[1.02]');
     });
     
     card.addEventListener('mouseleave', () => {
       card.classList.remove('hover:scale-[1.02]');
+    });
+    
+    // Add click handlers to open the corresponding modal
+    card.addEventListener('click', (e) => {
+      // Prevent default behavior if clicked on a button
+      if (e.target.tagName === 'BUTTON') return;
+      
+      // Get the modal ID from the nearest button's onclick attribute
+      const button = card.querySelector('button');
+      if (button) {
+        const onclickAttr = button.getAttribute('onclick');
+        if (onclickAttr) {
+          const modalId = onclickAttr.match(/'([^']+)'/)[1];
+          openModal(modalId);
+        }
+      }
     });
   });
 });
