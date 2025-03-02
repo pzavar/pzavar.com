@@ -354,25 +354,3 @@ body {
 .book-card:hover img {
   transform: scale(1.05);
 }
-
-.nav-link {
-  position: relative;
-  transition: all 0.3s ease;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #38bdf8 0%, #818cf8 100%);
-  transition: width 0.3s ease;
-}
-
-/* Add a faint dark overlay to the header to improve text contrast */
-header.glassmorphism {
-  background: rgba(15, 23, 42, 0.7) !important;
-}
