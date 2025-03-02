@@ -92,6 +92,36 @@ body {
   bottom: 0;
 }
 
+/* Make project cards clickable with cursor */
+.project-card {
+  cursor: pointer;
+}
+
+/* Modal styling */
+.project-modal {
+  transition: all 0.3s ease-out;
+}
+
+.modal-container {
+  transition: all 0.3s ease;
+  transform: scale(0.8);
+  opacity: 0;
+}
+
+.project-modal.active .modal-container {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.modal-overlay {
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.project-modal.active .modal-overlay {
+  opacity: 0.75;
+}
+
 /* Education logos styling */
 .timeline-item img {
   max-width: 100%;

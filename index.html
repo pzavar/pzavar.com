@@ -453,7 +453,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- AnonNet -->
-        <div class="project-card rounded-xl overflow-hidden card-hover relative h-80">
+        <div class="project-card rounded-xl overflow-hidden card-hover relative h-80" onclick="openModal('anonnet-modal')">
           <img src="anonnet.png" alt="AnonNet" class="w-full h-full object-cover">
           <div class="project-overlay">
             <div class="project-content">
@@ -468,10 +468,13 @@
               </div>
             </div>
           </div>
+          <div class="absolute bottom-4 right-4 bg-blue-500 hover:bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center transition-all">
+            <i class="fas fa-plus"></i>
+          </div>
         </div>
 
         <!-- GrubMatch -->
-        <div class="project-card rounded-xl overflow-hidden card-hover relative h-80">
+        <div class="project-card rounded-xl overflow-hidden card-hover relative h-80" onclick="openModal('grubmatch-modal')">
           <img src="grubmatch.jpg" alt="GrubMatch" class="w-full h-full object-cover">
           <div class="project-overlay">
             <div class="project-content">
@@ -484,10 +487,13 @@
               </div>
             </div>
           </div>
+          <div class="absolute bottom-4 right-4 bg-blue-500 hover:bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center transition-all">
+            <i class="fas fa-plus"></i>
+          </div>
         </div>
 
         <!-- PoolChemist -->
-        <div class="project-card rounded-xl overflow-hidden card-hover relative h-80">
+        <div class="project-card rounded-xl overflow-hidden card-hover relative h-80" onclick="openModal('poolchemist-modal')">
           <img src="poolchemist.jpg" alt="PoolChemist" class="w-full h-full object-cover">
           <div class="project-overlay">
             <div class="project-content">
@@ -498,6 +504,181 @@
                 <span class="text-xs font-medium bg-blue-900 text-blue-300 rounded-full px-3 py-1">IoT</span>
                 <span class="text-xs font-medium bg-purple-900 text-purple-300 rounded-full px-3 py-1">People's Choice
                   Award</span>
+              </div>
+            </div>
+          </div>
+          <div class="absolute bottom-4 right-4 bg-blue-500 hover:bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center transition-all">
+            <i class="fas fa-plus"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Modals -->
+      <!-- AnonNet Modal -->
+      <div id="anonnet-modal" class="project-modal fixed inset-0 z-50 flex items-center justify-center hidden">
+        <div class="modal-overlay absolute inset-0 bg-black opacity-75" onclick="closeModal('anonnet-modal')"></div>
+        <div class="modal-container bg-gray-800 w-11/12 md:max-w-3xl mx-auto rounded-xl shadow-xl z-50 overflow-hidden relative">
+          <div class="modal-header p-6 flex justify-between items-center border-b border-gray-700">
+            <h3 class="text-2xl font-bold gradient-text">AnonNet: Synthetic Medical Data Marketplace</h3>
+            <button class="modal-close text-gray-400 hover:text-white" onclick="closeModal('anonnet-modal')">
+              <i class="fas fa-times text-xl"></i>
+            </button>
+          </div>
+          <div class="modal-content p-6">
+            <div class="flex flex-col md:flex-row gap-6 mb-6">
+              <div class="md:w-1/3">
+                <img src="anonnet.png" alt="AnonNet" class="w-full h-auto rounded-lg">
+              </div>
+              <div class="md:w-2/3">
+                <h4 class="text-xl font-semibold text-blue-400 mb-3">Project Overview</h4>
+                <p class="text-gray-300 mb-4">
+                  AnonNet is a groundbreaking platform that creates and distributes synthetic medical data that statistically mimics real patient information while preserving privacy. It addresses the critical challenge of data sharing in healthcare research while maintaining HIPAA compliance and patient confidentiality.
+                </p>
+                <p class="text-gray-300 mb-4">
+                  The project won 1st Place in the UCLA Anderson Innovation Challenge (Healthcare Track) in 2021, recognized for its potential to accelerate medical research without compromising patient privacy.
+                </p>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div>
+                <h4 class="text-lg font-semibold text-blue-400 mb-2">Key Achievements</h4>
+                <ul class="list-disc pl-5 text-gray-300 space-y-2">
+                  <li>Developed a secure marketplace connecting data generators (hospitals, research institutions) with data consumers (pharmaceutical companies, researchers)</li>
+                  <li>Created synthetic data validation algorithms to ensure statistical similarity to source data</li>
+                  <li>Implemented an end-to-end encrypted transaction system for secure data exchange</li>
+                  <li>Built customizable data request tools allowing researchers to specify exactly what medical data patterns they need</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-blue-400 mb-2">Technologies Used</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="text-xs font-medium bg-blue-900 text-blue-300 rounded-full px-3 py-1">Python</span>
+                  <span class="text-xs font-medium bg-blue-900 text-blue-300 rounded-full px-3 py-1">PyTorch</span>
+                  <span class="text-xs font-medium bg-blue-900 text-blue-300 rounded-full px-3 py-1">TensorFlow</span>
+                  <span class="text-xs font-medium bg-blue-900 text-blue-300 rounded-full px-3 py-1">GANs</span>
+                  <span class="text-xs font-medium bg-blue-900 text-blue-300 rounded-full px-3 py-1">Node.js</span>
+                  <span class="text-xs font-medium bg-blue-900 text-blue-300 rounded-full px-3 py-1">AWS</span>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-blue-400 mb-2">My Role</h4>
+                <p class="text-gray-300">
+                  As the product lead, I conducted 40+ user interviews with healthcare researchers, managed the cross-functional team of developers and data scientists, and created the business strategy and pitch deck that won the competition.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GrubMatch Modal -->
+      <div id="grubmatch-modal" class="project-modal fixed inset-0 z-50 flex items-center justify-center hidden">
+        <div class="modal-overlay absolute inset-0 bg-black opacity-75" onclick="closeModal('grubmatch-modal')"></div>
+        <div class="modal-container bg-gray-800 w-11/12 md:max-w-3xl mx-auto rounded-xl shadow-xl z-50 overflow-hidden relative">
+          <div class="modal-header p-6 flex justify-between items-center border-b border-gray-700">
+            <h3 class="text-2xl font-bold gradient-text">GrubMatch: Restaurant Decision Made Easy</h3>
+            <button class="modal-close text-gray-400 hover:text-white" onclick="closeModal('grubmatch-modal')">
+              <i class="fas fa-times text-xl"></i>
+            </button>
+          </div>
+          <div class="modal-content p-6">
+            <div class="flex flex-col md:flex-row gap-6 mb-6">
+              <div class="md:w-1/3">
+                <img src="grubmatch.jpg" alt="GrubMatch" class="w-full h-auto rounded-lg">
+              </div>
+              <div class="md:w-2/3">
+                <h4 class="text-xl font-semibold text-blue-400 mb-3">Project Overview</h4>
+                <p class="text-gray-300 mb-4">
+                  GrubMatch solves the age-old problem of "Where should we eat?" by creating a Tinder-like swiping interface for restaurant selection that generates matches based on the preferences of all group members. The app helps friends and couples quickly find restaurants they'll all enjoy.
+                </p>
+                <p class="text-gray-300 mb-4">
+                  This project was developed during the COVID-19 pandemic to help restaurants attract diners once restrictions lifted, providing an intuitive way for people to discover new restaurants that match everyone's taste preferences.
+                </p>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div>
+                <h4 class="text-lg font-semibold text-blue-400 mb-2">Key Achievements</h4>
+                <ul class="list-disc pl-5 text-gray-300 space-y-2">
+                  <li>Built a recommendation algorithm that processes individual preferences to suggest restaurants acceptable to everyone</li>
+                  <li>Integrated with Yelp, Google Places, and OpenTable APIs to provide comprehensive restaurant data</li>
+                  <li>Created a group feature that allows multiple users to join a "match session" and find common ground</li>
+                  <li>Implemented a learning system that improves suggestions based on user choices over time</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-blue-400 mb-2">Technologies Used</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="text-xs font-medium bg-blue-900 text-blue-300 rounded-full px-3 py-1">React Native</span>
+                  <span class="text-xs font-medium bg-blue-900 text-blue-300 rounded-full px-3 py-1">Firebase</span>
+                  <span class="text-xs font-medium bg-blue-900 text-blue-300 rounded-full px-3 py-1">Node.js</span>
+                  <span class="text-xs font-medium bg-blue-900 text-blue-300 rounded-full px-3 py-1">MongoDB</span>
+                  <span class="text-xs font-medium bg-blue-900 text-blue-300 rounded-full px-3 py-1">Recommendation Algorithms</span>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-blue-400 mb-2">My Role</h4>
+                <p class="text-gray-300">
+                  I led the product development effort, created the matching algorithm, and managed a team of 3 developers. I was responsible for the UX design, user testing, and feature prioritization.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PoolChemist Modal -->
+      <div id="poolchemist-modal" class="project-modal fixed inset-0 z-50 flex items-center justify-center hidden">
+        <div class="modal-overlay absolute inset-0 bg-black opacity-75" onclick="closeModal('poolchemist-modal')"></div>
+        <div class="modal-container bg-gray-800 w-11/12 md:max-w-3xl mx-auto rounded-xl shadow-xl z-50 overflow-hidden relative">
+          <div class="modal-header p-6 flex justify-between items-center border-b border-gray-700">
+            <h3 class="text-2xl font-bold gradient-text">PoolChemist: Smart Pool Maintenance</h3>
+            <button class="modal-close text-gray-400 hover:text-white" onclick="closeModal('poolchemist-modal')">
+              <i class="fas fa-times text-xl"></i>
+            </button>
+          </div>
+          <div class="modal-content p-6">
+            <div class="flex flex-col md:flex-row gap-6 mb-6">
+              <div class="md:w-1/3">
+                <img src="poolchemist.jpg" alt="PoolChemist" class="w-full h-auto rounded-lg">
+              </div>
+              <div class="md:w-2/3">
+                <h4 class="text-xl font-semibold text-blue-400 mb-3">Project Overview</h4>
+                <p class="text-gray-300 mb-4">
+                  PoolChemist is an IoT device that automates pool maintenance by continuously monitoring water chemistry, automatically dispensing chemicals as needed, and providing detailed insights to pool owners through a mobile app.
+                </p>
+                <p class="text-gray-300 mb-4">
+                  The project won the People's Choice Award at the UCLA Anderson Product Innovation Challenge, recognized for its potential to revolutionize pool maintenance for homeowners and commercial pool operators.
+                </p>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div>
+                <h4 class="text-lg font-semibold text-blue-400 mb-2">Key Achievements</h4>
+                <ul class="list-disc pl-5 text-gray-300 space-y-2">
+                  <li>Designed a floating IoT platform with multiple chemical sensors and dispensers</li>
+                  <li>Created a machine learning algorithm that predicts chemical needs based on usage patterns, weather, and historical data</li>
+                  <li>Built a mobile app that provides real-time pool status and maintenance history</li>
+                  <li>Implemented an automatic chemical reordering system integrated with major suppliers</li>
+                  <li>Reduced pool maintenance costs by up to 40% in pilot tests</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-blue-400 mb-2">Technologies Used</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="text-xs font-medium bg-blue-900 text-blue-300 rounded-full px-3 py-1">Arduino</span>
+                  <span class="text-xs font-medium bg-blue-900 text-blue-300 rounded-full px-3 py-1">Raspberry Pi</span>
+                  <span class="text-xs font-medium bg-blue-900 text-blue-300 rounded-full px-3 py-1">React Native</span>
+                  <span class="text-xs font-medium bg-blue-900 text-blue-300 rounded-full px-3 py-1">AWS IoT</span>
+                  <span class="text-xs font-medium bg-blue-900 text-blue-300 rounded-full px-3 py-1">Python</span>
+                  <span class="text-xs font-medium bg-blue-900 text-blue-300 rounded-full px-3 py-1">C++</span>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-blue-400 mb-2">My Role</h4>
+                <p class="text-gray-300">
+                  I served as the project manager and software architect, coordinating between hardware and software teams. I also developed the cloud infrastructure and implemented the predictive maintenance algorithm.
+                </p>
               </div>
             </div>
           </div>
