@@ -1,26 +1,32 @@
 
 // Modal functionality
 function openModal(modalId) {
+  console.log("Opening modal:", modalId); // Debug log
   const modal = document.getElementById(modalId);
   if (modal) {
     document.body.style.overflow = 'hidden'; // Prevent scrolling
     modal.classList.remove('hidden');
     
-    // Use setTimeout to allow the DOM to update before adding active class
-    setTimeout(() => {
-      modal.classList.add('active');
-    }, 10);
+    // Force reflow before adding active class for animation
+    modal.offsetWidth;
+    
+    // Add active class to trigger animation
+    modal.classList.add('active');
     
     // Add escape key listener
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function escapeHandler(e) {
       if (e.key === 'Escape') {
         closeModal(modalId);
+        document.removeEventListener('keydown', escapeHandler);
       }
     });
+  } else {
+    console.error("Modal not found:", modalId);
   }
 }
 
 function closeModal(modalId) {
+  console.log("Closing modal:", modalId); // Debug log
   const modal = document.getElementById(modalId);
   if (modal) {
     modal.classList.remove('active');

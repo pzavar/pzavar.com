@@ -990,7 +990,14 @@
     </div>
   </footer>
 
+  <script src="script.js"></script>
   <script>
+    // Debug function to test modals directly
+    function testModal(modalId) {
+      console.log("Testing modal:", modalId);
+      openModal(modalId);
+    }
+    
     // Enhanced smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
