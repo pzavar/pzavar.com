@@ -240,7 +240,8 @@ body {
 }
 
 .project-card:hover img {
-  filter: brightness(0.15) contrast(1.05); /* Nearly invisible image */
+  filter: brightness(0.05) contrast(1.05); /* Almost completely dark image on hover */
+  opacity: 0.2; /* Additional opacity reduction */
 }
 
 .project-card .project-overlay {
@@ -249,7 +250,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.95); /* 95% black overlay */
+  background-color: rgba(0, 0, 0, 0.98); /* Almost completely black overlay */
   opacity: 0;
   transition: opacity 0.3s ease;
 }
