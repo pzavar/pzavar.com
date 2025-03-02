@@ -15,21 +15,6 @@
       scroll-behavior: smooth;
       background-color: #0f172a;
       color: #f8fafc;
-      position: relative;
-      overflow-x: hidden;
-    }
-    
-    #video-background {
-      position: fixed;
-      right: 0;
-      bottom: 0;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      z-index: -1000;
-      opacity: 0.15;
-      object-fit: cover;
     }
 
     .gradient-text {
@@ -163,23 +148,7 @@
       }
     }
 
-    .animate-float {
-      animation: float 3s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0% {
-        transform: translateY(0px);
-      }
-
-      50% {
-        transform: translateY(-20px);
-      }
-
-      100% {
-        transform: translateY(0px);
-      }
-    }
+    /* Removed floating animation */
 
     .glassmorphism {
       background: rgba(15, 23, 42, 0.7);
@@ -224,12 +193,6 @@
 </head>
 
 <body>
-  <!-- Video Background -->
-  <video autoplay muted loop id="video-background">
-    <source src="video.mp4" type="video/mp4">
-    Your browser does not support HTML5 video.
-  </video>
-  
   <!-- Fixed Navbar -->
   <header class="fixed top-0 left-0 w-full z-50 glassmorphism transition-all duration-300 py-4">
     <div class="container mx-auto px-6 flex justify-between items-center">
@@ -261,8 +224,8 @@
           <h1 class="text-5xl md:text-7xl font-bold mb-4">
             Parham <span class="gradient-text">Hajzavar</span>
           </h1>
-          <h2 class="text-xl md:text-2xl font-light mb-6 text-gray-300">Implementation Consultant | Future Product
-            Manager</h2>
+          <h2 class="text-xl md:text-2xl font-light mb-6 text-gray-300">Former Implementation Consultant | Passionate
+            About Technical Solutioning</h2>
           <p class="text-lg mb-8 text-gray-400 max-w-lg">
             Bridging the gap between technology and business needs. Currently pursuing MS in Information Systems at the
             University of Washington.
@@ -278,7 +241,7 @@
             </a>
           </div>
         </div>
-        <div class="md:w-1/2 flex justify-center animate-float">
+        <div class="md:w-1/2 flex justify-center">
           <div class="relative">
             <div
               class="w-64 h-64 rounded-full bg-gradient-to-r from-blue-400 to-indigo-500 absolute -inset-1 blur-md opacity-75">
@@ -306,56 +269,46 @@
             <h3 class="text-xl font-semibold mb-4 gradient-text">Quick Facts</h3>
             <ul class="space-y-4">
               <li class="flex items-start">
-                <span class="text-blue-400 mr-3"><i class="fas fa-map-marker-alt"></i></span>
-                <span>Seattle, Washington</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-blue-400 mr-3"><i class="fas fa-graduation-cap"></i></span>
-                <span>MS in Information Systems, UW Foster (2024-2025)</span>
+                <span class="text-blue-400 mr-3"><i class="fas fa-lightbulb"></i></span>
+                <span>Passionate about designing technical solutions</span>
               </li>
               <li class="flex items-start">
                 <span class="text-blue-400 mr-3"><i class="fas fa-briefcase"></i></span>
-                <span>Former Implementation Consultant & Team Manager at FAST Enterprises</span>
+                <span>Former Implementation Consultant Team Manager at FAST Enterprises</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-400 mr-3"><i class="fas fa-graduation-cap"></i></span>
+                <span>MS in Information Systems, University of Washington, Michael G. Foster School of Business
+                  '25</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-400 mr-3"><i class="fas fa-graduation-cap"></i></span>
+                <span>BS in Computer Science, UCLA Henry Samueli School of Engineering '21</span>
               </li>
               <li class="flex items-start">
                 <span class="text-blue-400 mr-3"><i class="fas fa-trophy"></i></span>
-                <span>1st Place, UCLA Anderson Innovation Challenge</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-blue-400 mr-3"><i class="fas fa-language"></i></span>
-                <span>English, Persian, French</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-blue-400 mr-3"><i class="fas fa-globe"></i></span>
-                <span>Visited 14 countries</span>
+                <span>1st Place, UCLA Anderson Innovation Challenge '21</span>
               </li>
             </ul>
           </div>
         </div>
         <div class="md:w-2/3 md:pl-12">
           <p class="text-xl text-gray-300 mb-6 leading-relaxed">
-            I'm a results-driven professional with expertise in leading teams, developing software solutions, and
-            navigating complex stakeholder relationships. My journey has taken me from modernizing government systems to
-            creating innovative healthcare solutions using generative AI.
+            From the vibrant streets of Iran to the towering skylines of Dubai to the innovative corridors of UCLA, my global journey has forged in me a perspective that transcends borders and cultures. After graduating with my Computer Science degree, I took a leap of faith and moved to Des Moines for the Iowa Department of Revenue Modernization Program. What I couldn't have foreseen was how quickly opportunity would find me there. When my team manager suddenly departed—creating a critical gap in project leadership—the client's trust in me led them to advocate directly to my director. In a field where management roles typically require years of seasoning, I found myself entrusted with leading the govconnect.iowa.gov portal team, navigating complex stakeholder relationships while ensuring uninterrupted delivery of vital public services.
           </p>
           <p class="text-xl text-gray-300 mb-6 leading-relaxed">
-            With experience leading a team responsible for Iowa's taxpayer portal serving 1.5 million customers
-            annually, I've developed expertise in requirement analysis, end-to-end product development, and stakeholder
-            management. I excel at bridging the gap between technical teams and business stakeholders, ensuring
-            alignment and successful product delivery.
+            I thrive at the intersection of technology and business value. With a strong foundation in programming, AI development, and data science, I've leveraged these technical skills to reimagine critical systems that serve millions. The Iowa taxpayer portal I led now helps 1.5 million citizens annually, with features that reduced processing times by days and slashed abandonment rates by over 20%.
+          </p>
+          <p class="text-xl text-gray-300 mb-6 leading-relaxed">
+            What drives me is identifying the exact point where technical capability meets human need. Whether I'm conducting user interviews, rebuilding legacy systems, or designing new experiences, I excel at translating complex requirements into elegant solutions that delight both stakeholders and users.
           </p>
           <p class="text-xl text-gray-300 mb-8 leading-relaxed">
-            As I approach graduation in June 2025, I'm seeking opportunities in product management and solutions
-            engineering where I can leverage my technical background and business acumen to create meaningful impact.
+            As I complete my MS in Information Systems at UW in 2025, I'm seeking to apply this unique blend of technical expertise and business acumen as a Product Manager or Solutions Engineer where I can continue bridging gaps and building transformative products.
           </p>
           <div class="flex flex-wrap gap-3">
             <a href="https://www.linkedin.com/in/pzavar/" target="_blank"
               class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-800 text-white hover:bg-blue-600 transition-colors duration-300">
               <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://github.com/" target="_blank"
-              class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-colors duration-300">
-              <i class="fab fa-github"></i>
             </a>
             <a href="mailto:parham.zavar@gmail.com"
               class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-800 text-white hover:bg-red-500 transition-colors duration-300">
@@ -601,4 +554,132 @@
         <div class="mt-12 bg-gray-800 p-8 rounded-xl shadow-xl">
           <h3 class="text-2xl font-bold gradient-text mb-6">Certifications</h3>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div class="bg-gray-700 p-4 rounded-lg hover:bg-gray-600
+            <div class="bg-gray-700 p-4 rounded-lg hover:bg-gray-600 transition-colors duration-300">
+              <h4 class="font-medium text-lg mb-2">Software Product Management Specialization</h4>
+              <p class="text-gray-400">University of Alberta (Coursera)</p>
+            </div>
+            <div class="bg-gray-700 p-4 rounded-lg hover:bg-gray-600 transition-colors duration-300">
+              <h4 class="font-medium text-lg mb-2">UX Design Master Course</h4>
+              <p class="text-gray-400">Udemy</p>
+            </div>
+            <div class="bg-gray-700 p-4 rounded-lg hover:bg-gray-600 transition-colors duration-300">
+              <h4 class="font-medium text-lg mb-2">Agile Project Management</h4>
+              <p class="text-gray-400">LinkedIn Learning</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-24 gradient-bg">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-2 text-center">Get In <span class="gradient-text">Touch</span></h2>
+      <div class="h-1 w-20 bg-gradient-to-r from-blue-400 to-indigo-500 mx-auto mb-16"></div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-gray-800 p-8 rounded-xl shadow-xl">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+              <ul class="space-y-6">
+                <li class="flex items-start">
+                  <span class="text-blue-400 mr-4 mt-1"><i class="fas fa-map-marker-alt"></i></span>
+                  <span>Seattle, Washington</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-400 mr-4 mt-1"><i class="fas fa-envelope"></i></span>
+                  <a href="mailto:parham.zavar@gmail.com" class="hover:text-blue-400 transition-colors">parham.zavar@gmail.com</a>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-400 mr-4 mt-1"><i class="fas fa-phone"></i></span>
+                  <a href="tel:+14243033401" class="hover:text-blue-400 transition-colors">(424) 303-3401</a>
+                </li>
+              </ul>
+              <div class="mt-8 flex space-x-4">
+                <a href="https://www.linkedin.com/in/pzavar/" target="_blank"
+                  class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-700 text-white hover:bg-blue-600 transition-colors duration-300">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://twitter.com/" target="_blank" class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-700 text-white hover:bg-blue-400 transition-colors duration-300">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://github.com/" target="_blank" class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-700 text-white hover:bg-gray-600 transition-colors duration-300">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold mb-6">Send Me a Message</h3>
+              <form>
+                <div class="mb-4">
+                  <input type="text" placeholder="Your Name"
+                    class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:border-blue-400 transition-colors">
+                </div>
+                <div class="mb-4">
+                  <input type="email" placeholder="Your Email"
+                    class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:border-blue-400 transition-colors">
+                </div>
+                <div class="mb-4">
+                  <textarea rows="4" placeholder="Your Message"
+                    class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:border-blue-400 transition-colors"></textarea>
+                </div>
+                <button type="submit"
+                  class="w-full py-3 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-lg text-white font-medium hover:shadow-lg hover:from-blue-500 hover:to-indigo-600 transition-all duration-300">
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 bg-gray-900">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 mb-4 md:mb-0">© 2025 Parham Hajzavar. All rights reserved.</p>
+        <div class="flex space-x-4">
+          <a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a>
+          <a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a>
+          <a href="#experience" class="text-gray-400 hover:text-white transition-colors">Experience</a>
+          <a href="#projects" class="text-gray-400 hover:text-white transition-colors">Projects</a>
+          <a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Navbar appearance change on scroll
+    window.addEventListener('scroll', function () {
+      const navbar = document.querySelector('header');
+      if (window.scrollY > 50) {
+        navbar.classList.add('py-2');
+        navbar.classList.add('bg-gray-900');
+        navbar.classList.remove('py-4');
+        navbar.classList.remove('glassmorphism');
+      } else {
+        navbar.classList.add('py-4');
+        navbar.classList.add('glassmorphism');
+        navbar.classList.remove('py-2');
+        navbar.classList.remove('bg-gray-900');
+      }
+    });
+  </script>
+</body>
+
+</html>
