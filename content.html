@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parham Hajzavar | My Reading List</title>
+  <link rel="icon" href="ph.png" type="image/png">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+      background-color: #0f172a;
+      color: #f8fafc;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #38bdf8 0%, #818cf8 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gradient-bg {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
+
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    }
+
+    .glassmorphism {
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-link {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #38bdf8 0%, #818cf8 100%);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .book-card {
+      transition: all 0.3s ease;
+    }
+
+    .book-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .floating {
+      animation: float 4s ease-in-out infinite;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Fixed Navbar -->
+  <header class="fixed top-0 left-0 w-full z-50 glassmorphism transition-all duration-300 py-4">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <span class="text-xl font-bold gradient-text">PH</span>
+      <nav class="hidden md:flex items-center space-x-10">
+        <a href="index.html#about" class="nav-link text-gray-300 hover:text-white">About</a>
+        <a href="index.html#experience" class="nav-link text-gray-300 hover:text-white">Experience</a>
+        <a href="index.html#projects" class="nav-link text-gray-300 hover:text-white">Projects</a>
+        <a href="index.html#education" class="nav-link text-gray-300 hover:text-white">Education</a>
+        <a href="index.html#skills" class="nav-link text-gray-300 hover:text-white">Skills</a>
+        <a href="content.html" class="nav-link text-gray-300 hover:text-white">Reading List</a>
+        <a href="index.html#contact"
+          class="py-2 px-5 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full text-white font-medium hover:shadow-lg hover:from-blue-500 hover:to-indigo-600 transition-all duration-300">Contact</a>
+      </nav>
+      <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+      <div id="mobile-menu" class="md:hidden fixed inset-0 bg-gray-900 bg-opacity-95 z-40 transform translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="flex flex-col h-full">
+          <div class="flex justify-end p-6">
+            <button id="close-menu-button" class="text-white focus:outline-none">
+              <i class="fas fa-times text-xl"></i>
+            </button>
+          </div>
+          <div class="flex flex-col items-center space-y-8 mt-10">
+            <a href="index.html#about" class="text-xl text-gray-300 hover:text-white">About</a>
+            <a href="index.html#experience" class="text-xl text-gray-300 hover:text-white">Experience</a>
+            <a href="index.html#projects" class="text-xl text-gray-300 hover:text-white">Projects</a>
+            <a href="index.html#education" class="text-xl text-gray-300 hover:text-white">Education</a>
+            <a href="index.html#skills" class="text-xl text-gray-300 hover:text-white">Skills</a>
+            <a href="content.html" class="text-xl text-gray-300 hover:text-white">Reading List</a>
+            <a href="index.html#contact" class="py-2 px-5 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full text-white font-medium hover:shadow-lg hover:from-blue-500 hover:to-indigo-600 transition-all duration-300">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Reading List Section -->
+  <section class="pt-32 pb-24 gradient-bg min-h-screen">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-2 text-center">My <span class="gradient-text">Reading List</span></h2>
+      <div class="h-1 w-20 bg-gradient-to-r from-blue-400 to-indigo-500 mx-auto mb-16"></div>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <!-- Book 1 -->
+        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <div class="h-64 overflow-hidden">
+            <img src="https://m.media-amazon.com/images/I/71m-MxdJ2WL._AC_UF1000,1000_QL80_.jpg" alt="Thinking, Fast and Slow" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Thinking, Fast and Slow</h3>
+            <p class="text-gray-400 mb-3">Daniel Kahneman</p>
+            <p class="text-sm text-gray-300">A groundbreaking exploration of the two systems that drive the way we think and make decisions.</p>
+          </div>
+        </div>
+        
+        <!-- Book 2 -->
+        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <div class="h-64 overflow-hidden">
+            <img src="https://m.media-amazon.com/images/I/719mZmX5UXL._AC_UF894,1000_QL80_.jpg" alt="Zero to One" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Zero to One</h3>
+            <p class="text-gray-400 mb-3">Peter Thiel</p>
+            <p class="text-sm text-gray-300">Notes on startups, or how to build the future by the co-founder of PayPal.</p>
+          </div>
+        </div>
+        
+        <!-- Book 3 -->
+        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <div class="h-64 overflow-hidden">
+            <img src="https://m.media-amazon.com/images/I/61-hMfd7NGL._AC_UF1000,1000_QL80_.jpg" alt="Inspired" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Inspired</h3>
+            <p class="text-gray-400 mb-3">Marty Cagan</p>
+            <p class="text-sm text-gray-300">How to create tech products customers love. A product management classic.</p>
+          </div>
+        </div>
+        
+        <!-- Book 4 -->
+        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <div class="h-64 overflow-hidden">
+            <img src="https://m.media-amazon.com/images/I/61F7N4mJ-sL._AC_UF1000,1000_QL80_.jpg" alt="Hooked" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Hooked</h3>
+            <p class="text-gray-400 mb-3">Nir Eyal</p>
+            <p class="text-sm text-gray-300">How to build habit-forming products that keep users coming back.</p>
+          </div>
+        </div>
+        
+        <!-- Book 5 -->
+        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <div class="h-64 overflow-hidden">
+            <img src="https://m.media-amazon.com/images/I/71wkfcBXtkL._AC_UF1000,1000_QL80_.jpg" alt="The Lean Startup" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">The Lean Startup</h3>
+            <p class="text-gray-400 mb-3">Eric Ries</p>
+            <p class="text-sm text-gray-300">A methodology for developing businesses and products that shortens product development cycles.</p>
+          </div>
+        </div>
+        
+        <!-- Book 6 -->
+        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <div class="h-64 overflow-hidden">
+            <img src="https://m.media-amazon.com/images/I/713mzPe9SwL._AC_UF1000,1000_QL80_.jpg" alt="Cracking the PM Interview" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Cracking the PM Interview</h3>
+            <p class="text-gray-400 mb-3">Gayle Laakmann McDowell</p>
+            <p class="text-sm text-gray-300">How to land a product manager job in a tech company.</p>
+          </div>
+        </div>
+        
+        <!-- Book 7 -->
+        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <div class="h-64 overflow-hidden">
+            <img src="https://m.media-amazon.com/images/I/61pDNU9qEGL._AC_UF1000,1000_QL80_.jpg" alt="The Design of Everyday Things" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">The Design of Everyday Things</h3>
+            <p class="text-gray-400 mb-3">Don Norman</p>
+            <p class="text-sm text-gray-300">A powerful primer on how and why some products satisfy customers while others frustrate them.</p>
+          </div>
+        </div>
+        
+        <!-- Book 8 -->
+        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <div class="h-64 overflow-hidden">
+            <img src="https://m.media-amazon.com/images/I/51Veo-gvApL._AC_UF1000,1000_QL80_.jpg" alt="Measure What Matters" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Measure What Matters</h3>
+            <p class="text-gray-400 mb-3">John Doerr</p>
+            <p class="text-sm text-gray-300">How Google, Bono, and the Gates Foundation rock the world with OKRs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="py-8 bg-gray-900">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 mb-4 md:mb-0">© 2025 Parham Hajzavar. All rights reserved.</p>
+        <div class="flex space-x-4">
+          <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
+          <a href="index.html#about" class="text-gray-400 hover:text-white transition-colors">About</a>
+          <a href="index.html#experience" class="text-gray-400 hover:text-white transition-colors">Experience</a>
+          <a href="index.html#projects" class="text-gray-400 hover:text-white transition-colors">Projects</a>
+          <a href="index.html#education" class="text-gray-400 hover:text-white transition-colors">Education</a>
+          <a href="content.html" class="text-gray-400 hover:text-white transition-colors">Reading List</a>
+          <a href="index.html#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Throttle function to limit how often a function can run
+    function throttle(func, limit) {
+      let lastFunc;
+      let lastRan;
+      return function () {
+        const context = this;
+        const args = arguments;
+        if (!lastRan) {
+          func.apply(context, args);
+          lastRan = Date.now();
+        } else {
+          clearTimeout(lastFunc);
+          lastFunc = setTimeout(function () {
+            if ((Date.now() - lastRan) >= limit) {
+              func.apply(context, args);
+              lastRan = Date.now();
+            }
+          }, limit - (Date.now() - lastRan));
+        }
+      }
+    }
+
+    // Smoother navbar appearance change on scroll with throttling
+    window.addEventListener('scroll', throttle(function () {
+      const navbar = document.querySelector('header');
+      if (window.scrollY > 50) {
+        navbar.classList.add('py-2');
+        navbar.classList.add('bg-gray-900');
+        navbar.classList.remove('py-4');
+        navbar.classList.remove('glassmorphism');
+      } else {
+        navbar.classList.add('py-4');
+        navbar.classList.add('glassmorphism');
+        navbar.classList.remove('py-2');
+        navbar.classList.remove('bg-gray-900');
+      }
+    }, 50));
+  </script>
+</body>
+
+</html>
