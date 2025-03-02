@@ -53,14 +53,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Project cards already have hover effects in CSS
-  // We'll just make sure the entire card is clickable
+  // Add visual feedback for clickable project cards
   const projectCards = document.querySelectorAll('.project-card');
   projectCards.forEach(card => {
-    card.addEventListener('click', (e) => {
-      // Get the modal ID from the card's onclick attribute
-      const modalId = card.getAttribute('onclick').replace('openModal(\'', '').replace('\')', '');
-      openModal(modalId);
+    card.addEventListener('mouseenter', () => {
+      card.classList.add('hover:scale-[1.02]');
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      card.classList.remove('hover:scale-[1.02]');
     });
   });
 });
