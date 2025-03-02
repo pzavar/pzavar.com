@@ -273,14 +273,17 @@ body {
 .book-card h3 {
   color: #ffffff;
   font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
-.book-card p.text-gray-400 {
+.book-card p.text-gray-400, .book-card p.text-blue-300 {
   color: #a3e0ff !important;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
-.book-card p.text-sm {
+.book-card p.text-sm, .book-card p.text-white {
   color: #ffffff !important;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .book-card {
