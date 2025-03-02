@@ -92,9 +92,42 @@ body {
   bottom: 0;
 }
 
-/* Make project cards clickable with cursor */
+/* Make project cards clickable with cursor and visual cues */
 .project-card {
   cursor: pointer;
+  position: relative;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.project-card:hover::before {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.project-card .project-content button {
+  transform: translateY(10px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover .project-content button {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 /* Modal styling */

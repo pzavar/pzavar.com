@@ -47,17 +47,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Add hover effect for the plus button
+  // Add visual feedback for clickable project cards
   const projectCards = document.querySelectorAll('.project-card');
   projectCards.forEach(card => {
-    const plusButton = card.querySelector('.fas.fa-plus').parentElement;
-    
     card.addEventListener('mouseenter', () => {
-      plusButton.classList.add('scale-110');
+      card.classList.add('hover:scale-[1.02]');
     });
     
     card.addEventListener('mouseleave', () => {
-      plusButton.classList.remove('scale-110');
+      card.classList.remove('hover:scale-[1.02]');
     });
   });
 });
