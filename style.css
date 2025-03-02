@@ -1,3 +1,4 @@
+
 /* Animated background patterns */
 .bg-pattern {
   position: absolute;
@@ -265,5 +266,37 @@ body {
 }
 
 .project-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Book card text styling for better readability */
+.book-card h3 {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.book-card p.text-gray-400 {
+  color: #a3e0ff !important;
+}
+
+.book-card p.text-sm {
+  color: #ffffff !important;
+}
+
+.book-card {
+  transition: transform 0.3s ease;
+  background: rgba(17, 24, 39, 0.95) !important;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.book-card img {
+  transition: all 0.4s ease;
+}
+
+.book-card:hover img {
   transform: scale(1.05);
 }
