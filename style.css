@@ -1,4 +1,3 @@
-
 /* Animated background patterns */
 .bg-pattern {
   position: absolute;
@@ -87,4 +86,19 @@ body {
 
 .video-container video {
   transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover .project-content {
+  bottom: 0;
+}
+
+/* Education logos styling */
+.timeline-item img {
+  max-width: 100%;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.timeline-item:hover img {
+  transform: scale(1.05);
 }
