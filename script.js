@@ -92,4 +92,37 @@ document.addEventListener('DOMContentLoaded', function() {
       card.classList.remove('hover:scale-[1.02]');
     });
   });
+  
+  // Add visual feedback for book cards (Reading List page)
+  const bookCards = document.querySelectorAll('.book-card');
+  bookCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.querySelector('img').style.transform = 'scale(1.05)';
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      card.querySelector('img').style.transform = 'scale(1)';
+    });
+  });
+});
+
+// Animate books on Reading List page when they come into view
+document.addEventListener('DOMContentLoaded', function() {
+  if (document.querySelector('.book-card')) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+    
+    document.querySelectorAll('.book-card').forEach(card => {
+      card.style.opacity = '0';
+      observer.observe(card);
+    });
+  }
 });

@@ -9,82 +9,7 @@
   <link rel="icon" href="ph.png" type="image/png">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      scroll-behavior: smooth;
-      background-color: #0f172a;
-      color: #f8fafc;
-    }
-
-    .gradient-text {
-      background: linear-gradient(90deg, #38bdf8 0%, #818cf8 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .gradient-bg {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    }
-
-    .card-hover {
-      transition: all 0.3s ease;
-    }
-
-    .card-hover:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
-    }
-
-    .glassmorphism {
-      background: rgba(15, 23, 42, 0.7);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .nav-link {
-      position: relative;
-      transition: all 0.3s ease;
-    }
-
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: linear-gradient(90deg, #38bdf8 0%, #818cf8 100%);
-      transition: width 0.3s ease;
-    }
-
-    .nav-link:hover::after {
-      width: 100%;
-    }
-
-    .book-card {
-      transition: all 0.3s ease;
-    }
-
-    .book-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
-    }
-
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0px); }
-    }
-
-    .floating {
-      animation: float 4s ease-in-out infinite;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -133,99 +58,231 @@
       <div class="h-1 w-20 bg-gradient-to-r from-blue-400 to-indigo-500 mx-auto mb-16"></div>
       
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        <!-- Book 1 -->
+        <!-- The Signal and the Noise -->
         <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
           <div class="h-64 overflow-hidden">
-            <img src="https://m.media-amazon.com/images/I/71m-MxdJ2WL._AC_UF1000,1000_QL80_.jpg" alt="Thinking, Fast and Slow" class="w-full h-full object-cover">
+            <img src="https://m.media-amazon.com/images/I/71U2JTVDhZL._AC_UF1000,1000_QL80_.jpg" alt="The Signal and the Noise" class="w-full h-full object-cover">
           </div>
           <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Thinking, Fast and Slow</h3>
-            <p class="text-gray-400 mb-3">Daniel Kahneman</p>
-            <p class="text-sm text-gray-300">A groundbreaking exploration of the two systems that drive the way we think and make decisions.</p>
+            <h3 class="text-xl font-bold mb-2">The Signal and the Noise</h3>
+            <p class="text-gray-400 mb-3">Nate Silver</p>
+            <p class="text-sm text-gray-300">Why so many predictions fail—but some don't.</p>
           </div>
         </div>
         
-        <!-- Book 2 -->
+        <!-- How to Win Friends and Influence People -->
         <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
           <div class="h-64 overflow-hidden">
-            <img src="https://m.media-amazon.com/images/I/719mZmX5UXL._AC_UF894,1000_QL80_.jpg" alt="Zero to One" class="w-full h-full object-cover">
+            <img src="https://m.media-amazon.com/images/I/71xmj35EFLL._AC_UF1000,1000_QL80_.jpg" alt="How to Win Friends and Influence People" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">How to Win Friends and Influence People</h3>
+            <p class="text-gray-400 mb-3">Dale Carnegie</p>
+            <p class="text-sm text-gray-300">The timeless guide to building relationships and influencing others.</p>
+          </div>
+        </div>
+        
+        <!-- Why We Sleep -->
+        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <div class="h-64 overflow-hidden">
+            <img src="https://m.media-amazon.com/images/I/71LpY0qJXaL._AC_UF1000,1000_QL80_.jpg" alt="Why We Sleep" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Why We Sleep</h3>
+            <p class="text-gray-400 mb-3">Matthew Walker</p>
+            <p class="text-sm text-gray-300">Unlocking the power of sleep and dreams.</p>
+          </div>
+        </div>
+        
+        <!-- Mindset: The New Psychology of Success -->
+        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <div class="h-64 overflow-hidden">
+            <img src="https://m.media-amazon.com/images/I/71Ftun0hAML._AC_UF1000,1000_QL80_.jpg" alt="Mindset: The New Psychology of Success" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Mindset: The New Psychology of Success</h3>
+            <p class="text-gray-400 mb-3">Carol S. Dweck</p>
+            <p class="text-sm text-gray-300">How we can learn to fulfill our potential through developing a growth mindset.</p>
+          </div>
+        </div>
+        
+        <!-- 1984 -->
+        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <div class="h-64 overflow-hidden">
+            <img src="https://m.media-amazon.com/images/I/71kxa1-0mfL._AC_UF1000,1000_QL80_.jpg" alt="1984" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">1984</h3>
+            <p class="text-gray-400 mb-3">George Orwell</p>
+            <p class="text-sm text-gray-300">A dystopian novel about totalitarianism, surveillance, and the manipulation of truth.</p>
+          </div>
+        </div>
+        
+        <!-- Meditations -->
+        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <div class="h-64 overflow-hidden">
+            <img src="https://m.media-amazon.com/images/I/71RWWSJ-P4L._AC_UF1000,1000_QL80_.jpg" alt="Meditations" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Meditations</h3>
+            <p class="text-gray-400 mb-3">Marcus Aurelius</p>
+            <p class="text-sm text-gray-300">Personal writings of the Roman Emperor on Stoic philosophy and self-improvement.</p>
+          </div>
+        </div>
+        
+        <!-- Shoe Dog -->
+        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <div class="h-64 overflow-hidden">
+            <img src="https://m.media-amazon.com/images/I/71xHv7abOhL._AC_UF1000,1000_QL80_.jpg" alt="Shoe Dog" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Shoe Dog</h3>
+            <p class="text-gray-400 mb-3">Phil Knight</p>
+            <p class="text-sm text-gray-300">A memoir by the creator of Nike about creating an iconic brand.</p>
+          </div>
+        </div>
+        
+        <!-- Breathe -->
+        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <div class="h-64 overflow-hidden">
+            <img src="https://m.media-amazon.com/images/I/71Vb7qWoEJL._AC_UF1000,1000_QL80_.jpg" alt="Breathe" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Breathe</h3>
+            <p class="text-gray-400 mb-3">James Nestor</p>
+            <p class="text-sm text-gray-300">A New Science of a Lost Art - exploring how the way we breathe affects our health.</p>
+          </div>
+        </div>
+        
+        <!-- The Defining Decade -->
+        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <div class="h-64 overflow-hidden">
+            <img src="https://m.media-amazon.com/images/I/71YTmFTJLXL._AC_UF1000,1000_QL80_.jpg" alt="The Defining Decade" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">The Defining Decade</h3>
+            <p class="text-gray-400 mb-3">Meg Jay</p>
+            <p class="text-sm text-gray-300">Why your twenties matter—and how to make the most of them now.</p>
+          </div>
+        </div>
+        
+        <!-- The Lean Product Playbook -->
+        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <div class="h-64 overflow-hidden">
+            <img src="https://m.media-amazon.com/images/I/61VfLCzvL2L._AC_UF1000,1000_QL80_.jpg" alt="The Lean Product Playbook" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">The Lean Product Playbook</h3>
+            <p class="text-gray-400 mb-3">Dan Olsen</p>
+            <p class="text-sm text-gray-300">How to Innovate with Minimum Viable Products and Rapid Customer Feedback.</p>
+          </div>
+        </div>
+        
+        <!-- Animal Farm -->
+        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <div class="h-64 overflow-hidden">
+            <img src="https://m.media-amazon.com/images/I/91iGoJNdLnL._AC_UF1000,1000_QL80_.jpg" alt="Animal Farm" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Animal Farm</h3>
+            <p class="text-gray-400 mb-3">George Orwell</p>
+            <p class="text-sm text-gray-300">An allegorical novella about the Russian Revolution and the rise of Stalinism.</p>
+          </div>
+        </div>
+        
+        <!-- The Art of War -->
+        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <div class="h-64 overflow-hidden">
+            <img src="https://m.media-amazon.com/images/I/71s0WUVTlyL._AC_UF1000,1000_QL80_.jpg" alt="The Art of War" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">The Art of War</h3>
+            <p class="text-gray-400 mb-3">Sun Tzu</p>
+            <p class="text-sm text-gray-300">An ancient Chinese military treatise that has influenced both Eastern and Western military thinking.</p>
+          </div>
+        </div>
+        
+        <!-- The Subtle Art of Not Giving a F*ck -->
+        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <div class="h-64 overflow-hidden">
+            <img src="https://m.media-amazon.com/images/I/71QKQ9mwV7L._AC_UF1000,1000_QL80_.jpg" alt="The Subtle Art of Not Giving a F*ck" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">The Subtle Art of Not Giving a F*ck</h3>
+            <p class="text-gray-400 mb-3">Mark Manson</p>
+            <p class="text-sm text-gray-300">A counterintuitive approach to living a good life by focusing on what truly matters.</p>
+          </div>
+        </div>
+        
+        <!-- A Short History of Nearly Everything -->
+        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <div class="h-64 overflow-hidden">
+            <img src="https://m.media-amazon.com/images/I/91MNEon5hBL._AC_UF1000,1000_QL80_.jpg" alt="A Short History of Nearly Everything" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">A Short History of Nearly Everything</h3>
+            <p class="text-gray-400 mb-3">Bill Bryson</p>
+            <p class="text-sm text-gray-300">A humorous and accessible journey through science, from the Big Bang to the rise of civilization.</p>
+          </div>
+        </div>
+        
+        <!-- Einstein -->
+        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <div class="h-64 overflow-hidden">
+            <img src="https://m.media-amazon.com/images/I/717L0Ci2iVL._AC_UF1000,1000_QL80_.jpg" alt="Einstein" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Einstein</h3>
+            <p class="text-gray-400 mb-3">Walter Isaacson</p>
+            <p class="text-sm text-gray-300">The life and universe of the world's most famous scientist.</p>
+          </div>
+        </div>
+        
+        <!-- George Washington -->
+        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <div class="h-64 overflow-hidden">
+            <img src="https://m.media-amazon.com/images/I/81KHKzEdqbL._AC_UF1000,1000_QL80_.jpg" alt="George Washington" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">George Washington</h3>
+            <p class="text-gray-400 mb-3">David O. Stewart</p>
+            <p class="text-sm text-gray-300">The political rise of America's founding father.</p>
+          </div>
+        </div>
+        
+        <!-- Outliers -->
+        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <div class="h-64 overflow-hidden">
+            <img src="https://m.media-amazon.com/images/I/71b+X6j3PtL._AC_UF1000,1000_QL80_.jpg" alt="Outliers" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Outliers</h3>
+            <p class="text-gray-400 mb-3">Malcolm Gladwell</p>
+            <p class="text-sm text-gray-300">The Story of Success - examining the factors that contribute to high levels of success.</p>
+          </div>
+        </div>
+        
+        <!-- Zero to One -->
+        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+          <div class="h-64 overflow-hidden">
+            <img src="https://m.media-amazon.com/images/I/71m-MxdJ2WL._AC_UF1000,1000_QL80_.jpg" alt="Zero to One" class="w-full h-full object-cover">
           </div>
           <div class="p-6">
             <h3 class="text-xl font-bold mb-2">Zero to One</h3>
             <p class="text-gray-400 mb-3">Peter Thiel</p>
-            <p class="text-sm text-gray-300">Notes on startups, or how to build the future by the co-founder of PayPal.</p>
+            <p class="text-sm text-gray-300">Notes on startups, or how to build the future.</p>
           </div>
         </div>
         
-        <!-- Book 3 -->
+        <!-- Steve Jobs -->
         <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
           <div class="h-64 overflow-hidden">
-            <img src="https://m.media-amazon.com/images/I/61-hMfd7NGL._AC_UF1000,1000_QL80_.jpg" alt="Inspired" class="w-full h-full object-cover">
+            <img src="https://m.media-amazon.com/images/I/71DF+J3W+jL._AC_UF1000,1000_QL80_.jpg" alt="Steve Jobs" class="w-full h-full object-cover">
           </div>
           <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Inspired</h3>
-            <p class="text-gray-400 mb-3">Marty Cagan</p>
-            <p class="text-sm text-gray-300">How to create tech products customers love. A product management classic.</p>
-          </div>
-        </div>
-        
-        <!-- Book 4 -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img src="https://m.media-amazon.com/images/I/61F7N4mJ-sL._AC_UF1000,1000_QL80_.jpg" alt="Hooked" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Hooked</h3>
-            <p class="text-gray-400 mb-3">Nir Eyal</p>
-            <p class="text-sm text-gray-300">How to build habit-forming products that keep users coming back.</p>
-          </div>
-        </div>
-        
-        <!-- Book 5 -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img src="https://m.media-amazon.com/images/I/71wkfcBXtkL._AC_UF1000,1000_QL80_.jpg" alt="The Lean Startup" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">The Lean Startup</h3>
-            <p class="text-gray-400 mb-3">Eric Ries</p>
-            <p class="text-sm text-gray-300">A methodology for developing businesses and products that shortens product development cycles.</p>
-          </div>
-        </div>
-        
-        <!-- Book 6 -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img src="https://m.media-amazon.com/images/I/713mzPe9SwL._AC_UF1000,1000_QL80_.jpg" alt="Cracking the PM Interview" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Cracking the PM Interview</h3>
-            <p class="text-gray-400 mb-3">Gayle Laakmann McDowell</p>
-            <p class="text-sm text-gray-300">How to land a product manager job in a tech company.</p>
-          </div>
-        </div>
-        
-        <!-- Book 7 -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img src="https://m.media-amazon.com/images/I/61pDNU9qEGL._AC_UF1000,1000_QL80_.jpg" alt="The Design of Everyday Things" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">The Design of Everyday Things</h3>
-            <p class="text-gray-400 mb-3">Don Norman</p>
-            <p class="text-sm text-gray-300">A powerful primer on how and why some products satisfy customers while others frustrate them.</p>
-          </div>
-        </div>
-        
-        <!-- Book 8 -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img src="https://m.media-amazon.com/images/I/51Veo-gvApL._AC_UF1000,1000_QL80_.jpg" alt="Measure What Matters" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Measure What Matters</h3>
-            <p class="text-gray-400 mb-3">John Doerr</p>
-            <p class="text-sm text-gray-300">How Google, Bono, and the Gates Foundation rock the world with OKRs.</p>
+            <h3 class="text-xl font-bold mb-2">Steve Jobs</h3>
+            <p class="text-gray-400 mb-3">Walter Isaacson</p>
+            <p class="text-sm text-gray-300">The exclusive biography of the innovative founder of Apple.</p>
           </div>
         </div>
       </div>
