@@ -166,8 +166,32 @@ body {
 
 /* Fix for image backgrounds */
 img {
-  background: transparent;
+  background: transparent !important;
   border-radius: inherit;
+}
+
+/* Fix for blue border on images */
+#home img, 
+#about img,
+#projects img,
+#education img,
+#contact img,
+.rounded-xl img {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: inherit;
+}
+
+/* Fix for blue frame around photos */
+.w-96, .rounded-xl, .border-4 {
+  border-color: transparent !important;
+  background: transparent !important;
+}
+
+/* Target the specific blue frame issue */
+[class*="rounded"] {
+  background: transparent !important;
 }
 
 .project-info-container {
