@@ -132,25 +132,40 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', throttleScroll(function() {
       const rect = educationSection.getBoundingClientRect();
       const isVisible = 
-        rect.top < window.innerHeight && 
-        rect.bottom > 0;
+        rect.top < window.innerHeight + 300 && // Increased visibility range
+        rect.bottom > -300;
         
       if (isVisible) {
         const videoContainer = educationSection.querySelector('.video-container');
-        if (videoContainer) {
+        const video = videoContainer ? videoContainer.querySelector('video') : null;
+        
+        if (videoContainer && video) {
           // Calculate how far into the section we've scrolled (0 to 1)
+          // This creates a smoother transition that starts earlier
           const scrollProgress = Math.min(
-            Math.max(0, (window.innerHeight - rect.top) / (window.innerHeight + rect.height)), 
+            Math.max(0, (window.innerHeight + 100 - rect.top) / (window.innerHeight + rect.height + 200)), 
             1
           );
           
-          // Apply subtle scale effect similar to main video
-          const scale = 1 + (scrollProgress * 0.1);
-          // Apply subtle parallax effect
-          const translateY = scrollProgress * -30; // Negative value moves it upward as you scroll down
+          // Enhanced scale effect for more depth
+          const scale = 1 + (scrollProgress * 0.15);
           
+          // Enhanced parallax effect with easing
+          const translateY = scrollProgress * -50; // Stronger upward movement
+          
+          // Add subtle rotation for more dimension
+          const rotateZ = scrollProgress * 0.5; // Very subtle rotation
+          
+          // Apply a slight blur to create depth perception
+          const blur = Math.min(scrollProgress * 1.5, 1);
+          
+          // Apply enhanced transform with combined effects
           requestAnimationFrame(() => {
-            videoContainer.style.transform = `scale(${scale}) translateY(${translateY}px)`;
+            videoContainer.style.transform = `scale(${scale}) translateY(${translateY}px) rotateZ(${rotateZ}deg)`;
+            video.style.filter = `blur(${blur}px)`;
+            
+            // Adjust opacity based on scroll to create fade effect
+            videoContainer.style.opacity = 0.6 + (scrollProgress * 0.4); // 0.6 to 1.0 range
           });
         }
       }
