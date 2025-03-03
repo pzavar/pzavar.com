@@ -166,46 +166,8 @@ body {
 
 /* Fix for image backgrounds */
 img {
-  background: transparent !important;
+  background: transparent;
   border-radius: inherit;
-}
-
-/* Fix for blue border on images */
-#home img, 
-#about img,
-#projects img,
-#education img,
-#contact img,
-.rounded-xl img {
-  border: none !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  border-radius: inherit;
-}
-
-/* Fix for blue frame around photos */
-.w-96, .rounded-xl, .border-4 {
-  border-color: transparent !important;
-  background: transparent !important;
-}
-
-/* Target the specific blue frame issue */
-[class*="rounded"] {
-  background: transparent !important;
-}
-
-/* Additional targeting for the image frame border */
-.relative > div.w-96.h-96 {
-  background: transparent !important;
-  border-color: transparent !important;
-  background-image: none !important;
-  box-shadow: none !important;
-}
-
-/* Target gradient div for profile photo */
-.w-96.h-96.rounded-xl.bg-gradient-to-r {
-  opacity: 0 !important;
-  background: none !important;
 }
 
 .project-info-container {
