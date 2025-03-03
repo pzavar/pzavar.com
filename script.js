@@ -147,17 +147,17 @@ document.addEventListener('DOMContentLoaded', function() {
             1
           );
           
-          // Enhanced scale effect for more depth
-          const scale = 1 + (scrollProgress * 0.15);
+          // Dramatically enhanced scale effect
+          const scale = 1 + (scrollProgress * 0.3);
           
-          // Enhanced parallax effect with easing
-          const translateY = scrollProgress * -50; // Stronger upward movement
+          // Much stronger parallax effect
+          const translateY = scrollProgress * -100; // Dramatic upward movement
           
-          // Add subtle rotation for more dimension
-          const rotateZ = scrollProgress * 0.5; // Very subtle rotation
+          // More noticeable rotation
+          const rotateZ = scrollProgress * 2; // More pronounced rotation
           
-          // Apply a slight blur to create depth perception
-          const blur = Math.min(scrollProgress * 1.5, 1);
+          // Increased blur effect for depth
+          const blur = Math.min(scrollProgress * 3, 2);
           
           // Apply enhanced transform with combined effects
           requestAnimationFrame(() => {
