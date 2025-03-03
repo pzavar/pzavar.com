@@ -138,9 +138,16 @@ document.addEventListener('DOMContentLoaded', function() {
       if (isVisible) {
         const videoContainer = educationSection.querySelector('.video-container');
         if (videoContainer) {
-          const scrollInElement = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
-          const scale = 1 + (scrollInElement * 0.1);
-          const translateY = scrollInElement * 20;
+          // Calculate how far into the section we've scrolled (0 to 1)
+          const scrollProgress = Math.min(
+            Math.max(0, (window.innerHeight - rect.top) / (window.innerHeight + rect.height)), 
+            1
+          );
+          
+          // Apply subtle scale effect similar to main video
+          const scale = 1 + (scrollProgress * 0.1);
+          // Apply subtle parallax effect
+          const translateY = scrollProgress * -30; // Negative value moves it upward as you scroll down
           
           requestAnimationFrame(() => {
             videoContainer.style.transform = `scale(${scale}) translateY(${translateY}px)`;
