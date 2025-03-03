@@ -194,6 +194,20 @@ img {
   background: transparent !important;
 }
 
+/* Additional targeting for the image frame border */
+.relative > div.w-96.h-96 {
+  background: transparent !important;
+  border-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Target gradient div for profile photo */
+.w-96.h-96.rounded-xl.bg-gradient-to-r {
+  opacity: 0 !important;
+  background: none !important;
+}
+
 .project-info-container {
   flex: 1;
   display: flex;
