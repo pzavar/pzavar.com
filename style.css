@@ -161,6 +161,13 @@ body {
 
 .project-image-container {
   overflow: hidden;
+  background: transparent;
+}
+
+/* Fix for image backgrounds */
+img {
+  background: transparent;
+  border-radius: inherit;
 }
 
 .project-info-container {
