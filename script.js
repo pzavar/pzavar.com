@@ -125,4 +125,28 @@ document.addEventListener('DOMContentLoaded', function() {
       observer.observe(card);
     });
   }
+  
+  // Education section video parallax effect
+  const educationSection = document.getElementById('education');
+  if (educationSection) {
+    window.addEventListener('scroll', throttleScroll(function() {
+      const rect = educationSection.getBoundingClientRect();
+      const isVisible = 
+        rect.top < window.innerHeight && 
+        rect.bottom > 0;
+        
+      if (isVisible) {
+        const videoContainer = educationSection.querySelector('.video-container');
+        if (videoContainer) {
+          const scrollInElement = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+          const scale = 1 + (scrollInElement * 0.1);
+          const translateY = scrollInElement * 20;
+          
+          requestAnimationFrame(() => {
+            videoContainer.style.transform = `scale(${scale}) translateY(${translateY}px)`;
+          });
+        }
+      }
+    }, 16));
+  }
 });
