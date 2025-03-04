@@ -44,27 +44,11 @@ function openModal(modalId) {
     
     // Get the modal content element for scrolling
     const modalContent = modal.querySelector('.modal-content');
-    const modalContainer = modal.querySelector('.modal-container');
-    
     if (modalContent) {
       // Reset scroll position to top
       setTimeout(() => {
         modalContent.scrollTop = 0;
       }, 50);
-    }
-    
-    // Ensure modal container has proper dimensions for all screen sizes
-    if (modalContainer) {
-      // Make sure the modal fits properly on smaller screens
-      const viewportHeight = window.innerHeight;
-      const maxHeight = Math.min(viewportHeight * 0.85, 800); // Cap at 85% of viewport or 800px
-      modalContainer.style.maxHeight = `${maxHeight}px`;
-      
-      // Ensure modal is visible on mobile
-      if (window.innerWidth < 768) {
-        modalContainer.style.height = 'auto';
-        modalContainer.style.maxWidth = '95%';
-      }
     }
     
     // Add escape key listener
