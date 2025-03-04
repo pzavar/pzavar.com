@@ -327,12 +327,24 @@ img {
 }
 
 /* Float image styles */
+.modal-content .float-right {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
 .modal-content .float-right img {
   transition: transform 0.3s ease;
 }
 
 .modal-content .float-right img:hover {
   transform: scale(1.05);
+}
+
+/* Title styles to accommodate image */
+.modal-content h4.text-xl {
+  display: inline-block;
+  margin-right: 0.5rem;
+  width: calc(75% - 1rem);
 }
 
 /* Clear both for proper spacing */
