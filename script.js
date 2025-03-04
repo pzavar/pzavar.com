@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const closeMenuButton = document.getElementById('close-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
   const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
+  const logoLink = document.querySelector('header a.gradient-text');
 
   // Toggle mobile menu
   mobileMenuButton.addEventListener('click', function() {
@@ -25,6 +26,23 @@ document.addEventListener('DOMContentLoaded', function() {
       document.body.classList.remove('overflow-hidden');
     });
   });
+  
+  // Smooth scroll to top when clicking logo on home page
+  if (logoLink && window.location.pathname.endsWith('index.html') || 
+      window.location.pathname === '/' || 
+      window.location.pathname === '') {
+    logoLink.addEventListener('click', function(e) {
+      // Only handle if we're already on the home page
+      const currentPath = window.location.pathname;
+      if (currentPath.endsWith('index.html') || currentPath === '/' || currentPath === '') {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
+    });
+  }
 });
 
 // Modal functionality
