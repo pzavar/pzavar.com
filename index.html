@@ -1059,6 +1059,22 @@
   </section>
 
   <!-- Footer -->
+  <!-- Temporary Debug Tool -->
+  <div id="debug-panel" style="position: fixed; bottom: 10px; right: 10px; z-index: 9999; background: rgba(0,0,0,0.8); padding: 10px; border-radius: 5px;">
+    <button onclick="debugModal('engageai-modal')" style="background: #3b82f6; color: white; padding: 5px 10px; margin: 5px; border-radius: 3px;">Test EngageAI Modal</button>
+    <button onclick="debugModal('anonnet-modal')" style="background: #3b82f6; color: white; padding: 5px 10px; margin: 5px; border-radius: 3px;">Test AnonNet Modal</button>
+    <button onclick="debugModal('grubmatch-modal')" style="background: #3b82f6; color: white; padding: 5px 10px; margin: 5px; border-radius: 3px;">Test GrubMatch Modal</button>
+  </div>
+  
+  <script>
+    function debugModal(modalId) {
+      console.group("Debug Modal Test: " + modalId);
+      console.log("Testing modal with ID:", modalId);
+      openModal(modalId);
+      console.groupEnd();
+    }
+  </script>
+  
   <footer class="py-8 bg-gray-900">
     <div class="container mx-auto px-6">
       <div class="flex flex-col md:flex-row justify-between items-center">

@@ -44,10 +44,40 @@ function openModal(modalId) {
     
     // Get the modal content element for scrolling
     const modalContent = modal.querySelector('.modal-content');
-    if (modalContent) {
+    const modalContainer = modal.querySelector('.modal-container');
+    
+    if (modalContent && modalContainer) {
+      // Debug logs for troubleshooting
+      console.log("Modal dimensions:", {
+        windowHeight: window.innerHeight,
+        modalHeight: modal.offsetHeight,
+        containerHeight: modalContainer.offsetHeight,
+        contentHeight: modalContent.offsetHeight,
+        contentScrollHeight: modalContent.scrollHeight,
+        containerTop: modalContainer.getBoundingClientRect().top,
+        contentTop: modalContent.getBoundingClientRect().top,
+        headerHeight: modal.querySelector('.modal-header')?.offsetHeight || 0
+      });
+      
+      // Check if content is taller than container
+      if (modalContent.scrollHeight > modalContent.offsetHeight) {
+        console.log("Content is taller than container - scrolling should be enabled");
+      } else {
+        console.log("Content fits within container - no scrolling needed");
+      }
+      
       // Reset scroll position to top
       setTimeout(() => {
         modalContent.scrollTop = 0;
+        
+        // Check styles that could affect scrolling
+        const contentStyles = window.getComputedStyle(modalContent);
+        console.log("Modal content CSS properties:", {
+          overflow: contentStyles.overflow,
+          overflowY: contentStyles.overflowY,
+          maxHeight: contentStyles.maxHeight,
+          position: contentStyles.position
+        });
       }, 50);
     }
     
@@ -87,6 +117,25 @@ document.addEventListener('DOMContentLoaded', function() {
       if (e.target === modal) {
         const modalId = modal.getAttribute('id');
         closeModal(modalId);
+      }
+    });
+    
+    // Add test function to inspect modal on resize
+    window.addEventListener('resize', function() {
+      if (!modal.classList.contains('hidden')) {
+        const modalId = modal.getAttribute('id');
+        const modalContent = modal.querySelector('.modal-content');
+        const modalContainer = modal.querySelector('.modal-container');
+        
+        if (modalContent && modalContainer) {
+          console.log(`Resize event - Modal ${modalId} dimensions:`, {
+            windowHeight: window.innerHeight,
+            modalHeight: modal.offsetHeight,
+            containerHeight: modalContainer.offsetHeight,
+            contentHeight: modalContent.offsetHeight,
+            headerHeight: modal.querySelector('.modal-header')?.offsetHeight || 0
+          });
+        }
       }
     });
   });
