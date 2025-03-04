@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Modal functionality
-// Updated modal functionality
+// Enhanced modal functionality
 function openModal(modalId) {
   console.log("Opening modal:", modalId);
   const modal = document.getElementById(modalId);
@@ -50,7 +50,7 @@ function openModal(modalId) {
       modalContent.scrollTop = 0;
     }
 
-    // Position modal to ensure visibility
+    // Position modal to ensure visibility with top margin
     positionModal(modal);
 
     // Add escape key listener
@@ -60,19 +60,36 @@ function openModal(modalId) {
         document.removeEventListener('keydown', escapeHandler);
       }
     });
+    
+    // Log modal dimensions - debugging
+    console.log("Modal dimensions:", {
+      windowHeight: window.innerHeight,
+      modalHeight: modal.offsetHeight,
+      containerHeight: modal.querySelector('.modal-container')?.offsetHeight,
+      contentHeight: modalContent?.offsetHeight
+    });
   } else {
     console.error("Modal not found:", modalId);
   }
 }
 
 function positionModal(modal) {
-  // Ensure the modal is positioned to show header and allow content scrolling
+  // Ensure the modal is positioned with proper margins
   const modalContainer = modal.querySelector('.modal-container');
   if (modalContainer) {
-    // Make sure the modal top is in view
-    if (window.innerHeight < 700) {
-      // For very small screens, adjust position
-      modal.scrollTop = 0;
+    // Always scroll to top when opening
+    modal.scrollTop = 0;
+    
+    // Check if modal is too tall for viewport
+    const viewportHeight = window.innerHeight;
+    const modalHeight = modalContainer.offsetHeight;
+    
+    if (modalHeight > viewportHeight - 24) { // If taller than viewport minus margins
+      // Set a max-height to ensure it fits with margin
+      modalContainer.style.height = `${viewportHeight - 24}px`;
+    } else {
+      // Reset any previously set height
+      modalContainer.style.height = '';
     }
   }
 }
@@ -86,7 +103,7 @@ function closeModal(modalId) {
     // Add a delay before hiding to allow animations to complete
     setTimeout(() => {
       modal.classList.add('hidden');
-      document.body.style.overflow = ''; // Restore scrolling
+      document.body.style.overflow = ''; // Restore body scrolling
     }, 300);
   }
 }

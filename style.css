@@ -250,17 +250,20 @@ img {
 
 /* Updated Modal Styling */
 .project-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease-out;
   display: flex !important;
   align-items: flex-start;
-  /* Changed from center to ensure top is always visible */
   justify-content: center;
-  padding: 40px 0;
-  /* Add padding at top and bottom */
+  padding-top: 12px; /* Half-inch margin from top */
+  z-index: 100;
   overflow-y: auto;
-  height: 100%;
 }
 
 .project-modal.hidden {
@@ -272,19 +275,32 @@ img {
   visibility: visible;
 }
 
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 50;
+}
+
 .modal-container {
+  position: relative;
   transition: all 0.3s ease;
   transform: scale(0.8);
   opacity: 0;
-  max-height: 80vh;
-  /* Slightly reduced to ensure it fits better */
-  margin: 20px auto;
+  width: 90%;
+  max-width: 800px;
+  max-height: calc(100vh - 24px); /* Account for top and bottom margins */
+  margin: 12px auto 12px auto; /* Half-inch margin from top and bottom */
   border-radius: 12px;
+  background-color: #1f2937;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  /* Contain overflow */
+  z-index: 60;
 }
 
 .project-modal.active .modal-container {
@@ -295,34 +311,48 @@ img {
 .modal-header {
   position: sticky;
   top: 0;
-  z-index: 60;
+  z-index: 61;
   background-color: #1f2937;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .modal-content {
   position: relative;
   z-index: 51;
   overflow-y: auto;
-  /* Enable vertical scrolling */
-  max-height: calc(80vh - 80px);
-  /* Account for header height and padding */
+  max-height: calc(100vh - 120px); /* Account for header and margins */
   flex-grow: 1;
 }
 
+/* Float image styles */
+.modal-content .float-right img {
+  transition: transform 0.3s ease;
+}
+
+.modal-content .float-right img:hover {
+  transform: scale(1.05);
+}
+
+/* Clear both for proper spacing */
+.clear-both {
+  clear: both;
+}
+
 /* Improved mobile responsiveness for modals */
-@media (max-height: 700px) {
-  .modal-container {
-    max-height: 90vh;
+@media (max-width: 640px) {
+  .modal-content .float-right {
+    float: none;
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 16px;
+    text-align: center;
   }
-
-  .modal-content {
-    max-height: calc(90vh - 80px);
-  }
-
-  .project-modal {
-    padding: 20px 0;
+  
+  .modal-content .float-right img {
+    max-width: 200px;
+    margin: 0 auto;
   }
 }
 
