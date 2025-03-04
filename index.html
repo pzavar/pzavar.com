@@ -705,16 +705,20 @@
               <div class="md:w-2/3">
                 <h4 class="text-xl font-semibold text-blue-400 mb-3">Project Overview</h4>
                 <p class="text-gray-300 mb-4">
-                  EngageAI is an innovative platform that leverages artificial intelligence to analyze and enhance
-                  classroom engagement.
-                  By monitoring student participation, emotional responses, and learning patterns, EngageAI provides
-                  educators with
-                  actionable insights while offering personalized learning experiences to students.
+                  We designed our web app frontend to simply take a recorded lecture video as input, and to
+                  generate in under a minute a modern analytics dashboard with various engagement summaries
+                  and graphs, available for download to review offline later as needed. This dashboard serves as a
+                  guide for instructors to pinpoint peaks and dips in engagement levels, and better understand
+                  which parts of the lecture were successful and which might need improvement.
                 </p>
                 <p class="text-gray-300 mb-4">
-                  This project was developed as part of the MSIS 522 course at the University of Washington, aiming to
-                  address
-                  the challenge of maintaining student engagement in both virtual and physical classroom environments.
+                  We intentionally kept our frontend lightweight and only responsible for the visualization layer – pushing all the
+                  heavy lifting such as data processing, facial emotion analysis, and engagement scoring
+                  computation to the backend. This makes our system more secure, self-contained, and eliminates
+                  the need to expose our API. Recognizing the gravity of collecting facial biometric data, we
+                  decided that we were not going to save student info in production. After each session, the lecture
+                  video that is uploaded by an instructor and any analysis generated using the video is wiped from
+                  our system, leaving us safe from most cyber attacks.
                 </p>
               </div>
             </div>
