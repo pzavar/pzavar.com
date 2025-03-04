@@ -5,19 +5,19 @@ document.addEventListener('DOMContentLoaded', function() {
   const closeMenuButton = document.getElementById('close-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
   const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
-  
+
   // Toggle mobile menu
   mobileMenuButton.addEventListener('click', function() {
     mobileMenu.classList.toggle('translate-x-full');
     document.body.classList.toggle('overflow-hidden');
   });
-  
+
   // Close menu
   closeMenuButton.addEventListener('click', function() {
     mobileMenu.classList.add('translate-x-full');
     document.body.classList.remove('overflow-hidden');
   });
-  
+
   // Close menu when clicking on links
   mobileMenuLinks.forEach(link => {
     link.addEventListener('click', function() {
@@ -28,29 +28,31 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Modal functionality
+// Updated modal functionality
 function openModal(modalId) {
-  console.log("Opening modal:", modalId); // Debug log
+  console.log("Opening modal:", modalId);
   const modal = document.getElementById(modalId);
   if (modal) {
-    // Allow modal to scroll while preventing body scroll
+    // Prevent body scroll but allow modal to scroll
     document.body.style.overflow = 'hidden';
     modal.classList.remove('hidden');
-    
+
     // Force reflow before adding active class for animation
     modal.offsetWidth;
-    
+
     // Add active class to trigger animation
     modal.classList.add('active');
-    
+
     // Get the modal content element for scrolling
     const modalContent = modal.querySelector('.modal-content');
     if (modalContent) {
       // Reset scroll position to top
-      setTimeout(() => {
-        modalContent.scrollTop = 0;
-      }, 50);
+      modalContent.scrollTop = 0;
     }
-    
+
+    // Position modal to ensure visibility
+    positionModal(modal);
+
     // Add escape key listener
     document.addEventListener('keydown', function escapeHandler(e) {
       if (e.key === 'Escape') {
@@ -63,12 +65,24 @@ function openModal(modalId) {
   }
 }
 
+function positionModal(modal) {
+  // Ensure the modal is positioned to show header and allow content scrolling
+  const modalContainer = modal.querySelector('.modal-container');
+  if (modalContainer) {
+    // Make sure the modal top is in view
+    if (window.innerHeight < 700) {
+      // For very small screens, adjust position
+      modal.scrollTop = 0;
+    }
+  }
+}
+
 function closeModal(modalId) {
-  console.log("Closing modal:", modalId); // Debug log
+  console.log("Closing modal:", modalId);
   const modal = document.getElementById(modalId);
   if (modal) {
     modal.classList.remove('active');
-    
+
     // Add a delay before hiding to allow animations to complete
     setTimeout(() => {
       modal.classList.add('hidden');
@@ -80,7 +94,7 @@ function closeModal(modalId) {
 // Close modal when clicking outside of content
 document.addEventListener('DOMContentLoaded', function() {
   const modals = document.querySelectorAll('.project-modal');
-  
+
   modals.forEach(modal => {
     modal.addEventListener('click', function(e) {
       // If the click is directly on the modal (not its children)
@@ -97,19 +111,19 @@ document.addEventListener('DOMContentLoaded', function() {
     card.addEventListener('mouseenter', () => {
       card.classList.add('hover:scale-[1.02]');
     });
-    
+
     card.addEventListener('mouseleave', () => {
       card.classList.remove('hover:scale-[1.02]');
     });
   });
-  
+
   // Add visual feedback for book cards (Reading List page)
   const bookCards = document.querySelectorAll('.book-card');
   bookCards.forEach(card => {
     card.addEventListener('mouseenter', () => {
       card.querySelector('img').style.transform = 'scale(1.05)';
     });
-    
+
     card.addEventListener('mouseleave', () => {
       card.querySelector('img').style.transform = 'scale(1)';
     });
@@ -129,36 +143,36 @@ document.addEventListener('DOMContentLoaded', function() {
     }, {
       threshold: 0.1
     });
-    
+
     document.querySelectorAll('.book-card').forEach(card => {
       card.style.opacity = '0';
       observer.observe(card);
     });
   }
-  
+
   // Education section video parallax effect
   const educationSection = document.getElementById('education');
   if (educationSection) {
     window.addEventListener('scroll', throttleScroll(function() {
       const rect = educationSection.getBoundingClientRect();
-      const isVisible = 
-        rect.top < window.innerHeight && 
+      const isVisible =
+        rect.top < window.innerHeight &&
         rect.bottom > 0;
-        
+
       if (isVisible) {
         const videoContainer = educationSection.querySelector('.video-container');
         if (videoContainer) {
           // Calculate how far into the section we've scrolled (0 to 1)
           const scrollProgress = Math.min(
-            Math.max(0, (window.innerHeight - rect.top) / (window.innerHeight + rect.height)), 
+            Math.max(0, (window.innerHeight - rect.top) / (window.innerHeight + rect.height)),
             1
           );
-          
+
           // Apply subtle scale effect similar to main video
           const scale = 1 + (scrollProgress * 0.1);
           // Apply subtle parallax effect
           const translateY = scrollProgress * -30; // Negative value moves it upward as you scroll down
-          
+
           requestAnimationFrame(() => {
             videoContainer.style.transform = `scale(${scale}) translateY(${translateY}px)`;
           });
