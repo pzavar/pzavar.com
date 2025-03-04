@@ -256,6 +256,7 @@ img {
   display: flex !important;
   align-items: center;
   justify-content: center;
+  padding: 20px;
 }
 
 .project-modal.hidden {
@@ -271,8 +272,27 @@ img {
   transition: all 0.3s ease;
   transform: scale(0.8);
   opacity: 0;
-  max-height: 90vh;
+  max-height: 80vh;
   overflow-y: auto;
+  margin: 30px auto;
+  border-radius: 12px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(59, 130, 246, 0.5) rgba(30, 41, 59, 0.7);
+}
+
+.modal-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-container::-webkit-scrollbar-track {
+  background: rgba(30, 41, 59, 0.7);
+  border-radius: 10px;
+}
+
+.modal-container::-webkit-scrollbar-thumb {
+  background-color: rgba(59, 130, 246, 0.5);
+  border-radius: 10px;
+  border: 2px solid rgba(30, 41, 59, 0.7);
 }
 
 .project-modal.active .modal-container {
