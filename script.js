@@ -32,8 +32,10 @@ function openModal(modalId) {
   console.log("Opening modal:", modalId); // Debug log
   const modal = document.getElementById(modalId);
   if (modal) {
-    // Allow modal to scroll while preventing body scroll
+    // Prevent body scrolling when modal is open
     document.body.style.overflow = 'hidden';
+    
+    // Make the modal visible
     modal.classList.remove('hidden');
     
     // Force reflow before adding active class for animation
@@ -49,6 +51,23 @@ function openModal(modalId) {
       setTimeout(() => {
         modalContent.scrollTop = 0;
       }, 50);
+    }
+    
+    // Position modal to ensure it's fully visible
+    // This is important for mobile and small screens
+    const modalContainer = modal.querySelector('.modal-container');
+    if (modalContainer) {
+      // Ensure modal is positioned correctly
+      const viewportHeight = window.innerHeight;
+      const modalHeight = modalContainer.offsetHeight;
+      
+      // If modal would be taller than viewport, adjust for scrolling
+      if (modalHeight > viewportHeight * 0.9) {
+        modalContainer.style.height = '90vh';
+        modalContainer.style.maxHeight = '90vh';
+      } else {
+        modalContainer.style.height = 'auto';
+      }
     }
     
     // Add escape key listener
@@ -73,6 +92,13 @@ function closeModal(modalId) {
     setTimeout(() => {
       modal.classList.add('hidden');
       document.body.style.overflow = ''; // Restore scrolling
+      
+      // Reset any inline styles we might have added
+      const modalContainer = modal.querySelector('.modal-container');
+      if (modalContainer) {
+        modalContainer.style.height = '';
+        modalContainer.style.maxHeight = '';
+      }
     }, 300);
   }
 }
