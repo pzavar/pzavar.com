@@ -32,10 +32,8 @@ function openModal(modalId) {
   console.log("Opening modal:", modalId); // Debug log
   const modal = document.getElementById(modalId);
   if (modal) {
-    // Prevent body scrolling when modal is open
+    // Allow modal to scroll while preventing body scroll
     document.body.style.overflow = 'hidden';
-    
-    // Show modal
     modal.classList.remove('hidden');
     
     // Force reflow before adding active class for animation
@@ -60,14 +58,6 @@ function openModal(modalId) {
         document.removeEventListener('keydown', escapeHandler);
       }
     });
-    
-    // Log modal dimensions - debugging
-    console.log("Modal dimensions:", {
-      windowHeight: window.innerHeight,
-      modalHeight: modal.offsetHeight,
-      containerHeight: modal.querySelector('.modal-container')?.offsetHeight,
-      contentHeight: modalContent?.offsetHeight
-    });
   } else {
     console.error("Modal not found:", modalId);
   }
@@ -82,7 +72,7 @@ function closeModal(modalId) {
     // Add a delay before hiding to allow animations to complete
     setTimeout(() => {
       modal.classList.add('hidden');
-      document.body.style.overflow = ''; // Restore body scrolling
+      document.body.style.overflow = ''; // Restore scrolling
     }, 300);
   }
 }
