@@ -274,11 +274,14 @@ img {
   transform: scale(0.8);
   opacity: 0;
   max-height: 85vh;
+  height: auto;
+  width: 100%;
   margin: 20px auto;
   border-radius: 12px;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .modal-header {
@@ -288,6 +291,8 @@ img {
   background-color: #1f2937;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
+  flex-shrink: 0;
+  padding: 1rem;
 }
 
 .modal-content {
@@ -295,6 +300,8 @@ img {
   z-index: 51;
   overflow-y: auto;
   flex-grow: 1;
+  max-height: calc(85vh - 70px); /* Account for header height */
+  padding: 1rem;
 }
 
 .project-modal.active .modal-container {
