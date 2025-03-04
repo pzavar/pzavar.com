@@ -32,7 +32,7 @@ function openModal(modalId) {
   console.log("Opening modal:", modalId); // Debug log
   const modal = document.getElementById(modalId);
   if (modal) {
-    document.body.style.overflow = 'hidden'; // Prevent scrolling
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
     modal.classList.remove('hidden');
     
     // Force reflow before adding active class for animation
@@ -40,6 +40,13 @@ function openModal(modalId) {
     
     // Add active class to trigger animation
     modal.classList.add('active');
+    
+    // Center modal vertically with a small offset
+    const modalContainer = modal.querySelector('.modal-container');
+    if (modalContainer) {
+      // Reset scroll position to top when opening
+      modalContainer.scrollTop = 0;
+    }
     
     // Add escape key listener
     document.addEventListener('keydown', function escapeHandler(e) {
