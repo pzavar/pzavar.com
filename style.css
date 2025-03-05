@@ -477,3 +477,33 @@ img {
   background-color: #0f172a;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+/* Accessibility improvements */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Improved focus styles for keyboard navigation */
+a:focus, button:focus, input:focus, select:focus, textarea:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Improve color contrast for small text */
+.text-gray-400 {
+  color: #a1a1aa !important; /* Slightly darker than default for better contrast */
+}
+
+/* Ensure hover states have sufficient contrast */
+.nav-link:hover::after {
+  background: linear-gradient(90deg, #38bdf8 0%, #818cf8 100%);
+  height: 3px; /* Thicker for better visibility */
+}

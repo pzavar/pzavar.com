@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Modal functionality
-// Enhanced modal functionality
+// Enhanced modal functionality with accessibility improvements
 function openModal(modalId) {
   console.log("Opening modal:", modalId);
   const modal = document.getElementById(modalId);
@@ -60,6 +60,29 @@ function openModal(modalId) {
 
     // Add active class to trigger animation
     modal.classList.add('active');
+
+    // Accessibility: Add role, aria attributes
+    const modalContainer = modal.querySelector('.modal-container');
+    if (modalContainer) {
+      modalContainer.setAttribute('role', 'dialog');
+      modalContainer.setAttribute('aria-modal', 'true');
+      modalContainer.setAttribute('aria-labelledby', `${modalId}-title`);
+      modalContainer.setAttribute('aria-describedby', `${modalId}-content`);
+      
+      // Find the close button and improve its accessibility
+      const closeButton = modalContainer.querySelector('.modal-close');
+      if (closeButton) {
+        closeButton.setAttribute('aria-label', 'Close dialog');
+      }
+      
+      // Focus the first focusable element inside the modal
+      setTimeout(() => {
+        const focusableElements = modalContainer.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        if (focusableElements.length > 0) {
+          focusableElements[0].focus();
+        }
+      }, 50);
+    }
 
     // Get the modal content element for scrolling
     const modalContent = modal.querySelector('.modal-content');
@@ -118,10 +141,21 @@ function closeModal(modalId) {
   if (modal) {
     modal.classList.remove('active');
 
+    // Store the element that had focus before the modal was opened
+    const lastFocusedElement = document.activeElement;
+    
+    // Find the trigger that opened the modal if possible
+    const possibleTrigger = document.querySelector(`[onclick*="openModal('${modalId}')"]`);
+
     // Add a delay before hiding to allow animations to complete
     setTimeout(() => {
       modal.classList.add('hidden');
       document.body.style.overflow = ''; // Restore body scrolling
+      
+      // Return focus to the element that opened the modal for better keyboard navigation
+      if (possibleTrigger) {
+        possibleTrigger.focus();
+      }
     }, 300);
   }
 }
