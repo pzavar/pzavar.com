@@ -1,0 +1,64 @@
+A little over half a decade ago, I had my first taste of machine learning (ML) when I enrolled in an introductory course during my computer science undergraduate degree. It turned out to be almost entirely mathematical, and my rusty differential equations and linear algebra skills made the course challenging and dry. While I learned about fundamental data mining techniques, I didn’t feel ready to apply them to my classes, work, and personal life. I assumed that the benefits of artificial intelligence (AI) were reserved for companies who could afford vast server rooms, teams of specialized engineers, a plethora of proprietary datasets, and complex algorithms far removed from everyday life. I am ecstatic to admit that I was wrong; well, half-wrong. In 2018, many of the technologies that power today’s futuristic AI products like ChatGPT existed, but were largely inaccessible to the public, and I was right that it was restricted to a tiny fraction of the software development industry, let alone the masses. Today, ChatGPT is available in 188 countries [1] and the underlying technology is improving at an unprecedented rate. 
+
+During my information systems master’s program in early 2025, I enrolled in an advanced machine learning course which opened my eyes to many of my predispositions. I learned the breadth that this technology, once confined to research labs and Silicon Valley headquarters, is now helping students, entrepreneurs, software developers, artists, researchers, and more. It is life-changing – having an expert tirelessly and enthusiastically work side-by-side with you any time you are brainstorming or creating something. From making numerical predictions to helping driverless cars “see” the world around them, AI is a part of many people’s lives already.
+
+ 
+Figure 2. Driverless vehicle “seeing” using computer vision [9]
+
+Companies today use AI to streamline and automate tasks across various departments, from finance to marketing, boosting productivity and product innovation [7]. However, my personal favorite benefit is its ability to help us prototype ideas quickly, a valuable asset for any entrepreneur or creator. How amazing is it  that today one may think of an idea after breakfast, and have a fully functional end-to-end product before lunch. As part of a class project, my team and I developed and demonstrated a live web application that empowers instructors to analyze student engagement in recorded online lectures. By visualizing peaks and dips in attention levels through an interactive dashboard, instructors can identify effective teaching moments and areas for improvement, ultimately enhancing future lecture delivery. A project with such complexity used to take months, but it can be completed in days. As I learned more about how such today’s models work in practice, I realized that they are incredibly data-hungry pattern recognizers, not unlike humans, that excel at combining different types of information, or “multimodal” data, to draw connections from and generate humanlike output [5]. 
+
+
+Figure 1. Multimodal AI context diagram [6]
+
+The current AI boom might seem sudden, but it is built on decades of foundational research, like stochastic gradient descent and the basic neural network architecture from the 1950s [2]. It is fair to ask: why now? The answer to this question is multi-faceted. The first side to it is that computing power has skyrocketed in the past few years, led by companies like NVIDIA, accelerating performance and lowering costs. There have also been powerful algorithmic advances such as the transformer architecture in 2017 [3] which paved the way for natural language processing (NLP), a key technology behind ChatGPT and similar products today. However, the technology would be useless without the amount of data created and saved on the internet, meaning that the internet needed to happen first before AI could become useful to us. Often forgotten, we are also lucky that open-source software culture remains strong, making it far easier for developers to become inspired from each others’ ideas and innovate. Finally, society needed to be culturally ready for this technology. Most businesses today handle large parts of their operations digitally, enabling AI solutions to integrate more readily, and the public has been introduced to basic ML tidbits in their everyday lives, such as through voice assistants like Apple’s Siri and Amazon’s Alexa, autocomplete in emails, and facial recognition when unlocking smartphones. This has also inspired countless young researchers and investors to direct their efforts towards AI advancement, propelling it farther than ever before. 
+
+Figure 3. Private investment in AI, from 2013 – 2021 [11]
+
+How can one begin using, or as a current user, improve their ability to interact with Generative AI? It begins with understanding that it is a collaborative tool. My early interactions with it were typing questions and hoping for the best, but I discovered that there is a science behind framing your requests, and crafting specific, nuanced, and well-articulated prompts is crucial for receiving useful, accurate, and relevant results from AI models [7]. While some will formally take on job titles like “prompt engineer”, even a basic understanding of it can dramatically improve anyone’s results. Think of it like learning to write emails: everyone benefits from being able to compose a clear message, whether or not they are a professional writer. Just as the human imagination is boundless, so can the applications. A DIY enthusiast can use contextual prompts to think of fresh ideas; a market testing agency can quickly validate new product ideas for target customer personas; a classroom teacher can design interactive lessons with AI-generated activities; a small cafe owner can experiment with unique menu variations. I believe basic prompt engineering should become a fundamental part of everyone’s digital literacy toolkit from now, alongside skills like web searching or basic spreadsheet use. 
+
+Looking forward, 2025 has already been a year full of AI product ingenuity, such as Deep Seek [4] alongside a myriad of AI startups doing incredible things. However, only about 300 million people worldwide actively use the most popular AI assistant, ChatGPT. While that number may seem large, that is only about 3.7% of people. In the next couple of years, I estimate that this number will double within the next couple of years as more individuals and companies learn to trust and benefit from AI in their day-to-day tasks. As NVIDIA and its competitors keep pushing the boundaries of what is possible in the hardware realm, there is also a healthy competition between software companies building models that continue to improve their answers. Newer models are able to perform deep research tasks that are at the PhD level [10]. It can even do tasks for you like ordering food for you! We are approaching the age of artificial general intelligence (AGI) and eventually artificial super intelligence (ASI), which will drastically change society for the better by making it more efficient and innovative. Beyond 2027, well, I would argue that anyone who thinks they can accurately predict what the world will look like then is either naive or a time-traveler. The future of AI isn’t about replacing human creativity and intelligence – it is about amplifying them. We do not have to wait until a distant future to harness this potential because the tools are here now, and each of us can improve one area of our lives with AI today, to try new approaches to old tasks. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Citations
+[1] OpenAI, "ChatGPT supported countries," OpenAI Help Center. [Online]. Available: https://help.openai.com/en/articles/7947663-chatgpt-supported-countries. 
+[2] H. E. Robbins, "A stochastic approximation method," Ann. Math. Statist., vol. 22, pp. 400-407, 1951. [Online]. Available: https://www.semanticscholar.org/paper/A-Stochastic-Approximation-Method-Robbins/34ddd8865569c2c32dec9bf7ffc817ff42faaa01?p2df. 
+[3] NVIDIA, "What is a Transformer Model?," NVIDIA Blog, 2023. [Online]. Available: https://blogs.nvidia.com/blog/what-is-a-transformer-model/#:~:text=First%20described%20in%20a%202017,of%20models%20invented%20to%20date.
+[4] X. Author(s), "Title of the paper," arXiv preprint, arXiv:2501.12948, 2025. [Online]. Available: https://arxiv.org/abs/2501.12948. 
+[5] L. Bix, "Multimodal AI: Foundations and Case Study with Hurricane Forecasting," 2024. [Online]. Available: https://www.leobix.us/genai.
+[6] Appen, "Multimodal AI," Appen, 2024. [Online]. Available: https://www.appen.com/multi-modal-ai. 
+[7] LinkedIn Learning, "Generative AI for Business Leaders," LinkedIn Learning, 2024. [Online]. Available: https://www.linkedin.com/learning/generative-ai-for-business-leaders/generative-ai-for-business-leaders?u=67682169. 
+[8] DemandSage, "ChatGPT Statistics," DemandSage, 2024. [Online]. Available: https://www.demandsage.com/chatgpt-statistics/?utm_source=chatgpt.com. 
+[9] West Virginia University, "WVU researcher to study computer vision-related image recognition," WVU Today, 2017. [Online]. Available: https://wvutoday.wvu.edu/stories/2017/03/06/wvu-researcher-to-study-computer-vision-related-image-recognition. 
+[10] Axios, "AI superagents: OpenAI and Meta’s next frontier," Axios, Jan. 19, 2025. [Online]. Available: https://www.axios.com/2025/01/19/ai-superagent-openai-meta.
+
+[11] Stanford HAI, "The state of AI in 9 charts," Stanford Institute for Human-Centered AI (HAI), 2024. [Online]. Available: https://hai.stanford.edu/news/state-ai-9-charts.
+
+AI Integrity
+This document was built alongside the help of ChatGPT o1 & 4o, Claude 3.5 Sonnet, and NotebookLM.
+ChatGPT: initially used for building the outline and structure for my essay as well as opinions about miscellaneous things. Also, I used it to help scrape information from the web using the Search. 
+Claude: used for its writing abilities to rephrase certain sentences that sounded awkward.
+NotebookLM: its power for drawing insights from a targeted set of documents, such as research papers, lecture slides, were leveraged for consolidating various sources and external insights.
+
+
+
