@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balancing Technical Depth with Business Vision | Parham Hajzavar</title>
+  <link rel="icon" href="ph.png" type="image/png">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+    }
+    body {
+      font-family: 'Lato', sans-serif;
+    }
+    .prose {
+      max-width: 65ch;
+      color: #f8fafc;
+    }
+    .prose h4 {
+      color: #38bdf8;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .prose p {
+      margin-bottom: 1rem;
+    }
+    .prose ul {
+      margin-bottom: 1rem;
+      list-style-type: disc;
+      padding-left: 1.25rem;
+    }
+    .prose li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+
+<body style="background-color: #0f172a; color: #f8fafc;">
+  <!-- Fixed Navbar -->
+  <header class="fixed top-0 left-0 w-full z-50 glassmorphism transition-all duration-300 py-4">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <a href="index.html" class="text-xl font-bold gradient-text">PH</a>
+      <nav class="hidden md:flex items-center space-x-10">
+        <a href="index.html#about" class="nav-link text-gray-300 hover:text-white">About</a>
+        <a href="index.html#experience" class="nav-link text-gray-300 hover:text-white">Experience</a>
+        <a href="index.html#projects" class="nav-link text-gray-300 hover:text-white">Projects</a>
+        <a href="index.html#education" class="nav-link text-gray-300 hover:text-white">Education</a>
+        <a href="index.html#skills" class="nav-link text-gray-300 hover:text-white">Skills</a>
+        <a href="content.html" class="nav-link text-gray-300 hover:text-white">Reading List</a>
+        <a href="essays.html" class="nav-link text-gray-300 hover:text-white">Essays</a>
+        <a href="index.html#contact"
+          class="py-2 px-5 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full text-white font-medium hover:shadow-lg hover:from-blue-500 hover:to-indigo-600 transition-all duration-300">Contact</a>
+      </nav>
+      <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+      <div id="mobile-menu" class="md:hidden fixed inset-0 bg-gray-900 bg-opacity-95 z-40 transform translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="flex flex-col h-full bg-gray-900 shadow-2xl">
+          <div class="flex justify-end p-6 bg-gray-900 border-b border-gray-800">
+            <button id="close-menu-button" class="text-white focus:outline-none">
+              <i class="fas fa-times text-xl"></i>
+            </button>
+          </div>
+          <div class="flex flex-col items-center space-y-8 mt-10 py-6 px-4 bg-gray-900 bg-opacity-100">
+            <a href="index.html#about" class="text-xl text-gray-300 hover:text-white">About</a>
+            <a href="index.html#experience" class="text-xl text-gray-300 hover:text-white">Experience</a>
+            <a href="index.html#projects" class="text-xl text-gray-300 hover:text-white">Projects</a>
+            <a href="index.html#education" class="text-xl text-gray-300 hover:text-white">Education</a>
+            <a href="index.html#skills" class="text-xl text-gray-300 hover:text-white">Skills</a>
+            <a href="content.html" class="text-xl text-gray-300 hover:text-white">Reading List</a>
+            <a href="essays.html" class="text-xl text-gray-300 hover:text-white">Essays</a>
+            <a href="index.html#contact" class="py-2 px-5 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full text-white font-medium hover:shadow-lg hover:from-blue-500 hover:to-indigo-600 transition-all duration-300">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Essay Content -->
+  <section class="pt-32 pb-24 gradient-bg min-h-screen">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto">
+        <!-- Essay Header -->
+        <div class="mb-10">
+          <a href="essays.html" class="inline-flex items-center text-blue-400 hover:text-blue-300 mb-6">
+            <i class="fas fa-arrow-left mr-2"></i> Back to Essays
+          </a>
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Balancing Technical Depth with Business Vision</h1>
+          <div class="flex items-center text-gray-400 mb-8">
+            <span class="mr-4"><i class="far fa-calendar-alt mr-2"></i> April 8, 2024</span>
+            <span><i class="far fa-clock mr-2"></i> 5 min read</span>
+          </div>
+        </div>
+        
+        <!-- Essay Content -->
+        <div class="prose prose-lg prose-invert max-w-none bg-gray-800 p-8 rounded-xl shadow-xl">
+          <p class="mb-4">
+            As someone with a computer science background transitioning into product management, I've grappled with how to leverage technical knowledge while developing strategic business thinking. This essay explores that balance and offers perspectives for technically-minded professionals expanding their impact.
+          </p>
+          
+          <h4 class="text-xl font-semibold text-blue-400 mt-6 mb-3">The Technical Advantage</h4>
+          <p class="mb-4">
+            Having technical depth provides significant advantages in product roles. It enables better communication with engineering teams, more accurate scoping of features, and the ability to identify technical risks early. When I worked on the identity verification API integration at FAST Enterprises, my understanding of the underlying systems allowed me to propose a solution that was both technically feasible and met business requirements.
+          </p>
+          
+          <h4 class="text-xl font-semibold text-blue-400 mt-6 mb-3">The Business Perspective Shift</h4>
+          <p class="mb-4">
+            However, technical knowledge alone isn't enough. Moving into product management requires a fundamental shift from "how can we build this?" to "should we build this at all?" This means developing new muscles for market analysis, customer research, and business strategy.
+          </p>
+          
+          <p class="mb-4">
+            I found that my graduate studies in Information Systems at the Foster School of Business helped bridge this gap, providing frameworks for analyzing business problems that complemented my technical understanding.
+          </p>
+          
+          <h4 class="text-xl font-semibold text-blue-400 mt-6 mb-3">Finding the Right Balance</h4>
+          <p class="mb-4">
+            The ideal balance varies by company and product stage. In early-stage startups or highly technical products, deeper technical involvement might be necessary. In more established products or business-focused companies, the emphasis shifts toward strategy and stakeholder management.
+          </p>
+          
+          <p class="mb-4">
+            Regardless of context, I've found that maintaining enough technical currency to be credible with engineering teams while gradually developing business acumen creates the most value. It's about knowing when to dive deep technically and when to zoom out to the big picture.
+          </p>
+          
+          <h4 class="text-xl font-semibold text-blue-400 mt-6 mb-3">Communication as the Bridge</h4>
+          <p class="mb-4">
+            Perhaps the most valuable skill in this transition is the ability to translate between technical and business contexts. Being able to explain technical concepts to non-technical stakeholders and business requirements to engineers creates alignment and builds trust across the organization.
+          </p>
+          
+          <h4 class="text-xl font-semibold text-blue-400 mt-6 mb-3">Looking Forward</h4>
+          <p class="mb-4">
+            As AI and other advanced technologies become more central to product development, having both technical insight and business vision will become increasingly valuable. The most impactful product leaders will be those who can understand the capabilities and limitations of new technologies while clearly connecting them to customer needs and business outcomes.
+          </p>
+        </div>
+        
+        <!-- Back to Essays button -->
+        <div class="mt-10 text-center">
+          <a href="essays.html" class="inline-block px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-md transition-all">
+            <i class="fas fa-arrow-left mr-2"></i> Back to Essays
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 bg-gray-900">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 mb-4 md:mb-0">© 2025 Parham Hajzavar. All rights reserved.</p>
+        <div class="flex space-x-4">
+          <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
+          <a href="index.html#about" class="text-gray-400 hover:text-white transition-colors">About</a>
+          <a href="index.html#experience" class="text-gray-400 hover:text-white transition-colors">Experience</a>
+          <a href="index.html#projects" class="text-gray-400 hover:text-white transition-colors">Projects</a>
+          <a href="index.html#education" class="text-gray-400 hover:text-white transition-colors">Education</a>
+          <a href="content.html" class="text-gray-400 hover:text-white transition-colors">Reading List</a>
+          <a href="essays.html" class="text-gray-400 hover:text-white transition-colors">Essays</a>
+          <a href="index.html#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Throttle function for navbar scroll behavior
+    function throttle(func, limit) {
+      let lastFunc;
+      let lastRan;
+      return function () {
+        const context = this;
+        const args = arguments;
+        if (!lastRan) {
+          func.apply(context, args);
+          lastRan = Date.now();
+        } else {
+          clearTimeout(lastFunc);
+          lastFunc = setTimeout(function () {
+            if ((Date.now() - lastRan) >= limit) {
+              func.apply(context, args);
+              lastRan = Date.now();
+            }
+          }, limit - (Date.now() - lastRan));
+        }
+      }
+    }
+
+    // Navbar appearance change on scroll
+    window.addEventListener('scroll', throttle(function () {
+      const navbar = document.querySelector('header');
+      if (window.scrollY > 50) {
+        navbar.classList.add('py-2');
+        navbar.classList.remove('py-4');
+      } else {
+        navbar.classList.add('py-4');
+        navbar.classList.remove('py-2');
+      }
+    }, 50));
+  </script>
+</body>
+
+</html>
