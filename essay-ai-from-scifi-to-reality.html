@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI: From Sci-Fi to Daily Reality | Parham Hajzavar</title>
+  <link rel="icon" href="ph.png" type="image/png">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+    }
+    body {
+      font-family: 'Lato', sans-serif;
+    }
+    .prose {
+      max-width: 65ch;
+      color: #f8fafc;
+    }
+    .prose h4 {
+      color: #38bdf8;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .prose p {
+      margin-bottom: 1rem;
+    }
+    .prose ul {
+      margin-bottom: 1rem;
+      list-style-type: disc;
+      padding-left: 1.25rem;
+    }
+    .prose li {
+      margin-bottom: 0.5rem;
+    }
+    .prose figure {
+      margin: 2rem 0;
+    }
+    .prose figure img {
+      margin: 0 auto;
+      max-width: 100%;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .prose figure figcaption {
+      text-align: center;
+      font-size: 0.875rem;
+      color: #94a3b8;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+
+<body style="background-color: #0f172a; color: #f8fafc;">
+  <!-- Fixed Navbar -->
+  <header class="fixed top-0 left-0 w-full z-50 glassmorphism transition-all duration-300 py-4">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <a href="index.html" class="text-xl font-bold gradient-text">PH</a>
+      <nav class="hidden md:flex items-center space-x-10">
+        <a href="index.html#about" class="nav-link text-gray-300 hover:text-white">About</a>
+        <a href="index.html#experience" class="nav-link text-gray-300 hover:text-white">Experience</a>
+        <a href="index.html#projects" class="nav-link text-gray-300 hover:text-white">Projects</a>
+        <a href="index.html#education" class="nav-link text-gray-300 hover:text-white">Education</a>
+        <a href="index.html#skills" class="nav-link text-gray-300 hover:text-white">Skills</a>
+        <a href="content.html" class="nav-link text-gray-300 hover:text-white">Reading List</a>
+        <a href="essays.html" class="nav-link text-gray-300 hover:text-white">Essays</a>
+        <a href="index.html#contact"
+          class="py-2 px-5 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full text-white font-medium hover:shadow-lg hover:from-blue-500 hover:to-indigo-600 transition-all duration-300">Contact</a>
+      </nav>
+      <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+      <div id="mobile-menu" class="md:hidden fixed inset-0 bg-gray-900 bg-opacity-95 z-40 transform translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="flex flex-col h-full bg-gray-900 shadow-2xl">
+          <div class="flex justify-end p-6 bg-gray-900 border-b border-gray-800">
+            <button id="close-menu-button" class="text-white focus:outline-none">
+              <i class="fas fa-times text-xl"></i>
+            </button>
+          </div>
+          <div class="flex flex-col items-center space-y-8 mt-10 py-6 px-4 bg-gray-900 bg-opacity-100">
+            <a href="index.html#about" class="text-xl text-gray-300 hover:text-white">About</a>
+            <a href="index.html#experience" class="text-xl text-gray-300 hover:text-white">Experience</a>
+            <a href="index.html#projects" class="text-xl text-gray-300 hover:text-white">Projects</a>
+            <a href="index.html#education" class="text-xl text-gray-300 hover:text-white">Education</a>
+            <a href="index.html#skills" class="text-xl text-gray-300 hover:text-white">Skills</a>
+            <a href="content.html" class="text-xl text-gray-300 hover:text-white">Reading List</a>
+            <a href="essays.html" class="text-xl text-gray-300 hover:text-white">Essays</a>
+            <a href="index.html#contact" class="py-2 px-5 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full text-white font-medium hover:shadow-lg hover:from-blue-500 hover:to-indigo-600 transition-all duration-300">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Essay Content -->
+  <section class="pt-32 pb-24 gradient-bg min-h-screen">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto">
+        <!-- Essay Header -->
+        <div class="mb-10">
+          <a href="essays.html" class="inline-flex items-center text-blue-400 hover:text-blue-300 mb-6">
+            <i class="fas fa-arrow-left mr-2"></i> Back to Essays
+          </a>
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">AI: From Sci-Fi to Daily Reality</h1>
+          <div class="flex items-center text-gray-400 mb-8">
+            <span class="mr-4"><i class="far fa-calendar-alt mr-2"></i> February 15, 2025</span>
+            <span><i class="far fa-clock mr-2"></i> 8 min read</span>
+          </div>
+        </div>
+        
+        <!-- Essay Content -->
+        <div class="prose prose-lg prose-invert max-w-none bg-gray-800 p-8 rounded-xl shadow-xl">
+          <p class="mb-4">
+            A little over half a decade ago, I had my first taste of machine learning (ML) when I enrolled in an introductory course during my computer science undergraduate degree. It turned out to be almost entirely mathematical, and my rusty differential equations and linear algebra skills made the course challenging and dry. While I learned about fundamental data mining techniques, I didn't feel ready to apply them to my classes, work, and personal life. I assumed that the benefits of artificial intelligence (AI) were reserved for companies who could afford vast server rooms, teams of specialized engineers, a plethora of proprietary datasets, and complex algorithms far removed from everyday life. I am ecstatic to admit that I was wrong; well, half-wrong. In 2018, many of the technologies that power today's futuristic AI products like ChatGPT existed, but were largely inaccessible to the public, and I was right that it was restricted to a tiny fraction of the software development industry, let alone the masses. Today, ChatGPT is available in 188 countries and the underlying technology is improving at an unprecedented rate.
+          </p>
+          
+          <p class="mb-4">
+            During my information systems master's program in early 2025, I enrolled in an advanced machine learning course which opened my eyes to many of my predispositions. I learned the breadth that this technology, once confined to research labs and Silicon Valley headquarters, is now helping students, entrepreneurs, software developers, artists, researchers, and more. It is life-changing – having an expert tirelessly and enthusiastically work side-by-side with you any time you are brainstorming or creating something. From making numerical predictions to helping driverless cars "see" the world around them, AI is a part of many people's lives already.
+          </p>
+          
+          <figure>
+            <img src="attached_assets/image_1741111190650.png" alt="Driverless vehicle using computer vision" class="mx-auto">
+            <figcaption>Figure 2. Driverless vehicle "seeing" using computer vision</figcaption>
+          </figure>
+          
+          <p class="mb-4">
+            Companies today use AI to streamline and automate tasks across various departments, from finance to marketing, boosting productivity and product innovation. However, my personal favorite benefit is its ability to help us prototype ideas quickly, a valuable asset for any entrepreneur or creator. How amazing is it that today one may think of an idea after breakfast, and have a fully functional end-to-end product before lunch. As part of a class project, my team and I developed and demonstrated a live web application that empowers instructors to analyze student engagement in recorded online lectures. By visualizing peaks and dips in attention levels through an interactive dashboard, instructors can identify effective teaching moments and areas for improvement, ultimately enhancing future lecture delivery. A project with such complexity used to take months, but it can be completed in days. As I learned more about how such today's models work in practice, I realized that they are incredibly data-hungry pattern recognizers, not unlike humans, that excel at combining different types of information, or "multimodal" data, to draw connections from and generate humanlike output.
+          </p>
+          
+          <figure>
+            <img src="attached_assets/image_1741064380310.png" alt="Multimodal AI context diagram" class="mx-auto">
+            <figcaption>Figure 1. Multimodal AI context diagram</figcaption>
+          </figure>
+          
+          <p class="mb-4">
+            The current AI boom might seem sudden, but it is built on decades of foundational research, like stochastic gradient descent and the basic neural network architecture from the 1950s. It is fair to ask: why now? The answer to this question is multi-faceted. The first side to it is that computing power has skyrocketed in the past few years, led by companies like NVIDIA, accelerating performance and lowering costs. There have also been powerful algorithmic advances such as the transformer architecture in 2017 which paved the way for natural language processing (NLP), a key technology behind ChatGPT and similar products today. However, the technology would be useless without the amount of data created and saved on the internet, meaning that the internet needed to happen first before AI could become useful to us. Often forgotten, we are also lucky that open-source software culture remains strong, making it far easier for developers to become inspired from each others' ideas and innovate. Finally, society needed to be culturally ready for this technology. Most businesses today handle large parts of their operations digitally, enabling AI solutions to integrate more readily, and the public has been introduced to basic ML tidbits in their everyday lives, such as through voice assistants like Apple's Siri and Amazon's Alexa, autocomplete in emails, and facial recognition when unlocking smartphones. This has also inspired countless young researchers and investors to direct their efforts towards AI advancement, propelling it farther than ever before.
+          </p>
+          
+          <figure>
+            <img src="attached_assets/image_1741118429768.png" alt="Private investment in AI, from 2013-2021" class="mx-auto">
+            <figcaption>Figure 3. Private investment in AI, from 2013 – 2021</figcaption>
+          </figure>
+          
+          <p class="mb-4">
+            How can one begin using, or as a current user, improve their ability to interact with Generative AI? It begins with understanding that it is a collaborative tool. My early interactions with it were typing questions and hoping for the best, but I discovered that there is a science behind framing your requests, and crafting specific, nuanced, and well-articulated prompts is crucial for receiving useful, accurate, and relevant results from AI models. While some will formally take on job titles like "prompt engineer", even a basic understanding of it can dramatically improve anyone's results. Think of it like learning to write emails: everyone benefits from being able to compose a clear message, whether or not they are a professional writer. Just as the human imagination is boundless, so can the applications. A DIY enthusiast can use contextual prompts to think of fresh ideas; a market testing agency can quickly validate new product ideas for target customer personas; a classroom teacher can design interactive lessons with AI-generated activities; a small cafe owner can experiment with unique menu variations. I believe basic prompt engineering should become a fundamental part of everyone's digital literacy toolkit from now, alongside skills like web searching or basic spreadsheet use.
+          </p>
+          
+          <p class="mb-4">
+            Looking forward, 2025 has already been a year full of AI product ingenuity, such as Deep Seek alongside a myriad of AI startups doing incredible things. However, only about 300 million people worldwide actively use the most popular AI assistant, ChatGPT. While that number may seem large, that is only about 3.7% of people. In the next couple of years, I estimate that this number will double within the next couple of years as more individuals and companies learn to trust and benefit from AI in their day-to-day tasks. As NVIDIA and its competitors keep pushing the boundaries of what is possible in the hardware realm, there is also a healthy competition between software companies building models that continue to improve their answers. Newer models are able to perform deep research tasks that are at the PhD level. It can even do tasks for you like ordering food for you! We are approaching the age of artificial general intelligence (AGI) and eventually artificial super intelligence (ASI), which will drastically change society for the better by making it more efficient and innovative. Beyond 2027, well, I would argue that anyone who thinks they can accurately predict what the world will look like then is either naive or a time-traveler. The future of AI isn't about replacing human creativity and intelligence – it is about amplifying them. We do not have to wait until a distant future to harness this potential because the tools are here now, and each of us can improve one area of our lives with AI today, to try new approaches to old tasks.
+          </p>
+        </div>
+        
+        <!-- Back to Essays button -->
+        <div class="mt-10 text-center">
+          <a href="essays.html" class="inline-block px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-md transition-all">
+            <i class="fas fa-arrow-left mr-2"></i> Back to Essays
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 bg-gray-900">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 mb-4 md:mb-0">© 2025 Parham Hajzavar. All rights reserved.</p>
+        <div class="flex space-x-4">
+          <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
+          <a href="index.html#about" class="text-gray-400 hover:text-white transition-colors">About</a>
+          <a href="index.html#experience" class="text-gray-400 hover:text-white transition-colors">Experience</a>
+          <a href="index.html#projects" class="text-gray-400 hover:text-white transition-colors">Projects</a>
+          <a href="index.html#education" class="text-gray-400 hover:text-white transition-colors">Education</a>
+          <a href="content.html" class="text-gray-400 hover:text-white transition-colors">Reading List</a>
+          <a href="essays.html" class="text-gray-400 hover:text-white transition-colors">Essays</a>
+          <a href="index.html#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Throttle function for navbar scroll behavior
+    function throttle(func, limit) {
+      let lastFunc;
+      let lastRan;
+      return function () {
+        const context = this;
+        const args = arguments;
+        if (!lastRan) {
+          func.apply(context, args);
+          lastRan = Date.now();
+        } else {
+          clearTimeout(lastFunc);
+          lastFunc = setTimeout(function () {
+            if ((Date.now() - lastRan) >= limit) {
+              func.apply(context, args);
+              lastRan = Date.now();
+            }
+          }, limit - (Date.now() - lastRan));
+        }
+      }
+    }
+
+    // Navbar appearance change on scroll
+    window.addEventListener('scroll', throttle(function () {
+      const navbar = document.querySelector('header');
+      if (window.scrollY > 50) {
+        navbar.classList.add('py-2');
+        navbar.classList.remove('py-4');
+      } else {
+        navbar.classList.add('py-4');
+        navbar.classList.remove('py-2');
+      }
+    }, 50));
+  </script>
+</body>
+
+</html>
