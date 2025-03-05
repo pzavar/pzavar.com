@@ -387,6 +387,36 @@ img {
   transform: scale(1.05);
 }
 
+/* Essay content styling for better readability */
+.essay-content {
+  width: 100%;
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+.essay-content p {
+  margin-bottom: 1.5rem;
+}
+
+.essay-content h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.essay-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 1280px) {
+  .essay-content {
+    max-width: 80ch;
+    margin: 0 auto;
+  }
+}
+
 /* Book card text styling for better readability */
 .book-card h3 {
   color: #ffffff;
