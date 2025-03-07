@@ -94,20 +94,53 @@ function openModal(modalId) {
 function positionModal(modal) {
   // Ensure the modal is positioned with proper margins
   const modalContainer = modal.querySelector('.modal-container');
+  const modalContent = modal.querySelector('.modal-content');
+  
   if (modalContainer) {
     // Always scroll to top when opening
     modal.scrollTop = 0;
+    if (modalContent) {
+      modalContent.scrollTop = 0;
+    }
     
     // Check if modal is too tall for viewport
     const viewportHeight = window.innerHeight;
-    const modalHeight = modalContainer.offsetHeight;
+    const modalHeight = modalContainer.scrollHeight;
     
     if (modalHeight > viewportHeight - 24) { // If taller than viewport minus margins
       // Set a max-height to ensure it fits with margin
       modalContainer.style.height = `${viewportHeight - 24}px`;
+      
+      // Add a little bottom padding to content for better scrolling experience
+      if (modalContent) {
+        modalContent.style.paddingBottom = '20px';
+      }
+      
+      // Ensure content is scrollable if needed
+      if (modalContent) {
+        // Get header height to calculate proper content max-height
+        const headerHeight = modal.querySelector('.modal-header')?.offsetHeight || 0;
+        modalContent.style.maxHeight = `${viewportHeight - headerHeight - 24}px`;
+      }
     } else {
-      // Reset any previously set height
+      // Reset any previously set heights
       modalContainer.style.height = '';
+      if (modalContent) {
+        modalContent.style.paddingBottom = '';
+      }
+    }
+    
+    // Check for images in the modal content to ensure they load properly
+    const modalImages = modal.querySelectorAll('img');
+    if (modalImages.length > 0) {
+      modalImages.forEach(img => {
+        if (!img.complete) {
+          img.onload = function() {
+            // Recalculate modal position after image loads
+            positionModal(modal);
+          };
+        }
+      });
     }
   }
 }

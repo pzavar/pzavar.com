@@ -321,8 +321,12 @@ img {
   position: relative;
   z-index: 51;
   overflow-y: auto;
+  overflow-x: hidden;
   max-height: calc(100vh - 120px); /* Account for header and margins */
   flex-grow: 1;
+  padding-right: 5px; /* Add some padding for scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(59, 130, 246, 0.5) rgba(31, 41, 55, 0.5);
 }
 
 /* Float image styles */
@@ -365,6 +369,25 @@ img {
     max-width: 200px;
     margin: 0 auto;
   }
+}
+
+/* Custom scrollbar styling for modals */
+.modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: rgba(31, 41, 55, 0.5);
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.5);
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.7);
 }
 
 /* Education logos styling */
