@@ -247,7 +247,7 @@ img {
   transform: scale(1.05);
 }
 
-/* Updated Modal Styling with enhanced animations */
+/* Updated Modal Styling */
 .project-modal {
   position: fixed;
   top: 0;
@@ -256,14 +256,13 @@ img {
   height: 100%;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 0.3s ease-out;
   display: flex !important;
   align-items: flex-start;
   justify-content: center;
   padding-top: 12px; /* Half-inch margin from top */
   z-index: 100;
   overflow-y: auto;
-  perspective: 1200px;
 }
 
 .project-modal.hidden {
@@ -281,19 +280,14 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0);
-  transition: background-color 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-  z-index: 50;
-}
-
-.project-modal.active .modal-overlay {
   background-color: rgba(0, 0, 0, 0.75);
+  z-index: 50;
 }
 
 .modal-container {
   position: relative;
-  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-  transform: scale(0.7) translateY(-30px) rotateX(10deg);
+  transition: all 0.3s ease;
+  transform: scale(0.8);
   opacity: 0;
   width: 90%;
   max-width: 800px;
@@ -306,64 +300,11 @@ img {
   flex-direction: column;
   overflow: hidden;
   z-index: 60;
-  transform-origin: center top;
-  backface-visibility: hidden;
-  will-change: transform, opacity;
 }
 
 .project-modal.active .modal-container {
-  transform: scale(1) translateY(0) rotateX(0);
+  transform: scale(1);
   opacity: 1;
-}
-
-/* Add a subtle border glow effect to the modal */
-.modal-container::after {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, rgba(59, 130, 246, 0.4), rgba(79, 70, 229, 0.4));
-  border-radius: 14px;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.6s ease;
-}
-
-.project-modal.active .modal-container::after {
-  opacity: 1;
-}
-
-/* Add animation for modal content elements */
-.modal-header, .modal-content > * {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-  transition-delay: 0.1s;
-}
-
-.project-modal.active .modal-header, 
-.project-modal.active .modal-content > * {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Stagger the animation of content elements */
-.project-modal.active .modal-content > *:nth-child(2) {
-  transition-delay: 0.2s;
-}
-
-.project-modal.active .modal-content > *:nth-child(3) {
-  transition-delay: 0.3s;
-}
-
-.project-modal.active .modal-content > *:nth-child(4) {
-  transition-delay: 0.4s;
-}
-
-.project-modal.active .modal-content > *:nth-child(5) {
-  transition-delay: 0.5s;
 }
 
 .modal-header {

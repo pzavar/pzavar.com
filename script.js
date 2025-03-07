@@ -46,24 +46,20 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Modal functionality
-// Enhanced modal functionality with improved animations
+// Enhanced modal functionality
 function openModal(modalId) {
   console.log("Opening modal:", modalId);
   const modal = document.getElementById(modalId);
   if (modal) {
     // Prevent body scroll but allow modal to scroll
     document.body.style.overflow = 'hidden';
-    
-    // First remove hidden class to make it display
     modal.classList.remove('hidden');
 
     // Force reflow before adding active class for animation
     modal.offsetWidth;
 
     // Add active class to trigger animation
-    setTimeout(() => {
-      modal.classList.add('active');
-    }, 10); // Small delay to ensure transition starts properly
+    modal.classList.add('active');
 
     // Get the modal content element for scrolling
     const modalContent = modal.querySelector('.modal-content');
@@ -74,12 +70,6 @@ function openModal(modalId) {
 
     // Position modal to ensure visibility with top margin
     positionModal(modal);
-
-    // Add a subtle entrance animation to modal content elements
-    const contentElements = modal.querySelectorAll('.modal-content > *');
-    contentElements.forEach((element, index) => {
-      element.style.transitionDelay = `${0.1 + (index * 0.05)}s`;
-    });
 
     // Add escape key listener
     document.addEventListener('keydown', function escapeHandler(e) {
@@ -126,20 +116,13 @@ function closeModal(modalId) {
   console.log("Closing modal:", modalId);
   const modal = document.getElementById(modalId);
   if (modal) {
-    // Reset the transition delays on content elements first
-    const contentElements = modal.querySelectorAll('.modal-content > *');
-    contentElements.forEach(element => {
-      element.style.transitionDelay = '0s';
-    });
-    
-    // Remove active class to start close animation
     modal.classList.remove('active');
 
     // Add a delay before hiding to allow animations to complete
     setTimeout(() => {
       modal.classList.add('hidden');
       document.body.style.overflow = ''; // Restore body scrolling
-    }, 500); // Increased delay to match our longer animation duration
+    }, 300);
   }
 }
 
