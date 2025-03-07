@@ -68,8 +68,8 @@ function openModal(modalId) {
       modalContent.scrollTop = 0;
     }
 
-    // Position modal to ensure visibility with top margin
-    positionModal(modal);
+    // Set up modal for proper scrolling
+    setupModalScrolling(modal);
 
     // Add escape key listener
     document.addEventListener('keydown', function escapeHandler(e) {
@@ -91,57 +91,53 @@ function openModal(modalId) {
   }
 }
 
-function positionModal(modal) {
-  // Ensure the modal is positioned with proper margins
+function setupModalScrolling(modal) {
   const modalContainer = modal.querySelector('.modal-container');
   const modalContent = modal.querySelector('.modal-content');
+  const modalHeader = modal.querySelector('.modal-header');
   
-  if (modalContainer) {
-    // Always scroll to top when opening
-    modal.scrollTop = 0;
-    if (modalContent) {
-      modalContent.scrollTop = 0;
-    }
-    
-    // Check if modal is too tall for viewport
-    const viewportHeight = window.innerHeight;
-    const modalHeight = modalContainer.scrollHeight;
-    
-    if (modalHeight > viewportHeight - 24) { // If taller than viewport minus margins
-      // Set a max-height to ensure it fits with margin
-      modalContainer.style.height = `${viewportHeight - 24}px`;
-      
-      // Add a little bottom padding to content for better scrolling experience
-      if (modalContent) {
-        modalContent.style.paddingBottom = '20px';
+  if (!modalContainer || !modalContent) return;
+  
+  // Reset any previous settings
+  modalContent.style.height = '';
+  modalContent.style.maxHeight = '';
+  modalContainer.style.maxHeight = '';
+  
+  // Calculate heights
+  const viewportHeight = window.innerHeight;
+  const headerHeight = modalHeader ? modalHeader.offsetHeight : 0;
+  const paddingAllowance = 40; // For top and bottom padding
+  
+  // Set the max-height of the container
+  modalContainer.style.maxHeight = `${viewportHeight - paddingAllowance}px`;
+  
+  // Calculate and set the content max-height
+  const contentMaxHeight = viewportHeight - headerHeight - paddingAllowance;
+  modalContent.style.maxHeight = `${contentMaxHeight}px`;
+  
+  // Ensure the overflow is set for scrolling
+  modalContent.style.overflowY = 'auto';
+  
+  // Add a bit of bottom padding for better appearance
+  modalContent.style.paddingBottom = '20px';
+  
+  // Check for images and set up event listeners for when they load
+  const modalImages = modal.querySelectorAll('img');
+  if (modalImages.length > 0) {
+    modalImages.forEach(img => {
+      if (!img.complete) {
+        img.onload = function() {
+          // Just ensure scrolling still works after image loads
+          modalContent.style.overflowY = 'auto';
+        };
       }
-      
-      // Ensure content is scrollable if needed
-      if (modalContent) {
-        // Get header height to calculate proper content max-height
-        const headerHeight = modal.querySelector('.modal-header')?.offsetHeight || 0;
-        modalContent.style.maxHeight = `${viewportHeight - headerHeight - 24}px`;
-      }
-    } else {
-      // Reset any previously set heights
-      modalContainer.style.height = '';
-      if (modalContent) {
-        modalContent.style.paddingBottom = '';
-      }
-    }
-    
-    // Check for images in the modal content to ensure they load properly
-    const modalImages = modal.querySelectorAll('img');
-    if (modalImages.length > 0) {
-      modalImages.forEach(img => {
-        if (!img.complete) {
-          img.onload = function() {
-            // Recalculate modal position after image loads
-            positionModal(modal);
-          };
-        }
-      });
-    }
+    });
+  }
+  
+  // Ensure the content has enough height to be scrollable if needed
+  if (modalContent.scrollHeight > contentMaxHeight) {
+    console.log("Modal content needs scrolling");
+    modalContent.style.overflowY = 'scroll';
   }
 }
 
