@@ -1,0 +1,26 @@
+Work projects
+Title: Full-stack Redesign of New Logon & Account Access web requests
+Short Blurb on home page: Led a team of 4 implementation consultants to redesign the two most important web requests on GovConnect.iowa.gov (link), a 1.5 million customer government web portal.
+Project Overview (modal view): 
+Owned the <b>requirements gathering, full-stack redesign, development, testing, launch, and production support</b> of the New Logon and Account Access web requests on GovConnect.iowa.gov (link), adding multi-layered security checkpoints and integrating an identity verification API that prevented malicious activity and spam attacks. With the new streamlined implementation, <b><u>customers saved 24 - 48 hours per request approval. </u></b>For a website of this size, that resulted in many dollars saved. 
+Project image on home page: gci_home.png
+Add this photo below the Project Overview section: gci_home.png
+
+
+Title: License Applications for External Agencies on GovConnectIowa
+Short Blurb on home page: Launched New & Renewal license applications for the Iowa Alcoholic Beverages Division, Iowa Lottery, and the Department of Inspections and Appeals
+Project Overview (modal view): 
+Developed and launched the <bold><underline>UX flow, frontend development, and data transformation and transfer APIs<.bold></underline> for New and Renewal license applications for external agencies including the Iowa Alcoholic Beverages Division, Iowa Lottery, and the Department of Inspections and Appeals. The new business process resulting from these license applications modernized legacy PDF/paper forms and <b><u>reduced total license processing time by 2 business days. <u><b>
+
+Throughout the one year project period, I worked closely with client program managers, business analysts, 3rd party vendor developers, training team, customer service department, and subject-matter experts to understand customer pain points and build the product requirements. These applications, used by 75% of Iowa businesses, resulted in a more streamlined and shortened licensing process for all stakeholders.
+Project image on home page: gci.png
+Add this photo below the Project Overview section: gci.png
+
+
+Title: Where’s My Refund
+Short Blurb on home page: Launched the "Where's My Refund" tool, used by 750,000 taxpayers annually for live refund statuses.
+Project Overview (modal view): 
+
+Worked at the focal point between subject-matter experts, internal agency staff, Legal, and program leadership to define the product requirements and build the tool that allows customers to receive real-time updates on their refund statuses, used by 750,000 taxpayers.
+Project image on home page: wmr.png
+Add this photo below the Project Overview section: wmr.png
