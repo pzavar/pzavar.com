@@ -32,13 +32,22 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
   max-width: 100vw;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 body {
   overflow-y: scroll;
+  overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   font-family: 'Lato', sans-serif;
   scroll-behavior: smooth;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
 }
 
 @keyframes skillAnimation {
@@ -356,7 +365,7 @@ img {
   clear: both;
 }
 
-/* Improved mobile responsiveness for modals */
+/* Improved mobile responsiveness for modals and general content */
 @media (max-width: 640px) {
   .modal-content .float-right {
     float: none;
@@ -369,6 +378,42 @@ img {
   .modal-content .float-right img {
     max-width: 200px;
     margin: 0 auto;
+  }
+  
+  /* Additional mobile fixes */
+  .container {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow-x: hidden;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .project-card, .book-card {
+    width: 100%;
+  }
+  
+  /* Fix potential code or pre blocks */
+  pre, code {
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  
+  /* Fix table layouts */
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  /* Ensure skills and tags wrap properly */
+  .skill-pill, .flex.flex-wrap {
+    white-space: normal;
+    width: auto;
   }
 }
 
@@ -411,6 +456,90 @@ img {
 }
 
 /* Essay content styling for better readability */
+
+/* Additional responsive fixes to prevent horizontal scroll */
+@media (max-width: 768px) {
+  /* Fix for oversized elements */
+  .hero-blob {
+    width: 150px;
+    height: 150px;
+  }
+  
+  /* Fix any fixed-width elements */
+  [class*="w-96"], 
+  [class*="w-80"], 
+  [class*="w-72"] {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* Fix section padding */
+  section {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  /* Fix for skill pill overflow */
+  .skill-pill {
+    max-width: 100%;
+  }
+  
+  /* Fix timeline items */
+  .timeline-item {
+    padding-left: 2rem;
+  }
+  
+  /* Fix any elements with flex that might cause overflow */
+  .flex {
+    flex-wrap: wrap;
+  }
+  
+  /* Fix for any potential overflow in the footer */
+  footer .flex.space-x-4 {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  footer .flex.space-x-4 a {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+}
+
+/* Fix for project cards with wrong spacing and flexbox issues */
+.project-info-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Fix modals on smaller screens */
+@media (max-width: 480px) {
+  .modal-container {
+    width: 95%;
+    padding: 10px;
+  }
+  
+  .modal-header {
+    padding: 10px;
+  }
+  
+  .modal-content {
+    padding: 10px;
+  }
+}
+
+/* Fix for any inline styles that might be causing issues */
+[style*="width:"] {
+  max-width: 100% !important;
+}
+
+/* Ensure images don't overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .essay-content {
   width: 100%;
   font-size: 1.125rem;
