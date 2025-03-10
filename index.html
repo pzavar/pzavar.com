@@ -492,31 +492,65 @@
         data-aos-delay="300"></div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Add your work projects here -->
-        <!-- Example Work Project Card -->
+        <!-- New Logon & Account Access Redesign -->
         <div class="project-card rounded-xl overflow-hidden card-hover relative"
-          onclick="openModal('workproject1-modal')">
+          onclick="openModal('newlogon-modal')">
           <div class="project-image-container h-40">
-            <img src="https://placehold.co/600x400?text=Work+Project+Image" alt="Work Project"
-              class="w-full h-full object-cover">
+            <img src="gci_home.png" alt="GovConnect Iowa" class="w-full h-full object-cover">
           </div>
           <div class="project-info-container bg-gray-800 p-4">
-            <h3 class="text-xl font-bold text-white mb-2">Agency New Logon Flow</h3>
-            <p class="text-gray-300 mb-4">Re-architected and developed New Logon and Account Access web flows for
-              GovConnect, implementing identity verification API integration.</p>
+            <h3 class="text-xl font-bold text-white mb-2">Full-stack Redesign of New Logon & Account Access</h3>
+            <p class="text-gray-300 mb-4">Led a team of 4 implementation consultants to redesign the two most important web requests on GovConnect.iowa.gov, a 1.5 million customer government web portal.</p>
             <div class="flex flex-wrap gap-2 mb-4">
               <span class="text-xs font-medium bg-blue-900 text-blue-300 rounded-full px-3 py-1">C#</span>
-              <span class="text-xs font-medium bg-purple-900 text-purple-300 rounded-full px-3 py-1">API
-                Integration</span>
+              <span class="text-xs font-medium bg-purple-900 text-purple-300 rounded-full px-3 py-1">API Integration</span>
               <span class="text-xs font-medium bg-green-900 text-green-300 rounded-full px-3 py-1">UX/UI Design</span>
             </div>
-            <button onclick="openModal('workproject1-modal')"
+            <button onclick="openModal('newlogon-modal')"
               class="w-full px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md transition-all">View
               Details</button>
           </div>
         </div>
 
-        <!-- Add more work project cards as needed -->
+        <!-- License Applications -->
+        <div class="project-card rounded-xl overflow-hidden card-hover relative"
+          onclick="openModal('license-modal')">
+          <div class="project-image-container h-40">
+            <img src="gci_newlogon.png" alt="License Applications" class="w-full h-full object-cover">
+          </div>
+          <div class="project-info-container bg-gray-800 p-4">
+            <h3 class="text-xl font-bold text-white mb-2">License Applications for External Agencies</h3>
+            <p class="text-gray-300 mb-4">Launched New & Renewal license applications for the Iowa Alcoholic Beverages Division, Iowa Lottery, and the Department of Inspections and Appeals.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="text-xs font-medium bg-blue-900 text-blue-300 rounded-full px-3 py-1">UX Flow</span>
+              <span class="text-xs font-medium bg-purple-900 text-purple-300 rounded-full px-3 py-1">Frontend</span>
+              <span class="text-xs font-medium bg-green-900 text-green-300 rounded-full px-3 py-1">Data Transformation</span>
+            </div>
+            <button onclick="openModal('license-modal')"
+              class="w-full px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md transition-all">View
+              Details</button>
+          </div>
+        </div>
+
+        <!-- Where's My Refund -->
+        <div class="project-card rounded-xl overflow-hidden card-hover relative"
+          onclick="openModal('refund-modal')">
+          <div class="project-image-container h-40">
+            <img src="wmr.png" alt="Where's My Refund" class="w-full h-full object-cover">
+          </div>
+          <div class="project-info-container bg-gray-800 p-4">
+            <h3 class="text-xl font-bold text-white mb-2">Where's My Refund</h3>
+            <p class="text-gray-300 mb-4">Launched the "Where's My Refund" tool, used by 750,000 taxpayers annually for live refund statuses.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="text-xs font-medium bg-blue-900 text-blue-300 rounded-full px-3 py-1">Requirements</span>
+              <span class="text-xs font-medium bg-purple-900 text-purple-300 rounded-full px-3 py-1">Product Management</span>
+              <span class="text-xs font-medium bg-green-900 text-green-300 rounded-full px-3 py-1">Stakeholder Coordination</span>
+            </div>
+            <button onclick="openModal('refund-modal')"
+              class="w-full px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md transition-all">View
+              Details</button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -609,14 +643,14 @@
       </div>
 
       <!-- Project Modals -->
-      <!-- Work Project 1 Modal -->
-      <div id="workproject1-modal" class="project-modal fixed inset-0 z-50 flex items-center justify-center hidden">
-        <div class="modal-overlay absolute inset-0 bg-black opacity-75" onclick="closeModal('workproject1-modal')">
+      <!-- New Logon & Account Access Modal -->
+      <div id="newlogon-modal" class="project-modal fixed inset-0 z-50 flex items-center justify-center hidden">
+        <div class="modal-overlay absolute inset-0 bg-black opacity-75" onclick="closeModal('newlogon-modal')">
         </div>
         <div class="modal-container bg-gray-800 w-11/12 md:max-w-3xl mx-auto rounded-xl shadow-xl z-50 relative">
           <div class="modal-header p-6 flex justify-between items-center border-b border-gray-700">
-            <h3 class="text-2xl font-bold gradient-text">Agency New Logon Flow Redesign</h3>
-            <button class="modal-close text-gray-400 hover:text-white" onclick="closeModal('workproject1-modal')">
+            <h3 class="text-2xl font-bold gradient-text">Full-stack Redesign of New Logon & Account Access</h3>
+            <button class="modal-close text-gray-400 hover:text-white" onclick="closeModal('newlogon-modal')">
               <i class="fas fa-times text-xl"></i>
             </button>
           </div>
@@ -626,15 +660,11 @@
                 <h4 class="text-xl font-semibold text-blue-400">Project Overview</h4>
               </div>
               <p class="text-gray-300 mb-4">
-                Led the full re-architecture and development of New Logon and Account Access web flows for GovConnect,
-                Iowa's taxpayer portal serving 1.5 million users annually. The project involved redesigning both
-                frontend and backend components while implementing a first-of-its-kind identity verification API
-                integration.
+                Owned the <b>requirements gathering, full-stack redesign, development, testing, launch, and production support</b> of the New Logon and Account Access web requests on GovConnect.iowa.gov, adding multi-layered security checkpoints and integrating an identity verification API that prevented malicious activity and spam attacks. With the new streamlined implementation, <b><u>customers saved 24 - 48 hours per request approval.</u></b> For a website of this size, that resulted in many dollars saved.
               </p>
-              <p class="text-gray-300 mb-4">
-                This implementation enabled multi-layered security checkpoints while dramatically improving efficiency,
-                saving customers 24-48 hours per request when accessing their government accounts.
-              </p>
+              <div class="rounded-lg overflow-hidden shadow-xl mb-6">
+                <img src="gci_home.png" alt="GovConnect Iowa" class="w-full">
+              </div>
             </div>
             <div class="space-y-4">
               <div>
@@ -642,8 +672,7 @@
                 <ul class="list-disc pl-5 text-gray-300 space-y-2">
                   <li>Integrated third-party identity verification APIs with existing authentication systems</li>
                   <li>Implemented secure session management and data handling for sensitive user information</li>
-                  <li>Designed a fault-tolerant system with graceful degradation when external services were unavailable
-                  </li>
+                  <li>Designed a fault-tolerant system with graceful degradation when external services were unavailable</li>
                   <li>Developed comprehensive user flows that balanced security with usability</li>
                 </ul>
               </div>
@@ -653,8 +682,104 @@
                   <li>Reduced account access request processing time from 24-48 hours to minutes</li>
                   <li>Improved user experience measured by significant reduction in support tickets</li>
                   <li>Enhanced security posture while maintaining accessibility for all users</li>
-                  <li>Created a solution that became a standard reference for other state government implementations
-                  </li>
+                  <li>Created a solution that became a standard reference for other state government implementations</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- License Applications Modal -->
+      <div id="license-modal" class="project-modal fixed inset-0 z-50 flex items-center justify-center hidden">
+        <div class="modal-overlay absolute inset-0 bg-black opacity-75" onclick="closeModal('license-modal')">
+        </div>
+        <div class="modal-container bg-gray-800 w-11/12 md:max-w-3xl mx-auto rounded-xl shadow-xl z-50 relative">
+          <div class="modal-header p-6 flex justify-between items-center border-b border-gray-700">
+            <h3 class="text-2xl font-bold gradient-text">License Applications for External Agencies</h3>
+            <button class="modal-close text-gray-400 hover:text-white" onclick="closeModal('license-modal')">
+              <i class="fas fa-times text-xl"></i>
+            </button>
+          </div>
+          <div class="modal-content p-6">
+            <div class="relative mb-6">
+              <div class="mb-3">
+                <h4 class="text-xl font-semibold text-blue-400">Project Overview</h4>
+              </div>
+              <p class="text-gray-300 mb-4">
+                Developed and launched the <b><u>UX flow, frontend development, and data transformation and transfer APIs</u></b> for New and Renewal license applications for external agencies including the Iowa Alcoholic Beverages Division, Iowa Lottery, and the Department of Inspections and Appeals. The new business process resulting from these license applications modernized legacy PDF/paper forms and <b><u>reduced total license processing time by 2 business days.</u></b>
+              </p>
+              <p class="text-gray-300 mb-4">
+                Throughout the one year project period, I worked closely with client program managers, business analysts, 3rd party vendor developers, training team, customer service department, and subject-matter experts to understand customer pain points and build the product requirements. These applications, used by 75% of Iowa businesses, resulted in a more streamlined and shortened licensing process for all stakeholders.
+              </p>
+              <div class="rounded-lg overflow-hidden shadow-xl mb-6">
+                <img src="gci_newlogon.png" alt="License Applications" class="w-full">
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div>
+                <h4 class="text-lg font-semibold text-blue-400 mb-2">Technical Highlights</h4>
+                <ul class="list-disc pl-5 text-gray-300 space-y-2">
+                  <li>Designed intuitive user flows that simplified complex licensing requirements</li>
+                  <li>Built data transformation APIs to convert legacy data formats</li>
+                  <li>Implemented responsive web forms accessible on multiple devices</li>
+                  <li>Collaborated across departments to ensure regulatory compliance</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-blue-400 mb-2">Business Impact</h4>
+                <ul class="list-disc pl-5 text-gray-300 space-y-2">
+                  <li>Reduced processing time by 2 full business days</li>
+                  <li>Improved accuracy of submitted applications</li>
+                  <li>Enhanced user satisfaction with digital application process</li>
+                  <li>Streamlined operations for both businesses and government agencies</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Where's My Refund Modal -->
+      <div id="refund-modal" class="project-modal fixed inset-0 z-50 flex items-center justify-center hidden">
+        <div class="modal-overlay absolute inset-0 bg-black opacity-75" onclick="closeModal('refund-modal')">
+        </div>
+        <div class="modal-container bg-gray-800 w-11/12 md:max-w-3xl mx-auto rounded-xl shadow-xl z-50 relative">
+          <div class="modal-header p-6 flex justify-between items-center border-b border-gray-700">
+            <h3 class="text-2xl font-bold gradient-text">Where's My Refund</h3>
+            <button class="modal-close text-gray-400 hover:text-white" onclick="closeModal('refund-modal')">
+              <i class="fas fa-times text-xl"></i>
+            </button>
+          </div>
+          <div class="modal-content p-6">
+            <div class="relative mb-6">
+              <div class="mb-3">
+                <h4 class="text-xl font-semibold text-blue-400">Project Overview</h4>
+              </div>
+              <p class="text-gray-300 mb-4">
+                Worked at the focal point between subject-matter experts, internal agency staff, Legal, and program leadership to define the product requirements and build the tool that allows customers to receive real-time updates on their refund statuses, used by 750,000 taxpayers.
+              </p>
+              <div class="rounded-lg overflow-hidden shadow-xl mb-6">
+                <img src="wmr.png" alt="Where's My Refund" class="w-full">
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div>
+                <h4 class="text-lg font-semibold text-blue-400 mb-2">Key Contributions</h4>
+                <ul class="list-disc pl-5 text-gray-300 space-y-2">
+                  <li>Coordinated between multiple stakeholders to gather comprehensive requirements</li>
+                  <li>Translated complex tax processing statuses into user-friendly information</li>
+                  <li>Integrated with internal tax processing systems to provide real-time updates</li>
+                  <li>Ensured compliance with security and privacy regulations for sensitive tax data</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-blue-400 mb-2">Impact</h4>
+                <ul class="list-disc pl-5 text-gray-300 space-y-2">
+                  <li>Tool used by 750,000 taxpayers annually</li>
+                  <li>Reduced call volume to customer service centers</li>
+                  <li>Improved taxpayer satisfaction with transparent process visibility</li>
+                  <li>Enhanced public perception of government service efficiency</li>
                 </ul>
               </div>
             </div>
