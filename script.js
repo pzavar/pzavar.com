@@ -115,7 +115,7 @@ function setupModalScrolling(modal) {
   const contentMaxHeight = viewportHeight - headerHeight - paddingAllowance;
   modalContent.style.maxHeight = `${contentMaxHeight}px`;
   
-  // Ensure the overflow is set for scrolling
+  // Ensure the overflow is set for scrolling - ALWAYS set to scroll for reliability
   modalContent.style.overflowY = 'auto';
   
   // Add a bit of bottom padding for better appearance
@@ -127,7 +127,7 @@ function setupModalScrolling(modal) {
     modalImages.forEach(img => {
       if (!img.complete) {
         img.onload = function() {
-          // Just ensure scrolling still works after image loads
+          // Force scroll capability after images load
           modalContent.style.overflowY = 'auto';
         };
       }
@@ -137,8 +137,13 @@ function setupModalScrolling(modal) {
   // Ensure the content has enough height to be scrollable if needed
   if (modalContent.scrollHeight > contentMaxHeight) {
     console.log("Modal content needs scrolling");
-    modalContent.style.overflowY = 'scroll';
+    modalContent.style.overflowY = 'auto';
   }
+  
+  // Force overflow property for all modals to ensure scrollability
+  setTimeout(() => {
+    modalContent.style.overflowY = 'auto';
+  }, 100);
 }
 
 function closeModal(modalId) {
