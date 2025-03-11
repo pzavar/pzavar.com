@@ -374,12 +374,12 @@ img {
     margin-bottom: 16px;
     text-align: center;
   }
-
+  
   .modal-content .float-right img {
     max-width: 200px;
     margin: 0 auto;
   }
-
+  
   /* Additional mobile fixes */
   .container {
     width: 100%;
@@ -387,29 +387,29 @@ img {
     padding-right: 15px;
     overflow-x: hidden;
   }
-
+  
   img {
     max-width: 100%;
     height: auto;
   }
-
+  
   .project-card, .book-card {
     width: 100%;
   }
-
+  
   /* Fix potential code or pre blocks */
   pre, code {
     white-space: pre-wrap;
     word-break: break-word;
   }
-
+  
   /* Fix table layouts */
   table {
     display: block;
     width: 100%;
     overflow-x: auto;
   }
-
+  
   /* Ensure skills and tags wrap properly */
   .skill-pill, .flex.flex-wrap {
     white-space: normal;
@@ -464,7 +464,7 @@ img {
     width: 150px;
     height: 150px;
   }
-
+  
   /* Fix any fixed-width elements */
   [class*="w-96"], 
   [class*="w-80"], 
@@ -472,35 +472,35 @@ img {
     width: 100%;
     max-width: 100%;
   }
-
+  
   /* Fix section padding */
   section {
     padding-left: 15px;
     padding-right: 15px;
   }
-
+  
   /* Fix for skill pill overflow */
   .skill-pill {
     max-width: 100%;
   }
-
+  
   /* Fix timeline items */
   .timeline-item {
     padding-left: 2rem;
   }
-
+  
   /* Fix any elements with flex that might cause overflow */
   .flex {
     flex-wrap: wrap;
   }
-
+  
   /* Fix for any potential overflow in the footer */
   footer .flex.space-x-4 {
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
   }
-
+  
   footer .flex.space-x-4 a {
     margin-right: 0 !important;
     margin-left: 0 !important;
@@ -519,11 +519,11 @@ img {
     width: 95%;
     padding: 10px;
   }
-
+  
   .modal-header {
     padding: 10px;
   }
-
+  
   .modal-content {
     padding: 10px;
   }
