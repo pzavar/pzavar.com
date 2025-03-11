@@ -1,0 +1,644 @@
+/* Animated background patterns */
+.bg-pattern {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 0.05;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 25px 25px, rgba(56, 189, 248, 0.2) 2%, transparent 0%),
+    radial-gradient(circle at 75px 75px, rgba(129, 140, 248, 0.2) 2%, transparent 0%);
+  background-size: 100px 100px;
+  animation: patternMove 60s linear infinite;
+}
+
+@keyframes patternMove {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 1000px 1000px;
+  }
+}
+
+
+html {
+  height: 100%;
+  width: 100%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  font-family: 'Lato', sans-serif;
+  scroll-behavior: smooth;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
+}
+
+@keyframes skillAnimation {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.skill-bar {
+  animation: skillAnimation 1.5s ease-out forwards;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.floating {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Video background effects */
+.video-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+}
+
+.video-fade,
+.education-video-fade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom,
+      rgba(15, 23, 42, 0) 0%,
+      rgba(15, 23, 42, 0.7) 70%,
+      rgba(15, 23, 42, 1) 100%);
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.education-video-fade {
+  background: linear-gradient(to bottom,
+      rgba(15, 23, 42, 0.6) 0%,
+      rgba(15, 23, 42, 0.7) 50%,
+      rgba(15, 23, 42, 0.9) 100%);
+  opacity: 1;
+}
+
+.video-container video {
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover .project-content {
+  bottom: 0;
+}
+
+/* Make project cards clickable with cursor and visual cues */
+.project-card {
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-image-container {
+  overflow: hidden;
+  background: transparent;
+}
+
+/* Fix for image backgrounds */
+img {
+  background: transparent;
+  border-radius: inherit;
+}
+
+.project-info-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-info-container button {
+  margin-top: auto;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Add pulse effect to indicate clickability */
+.project-card::after {
+  content: '';
+  position: absolute;
+  top: 20%;
+  /* Position in image area */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(59, 130, 246, 0.7);
+  border-radius: 50%;
+  z-index: 6;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+
+.project-card:hover::after {
+  opacity: 0.3;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.3;
+  }
+
+  70% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+  }
+}
+
+.project-card:hover::before {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.project-card img {
+  transition: all 0.3s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Updated Modal Styling */
+.project-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-out;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  overflow: hidden;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.project-modal.hidden {
+  display: none !important;
+}
+
+.project-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 50;
+}
+
+.modal-container {
+  position: relative;
+  transition: all 0.3s ease;
+  transform: scale(0.8);
+  opacity: 0;
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+  border-radius: 12px;
+  background-color: #1f2937;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  z-index: 60;
+  max-height: 90vh;
+  overflow: hidden;
+}
+
+.project-modal.active .modal-container {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.modal-header {
+  position: sticky;
+  top: 0;
+  z-index: 61;
+  background-color: #1f2937;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+.modal-content {
+  position: relative;
+  z-index: 51;
+  overflow-y: auto !important;
+  overflow-x: hidden;
+  flex-grow: 1;
+  padding-right: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(59, 130, 246, 0.5) rgba(31, 41, 55, 0.5);
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Special fix for EngageAI modal and other long content modals */
+#engageai-modal .modal-content,
+#anonnet-modal .modal-content,
+#grubmatch-modal .modal-content,
+#newlogon-modal .modal-content,
+#license-modal .modal-content,
+#refund-modal .modal-content {
+  height: auto;
+  max-height: calc(90vh - 70px);
+  padding-bottom: 30px;
+}
+
+/* Float image styles */
+.modal-content .float-right {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.modal-content .float-right img {
+  transition: transform 0.3s ease;
+}
+
+.modal-content .float-right img:hover {
+  transform: scale(1.05);
+}
+
+/* Title styles to accommodate image */
+.modal-content h4.text-xl {
+  display: inline-block;
+  margin-right: 0.5rem;
+  width: calc(75% - 1rem);
+}
+
+/* Clear both for proper spacing */
+.clear-both {
+  clear: both;
+}
+
+/* Improved mobile responsiveness for modals and general content */
+@media (max-width: 640px) {
+  .modal-content .float-right {
+    float: none;
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  
+  .modal-content .float-right img {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+  
+  /* Additional mobile fixes */
+  .container {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow-x: hidden;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .project-card, .book-card {
+    width: 100%;
+  }
+  
+  /* Fix potential code or pre blocks */
+  pre, code {
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  
+  /* Fix table layouts */
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  /* Ensure skills and tags wrap properly */
+  .skill-pill, .flex.flex-wrap {
+    white-space: normal;
+    width: auto;
+  }
+}
+
+/* Custom scrollbar styling for modals */
+.modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: rgba(31, 41, 55, 0.5);
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.5);
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.7);
+}
+
+/* Education logos styling */
+.timeline-item img {
+  max-width: 100%;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.timeline-item:hover img {
+  transform: scale(1.05);
+}
+
+.project-card img {
+  transition: all 0.4s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Essay content styling for better readability */
+
+/* Additional responsive fixes to prevent horizontal scroll */
+@media (max-width: 768px) {
+  /* Fix for oversized elements */
+  .hero-blob {
+    width: 150px;
+    height: 150px;
+  }
+  
+  /* Fix any fixed-width elements */
+  [class*="w-96"], 
+  [class*="w-80"], 
+  [class*="w-72"] {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* Fix section padding */
+  section {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  /* Fix for skill pill overflow */
+  .skill-pill {
+    max-width: 100%;
+  }
+  
+  /* Fix timeline items */
+  .timeline-item {
+    padding-left: 2rem;
+  }
+  
+  /* Fix any elements with flex that might cause overflow */
+  .flex {
+    flex-wrap: wrap;
+  }
+  
+  /* Fix for any potential overflow in the footer */
+  footer .flex.space-x-4 {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  footer .flex.space-x-4 a {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+}
+
+/* Fix for project cards with wrong spacing and flexbox issues */
+.project-info-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Fix modals on smaller screens */
+@media (max-width: 480px) {
+  .modal-container {
+    width: 95%;
+    padding: 10px;
+  }
+  
+  .modal-header {
+    padding: 10px;
+  }
+  
+  .modal-content {
+    padding: 10px;
+  }
+}
+
+/* Fix for any inline styles that might be causing issues */
+[style*="width:"] {
+  max-width: 100% !important;
+}
+
+/* Ensure images don't overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.essay-content {
+  width: 100%;
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+.essay-content p {
+  margin-bottom: 1.5rem;
+}
+
+.essay-content h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.essay-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 1280px) {
+  .essay-content {
+    max-width: 80ch;
+    margin: 0 auto;
+  }
+}
+
+/* Book card text styling for better readability */
+.book-card h3 {
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.book-card p.text-gray-400,
+.book-card p.text-blue-300 {
+  color: #a3e0ff !important;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.book-card p.text-sm,
+.book-card p.text-white {
+  color: #ffffff !important;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.book-card {
+  transition: transform 0.3s ease;
+  background: rgba(17, 24, 39, 0.95) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.book-card .h-64 {
+  position: relative;
+}
+
+.book-card .h-64::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to bottom, rgba(17, 24, 39, 0), rgba(17, 24, 39, 0.9));
+  pointer-events: none;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.book-card img {
+  transition: all 0.4s ease;
+}
+
+.book-card:hover img {
+  transform: scale(1.05);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
+
+.glassmorphism {
+  background-color: #0f172a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
