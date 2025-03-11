@@ -340,16 +340,13 @@ img {
   -webkit-overflow-scrolling: touch;
 }
 
-/* Special fix for EngageAI modal and other long content modals */
-#engageai-modal .modal-content,
-#anonnet-modal .modal-content,
-#grubmatch-modal .modal-content,
-#newlogon-modal .modal-content,
-#license-modal .modal-content,
-#refund-modal .modal-content {
+/* Special fix for all modals with long content */
+.project-modal .modal-content {
   height: auto;
   max-height: calc(90vh - 70px);
   padding-bottom: 30px;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Float image styles */

@@ -113,7 +113,16 @@ function setupModalScrolling(modal) {
   modalContent.style.overflowX = 'hidden';
   
   // Add bottom padding for better appearance
-  modalContent.style.paddingBottom = '20px';
+  modalContent.style.paddingBottom = '30px';
+  
+  // Ensure all content is visible by adding additional padding
+  const contentHeight = modalContent.scrollHeight;
+  const visibleHeight = modalContent.clientHeight;
+  
+  // If content is taller than visible area, add more padding at bottom
+  if (contentHeight > visibleHeight) {
+    modalContent.style.paddingBottom = '60px';
+  }
   
   // Fix for potential iOS scrolling issues
   setTimeout(() => {
