@@ -98,6 +98,8 @@ function setupModalScrolling(modal) {
   
   if (!modalContainer || !modalContent) return;
   
+  console.log(`Setting up scrolling for modal ID: ${modal.id}`);
+  
   // Reset any previous settings
   modalContent.style.height = '';
   modalContent.style.maxHeight = '';
@@ -106,7 +108,7 @@ function setupModalScrolling(modal) {
   // Calculate heights
   const viewportHeight = window.innerHeight;
   const headerHeight = modalHeader ? modalHeader.offsetHeight : 0;
-  const paddingAllowance = 40; // For top and bottom padding
+  const paddingAllowance = 60; // Increased for more space
   
   // Set the max-height of the container
   modalContainer.style.maxHeight = `${viewportHeight - paddingAllowance}px`;
@@ -115,11 +117,14 @@ function setupModalScrolling(modal) {
   const contentMaxHeight = viewportHeight - headerHeight - paddingAllowance;
   modalContent.style.maxHeight = `${contentMaxHeight}px`;
   
-  // Ensure the overflow is set for scrolling
+  // ALWAYS force scroll for all modals - this ensures scrollability
   modalContent.style.overflowY = 'auto';
   
   // Add a bit of bottom padding for better appearance
-  modalContent.style.paddingBottom = '20px';
+  modalContent.style.paddingBottom = '30px';
+  
+  // Force the modal content to be scrollable even before checking content height
+  modalContent.classList.add('force-scroll');
   
   // Check for images and set up event listeners for when they load
   const modalImages = modal.querySelectorAll('img');
@@ -127,18 +132,30 @@ function setupModalScrolling(modal) {
     modalImages.forEach(img => {
       if (!img.complete) {
         img.onload = function() {
-          // Just ensure scrolling still works after image loads
-          modalContent.style.overflowY = 'auto';
+          // Force scroll capability after images load
+          console.log(`Image loaded in modal: ${modal.id}`);
+          modalContent.style.overflowY = 'auto'; 
         };
       }
     });
   }
   
-  // Ensure the content has enough height to be scrollable if needed
-  if (modalContent.scrollHeight > contentMaxHeight) {
-    console.log("Modal content needs scrolling");
-    modalContent.style.overflowY = 'scroll';
-  }
+  // Add a slight delay to ensure proper calculation after DOM updates
+  setTimeout(() => {
+    // Ensure the content has enough height to be scrollable if needed
+    if (modalContent.scrollHeight > contentMaxHeight) {
+      console.log(`Modal ${modal.id} content needs scrolling: content height = ${modalContent.scrollHeight}, max height = ${contentMaxHeight}`);
+      // Force scroll mode - never use 'scroll' which can cause width issues, always use 'auto'
+      modalContent.style.overflowY = 'auto';
+    }
+    
+    // Additional force for problematic modals (like EngageAI)
+    if (modal.id === 'engageai-modal') {
+      console.log("Applying special handling for EngageAI modal");
+      modalContent.style.overflowY = 'auto';
+      modalContent.style.maxHeight = `${contentMaxHeight}px`;
+    }
+  }, 50);
 }
 
 function closeModal(modalId) {
