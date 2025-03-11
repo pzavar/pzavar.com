@@ -337,6 +337,20 @@ img {
   padding-right: 10px;
   scrollbar-width: thin;
   scrollbar-color: rgba(59, 130, 246, 0.5) rgba(31, 41, 55, 0.5);
+  max-height: 70vh !important; /* Fallback max-height */
+  -webkit-overflow-scrolling: touch; /* Smoother scrolling on mobile */
+}
+
+/* Special handling for problematic modals */
+.scrollable-content {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+/* Specific fix for EngageAI modal */
+#engageai-modal .modal-content {
+  overflow-y: auto !important;
+  max-height: 65vh !important;
 }
 
 /* Float image styles */
