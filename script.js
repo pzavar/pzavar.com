@@ -115,11 +115,20 @@ function setupModalScrolling(modal) {
   const contentMaxHeight = viewportHeight - headerHeight - paddingAllowance;
   modalContent.style.maxHeight = `${contentMaxHeight}px`;
   
-  // Ensure the overflow is set for scrolling
+  // Ensure the overflow is set for scrolling - FORCE it for all modals
   modalContent.style.overflowY = 'auto';
   
   // Add a bit of bottom padding for better appearance
   modalContent.style.paddingBottom = '20px';
+  
+  // Force scrollability with a small timeout to ensure it's applied after other DOM operations
+  setTimeout(() => {
+    modalContent.style.overflowY = 'auto';
+    // Explicitly set for EngageAI modal which seems to have issues
+    if (modal.id === 'engageai-modal') {
+      modalContent.style.maxHeight = '70vh';
+    }
+  }, 100);
   
   // Check for images and set up event listeners for when they load
   const modalImages = modal.querySelectorAll('img');
@@ -127,7 +136,7 @@ function setupModalScrolling(modal) {
     modalImages.forEach(img => {
       if (!img.complete) {
         img.onload = function() {
-          // Just ensure scrolling still works after image loads
+          // Force scroll capability after images load
           modalContent.style.overflowY = 'auto';
         };
       }

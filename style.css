@@ -337,6 +337,8 @@ img {
   padding-right: 10px;
   scrollbar-width: thin;
   scrollbar-color: rgba(59, 130, 246, 0.5) rgba(31, 41, 55, 0.5);
+  max-height: 70vh !important; /* Ensure maximum height is set */
+  -webkit-overflow-scrolling: touch; /* Smoother scrolling on mobile */
 }
 
 /* Float image styles */
