@@ -1,4 +1,3 @@
-
 // Mobile menu functionality
 document.addEventListener('DOMContentLoaded', function() {
   const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -26,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
       document.body.classList.remove('overflow-hidden');
     });
   });
-  
+
   // Smooth scroll to top when clicking logo on home page
   if (logoLink && window.location.pathname.endsWith('index.html') || 
       window.location.pathname === '/' || 
@@ -78,7 +77,7 @@ function openModal(modalId) {
         document.removeEventListener('keydown', escapeHandler);
       }
     });
-    
+
     // Log modal dimensions - debugging
     console.log("Modal dimensions:", {
       windowHeight: window.innerHeight,
@@ -95,32 +94,32 @@ function setupModalScrolling(modal) {
   const modalContainer = modal.querySelector('.modal-container');
   const modalContent = modal.querySelector('.modal-content');
   const modalHeader = modal.querySelector('.modal-header');
-  
+
   if (!modalContainer || !modalContent) return;
-  
+
   // Reset any previous settings
   modalContent.style.height = '';
   modalContent.style.maxHeight = '';
   modalContainer.style.maxHeight = '';
-  
+
   // Calculate heights
   const viewportHeight = window.innerHeight;
   const headerHeight = modalHeader ? modalHeader.offsetHeight : 0;
   const paddingAllowance = 40; // For top and bottom padding
-  
+
   // Set the max-height of the container
   modalContainer.style.maxHeight = `${viewportHeight - paddingAllowance}px`;
-  
+
   // Calculate and set the content max-height
   const contentMaxHeight = viewportHeight - headerHeight - paddingAllowance;
   modalContent.style.maxHeight = `${contentMaxHeight}px`;
-  
+
   // Ensure the overflow is set for scrolling
   modalContent.style.overflowY = 'auto';
-  
+
   // Add a bit of bottom padding for better appearance
   modalContent.style.paddingBottom = '20px';
-  
+
   // Check for images and set up event listeners for when they load
   const modalImages = modal.querySelectorAll('img');
   if (modalImages.length > 0) {
@@ -133,7 +132,7 @@ function setupModalScrolling(modal) {
       }
     });
   }
-  
+
   // Ensure the content has enough height to be scrollable if needed
   if (modalContent.scrollHeight > contentMaxHeight) {
     console.log("Modal content needs scrolling");
