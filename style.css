@@ -270,8 +270,8 @@ img {
   align-items: center;
   justify-content: center;
   z-index: 100;
-  overflow-y: auto;
-  padding: 20px 0;
+  overflow: hidden;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -308,7 +308,7 @@ img {
   display: flex;
   flex-direction: column;
   z-index: 60;
-  max-height: calc(100vh - 40px);
+  max-height: 90vh;
   overflow: hidden;
 }
 
@@ -337,6 +337,19 @@ img {
   padding-right: 10px;
   scrollbar-width: thin;
   scrollbar-color: rgba(59, 130, 246, 0.5) rgba(31, 41, 55, 0.5);
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Special fix for EngageAI modal and other long content modals */
+#engageai-modal .modal-content,
+#anonnet-modal .modal-content,
+#grubmatch-modal .modal-content,
+#newlogon-modal .modal-content,
+#license-modal .modal-content,
+#refund-modal .modal-content {
+  height: auto;
+  max-height: calc(90vh - 70px);
+  padding-bottom: 30px;
 }
 
 /* Float image styles */

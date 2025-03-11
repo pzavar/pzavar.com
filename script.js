@@ -98,47 +98,38 @@ function setupModalScrolling(modal) {
   
   if (!modalContainer || !modalContent) return;
   
-  // Reset any previous settings
-  modalContent.style.height = '';
-  modalContent.style.maxHeight = '';
-  modalContainer.style.maxHeight = '';
+  // Force scrollable content for all modals
+  modalContainer.style.maxHeight = '90vh';
+  modalContainer.style.display = 'flex';
+  modalContainer.style.flexDirection = 'column';
   
-  // Calculate heights
-  const viewportHeight = window.innerHeight;
+  // Calculate header height
   const headerHeight = modalHeader ? modalHeader.offsetHeight : 0;
-  const paddingAllowance = 40; // For top and bottom padding
   
-  // Set the max-height of the container
-  modalContainer.style.maxHeight = `${viewportHeight - paddingAllowance}px`;
-  
-  // Calculate and set the content max-height
-  const contentMaxHeight = viewportHeight - headerHeight - paddingAllowance;
-  modalContent.style.maxHeight = `${contentMaxHeight}px`;
-  
-  // Ensure the overflow is set for scrolling
+  // Set fixed height for content area with scrolling
+  modalContent.style.maxHeight = `calc(90vh - ${headerHeight}px)`;
+  modalContent.style.height = 'auto';
   modalContent.style.overflowY = 'auto';
+  modalContent.style.overflowX = 'hidden';
   
-  // Add a bit of bottom padding for better appearance
+  // Add bottom padding for better appearance
   modalContent.style.paddingBottom = '20px';
   
-  // Check for images and set up event listeners for when they load
-  const modalImages = modal.querySelectorAll('img');
-  if (modalImages.length > 0) {
-    modalImages.forEach(img => {
-      if (!img.complete) {
-        img.onload = function() {
-          // Just ensure scrolling still works after image loads
-          modalContent.style.overflowY = 'auto';
-        };
-      }
+  // Fix for potential iOS scrolling issues
+  setTimeout(() => {
+    modalContent.style.webkitOverflowScrolling = 'touch';
+    
+    // Force a reflow to ensure scrolling works
+    modalContent.style.display = 'none';
+    modalContent.offsetHeight; // Force reflow
+    modalContent.style.display = 'block';
+    
+    console.log("Modal content setup for scrolling", {
+      modalId: modal.id,
+      contentHeight: modalContent.scrollHeight,
+      availableHeight: modalContent.clientHeight
     });
-  }
-  
-  // Ensure the content has enough height to be scrollable if needed
-  if (modalContent.scrollHeight > contentMaxHeight) {
-    console.log("Modal content needs scrolling");
-    modalContent.style.overflowY = 'scroll';
-  }
+  }, 50);
 }
 
 function closeModal(modalId) {
