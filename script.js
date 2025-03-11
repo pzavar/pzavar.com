@@ -1,4 +1,3 @@
-
 // Mobile menu functionality
 document.addEventListener('DOMContentLoaded', function() {
   const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -26,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
       document.body.classList.remove('overflow-hidden');
     });
   });
-  
+
   // Smooth scroll to top when clicking logo on home page
   if (logoLink && window.location.pathname.endsWith('index.html') || 
       window.location.pathname === '/' || 
@@ -56,7 +55,7 @@ function openModal(modalId) {
     modal.classList.remove('hidden');
 
     // Force reflow before adding active class for animation
-    modal.offsetWidth;
+    void modal.offsetWidth;
 
     // Add active class to trigger animation
     modal.classList.add('active');
@@ -71,6 +70,11 @@ function openModal(modalId) {
     // Set up modal for proper scrolling
     setupModalScrolling(modal);
 
+    // Add a second call after a short delay to fix any race conditions
+    setTimeout(() => {
+      setupModalScrolling(modal);
+    }, 50);
+
     // Add escape key listener
     document.addEventListener('keydown', function escapeHandler(e) {
       if (e.key === 'Escape') {
@@ -78,13 +82,24 @@ function openModal(modalId) {
         document.removeEventListener('keydown', escapeHandler);
       }
     });
-    
+
+    // Add resize handler to adjust modal when window resizes
+    const resizeHandler = () => {
+      setupModalScrolling(modal);
+    };
+
+    window.addEventListener('resize', resizeHandler);
+
+    // Store the handler to remove it later
+    modal.resizeHandler = resizeHandler;
+
     // Log modal dimensions - debugging
     console.log("Modal dimensions:", {
       windowHeight: window.innerHeight,
       modalHeight: modal.offsetHeight,
       containerHeight: modal.querySelector('.modal-container')?.offsetHeight,
-      contentHeight: modalContent?.offsetHeight
+      contentHeight: modalContent?.offsetHeight,
+      contentScrollHeight: modalContent?.scrollHeight
     });
   } else {
     console.error("Modal not found:", modalId);
@@ -95,32 +110,32 @@ function setupModalScrolling(modal) {
   const modalContainer = modal.querySelector('.modal-container');
   const modalContent = modal.querySelector('.modal-content');
   const modalHeader = modal.querySelector('.modal-header');
-  
+
   if (!modalContainer || !modalContent) return;
-  
+
   // Reset any previous settings
   modalContent.style.height = '';
   modalContent.style.maxHeight = '';
   modalContainer.style.maxHeight = '';
-  
+
   // Calculate heights
   const viewportHeight = window.innerHeight;
   const headerHeight = modalHeader ? modalHeader.offsetHeight : 0;
   const paddingAllowance = 40; // For top and bottom padding
-  
+
   // Set the max-height of the container
   modalContainer.style.maxHeight = `${viewportHeight - paddingAllowance}px`;
-  
+
   // Calculate and set the content max-height
   const contentMaxHeight = viewportHeight - headerHeight - paddingAllowance;
   modalContent.style.maxHeight = `${contentMaxHeight}px`;
-  
+
   // Ensure the overflow is set for scrolling
   modalContent.style.overflowY = 'auto';
-  
+
   // Add a bit of bottom padding for better appearance
   modalContent.style.paddingBottom = '20px';
-  
+
   // Check for images and set up event listeners for when they load
   const modalImages = modal.querySelectorAll('img');
   if (modalImages.length > 0) {
@@ -133,7 +148,7 @@ function setupModalScrolling(modal) {
       }
     });
   }
-  
+
   // Ensure the content has enough height to be scrollable if needed
   if (modalContent.scrollHeight > contentMaxHeight) {
     console.log("Modal content needs scrolling");
@@ -146,6 +161,12 @@ function closeModal(modalId) {
   const modal = document.getElementById(modalId);
   if (modal) {
     modal.classList.remove('active');
+
+    // Remove any event listeners we added
+    if (modal.resizeHandler) {
+      window.removeEventListener('resize', modal.resizeHandler);
+      modal.resizeHandler = null;
+    }
 
     // Add a delay before hiding to allow animations to complete
     setTimeout(() => {
