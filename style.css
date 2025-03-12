@@ -617,30 +617,6 @@ img {
 }
 
 .essay-content {
-
-/* Simple mobile fix for horizontal scrolling */
-@media screen and (max-width: 767px) {
-  body, html {
-    overflow-x: hidden;
-    width: 100%;
-    position: relative;
-  }
-  
-  /* Fix container sizing */
-  .container {
-    width: 100%;
-    max-width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  
-  /* Fix image overflow */
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-}
-
   width: 100%;
   font-size: 1.125rem;
   line-height: 1.8;
