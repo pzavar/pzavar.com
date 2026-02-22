@@ -48,6 +48,12 @@ body {
   width: 100%;
   max-width: 100vw;
   position: relative;
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
 }
 
 @keyframes skillAnimation {
@@ -62,24 +68,6 @@ body {
 
 .skill-bar {
   animation: skillAnimation 1.5s ease-out forwards;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-.floating {
-  animation: float 4s ease-in-out infinite;
 }
 
 @keyframes fadeIn {
@@ -119,9 +107,6 @@ body {
 /* Video background effects */
 .video-container {
   overflow: hidden;
-  position: relative;
-  width: 100%;
-  max-width: 100%;
 }
 
 .video-fade,
@@ -467,50 +452,32 @@ img {
 
 /* Essay content styling for better readability */
 
-/* Additional responsive fixes to prevent horizontal scroll */
+/* Targeted responsive fixes for mobile */
 @media (max-width: 768px) {
-  /* Fix for oversized elements */
   .hero-blob {
     width: 150px;
     height: 150px;
   }
-  
-  /* Fix any fixed-width elements */
-  [class*="w-96"], 
-  [class*="w-80"], 
-  [class*="w-72"] {
-    width: 100%;
-    max-width: 100%;
-  }
-  
-  /* Fix section padding */
+
   section {
     padding-left: 15px;
     padding-right: 15px;
   }
-  
-  /* Fix for skill pill overflow */
+
   .skill-pill {
     max-width: 100%;
   }
-  
-  /* Fix timeline items */
+
   .timeline-item {
     padding-left: 2rem;
   }
-  
-  /* Fix any elements with flex that might cause overflow */
-  .flex {
-    flex-wrap: wrap;
-  }
-  
-  /* Fix for any potential overflow in the footer */
+
   footer .flex.space-x-4 {
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
   }
-  
+
   footer .flex.space-x-4 a {
     margin-right: 0 !important;
     margin-left: 0 !important;
@@ -527,66 +494,25 @@ img {
 
 /* Additional fixes for horizontal scrolling on mobile */
 html, body {
-  overflow-x: hidden !important;
+  overflow-x: hidden;
   width: 100%;
   max-width: 100vw;
   position: relative;
 }
 
-/* Force container width on smaller screens */
+/* Targeted container and layout fixes for mobile */
 @media (max-width: 768px) {
   .container {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding-left: 15px !important;
-    padding-right: 15px !important;
-    box-sizing: border-box !important;
+    width: 100%;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
   }
-  
-  /* Fix issues with flexbox items causing overflow */
-  .flex {
-    flex-wrap: wrap !important;
-  }
-  
-  /* Ensure images don't overflow their containers */
-  img {
-    max-width: 100% !important;
-    height: auto !important;
-  }
-  
-  /* Fix any fixed-width elements */
-  [class*="w-"] {
-    width: auto !important;
-    max-width: 100% !important;
-  }
-  
-  /* Ensure the hero section image is constrained */
-  .hero-blob {
-    width: 120px !important;
-    height: 120px !important;
-  }
-  
-  /* Fix any elements that might have absolute positioning */
-  .absolute {
-    max-width: 90vw !important;
-  }
-  
-  /* Make grid layout more mobile-friendly */
-  .grid {
-    display: flex !important;
-    flex-direction: column !important;
-  }
-  
-  /* Fix timeline items that might be too wide */
+
   .timeline-item {
-    width: 100% !important;
-    padding-left: 2rem !important;
-  }
-  
-  /* Fix for nav spacing */
-  .space-x-10 > * {
-    margin-left: 0.5rem !important;
-    margin-right: 0.5rem !important;
+    width: 100%;
+    padding-left: 2rem;
   }
 }
 
@@ -605,12 +531,7 @@ html, body {
   }
 }
 
-/* Fix for any inline styles that might be causing issues */
-[style*="width:"] {
-  max-width: 100% !important;
-}
-
-/* Ensure images don't overflow */
+/* Ensure images don't overflow their containers */
 img {
   max-width: 100%;
   height: auto;
@@ -699,9 +620,9 @@ img {
   transform: scale(1.05);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
-
 .glassmorphism {
-  background-color: #0f172a;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }

@@ -48,47 +48,29 @@ document.addEventListener('DOMContentLoaded', function() {
 // Modal functionality
 // Enhanced modal functionality
 function openModal(modalId) {
-  console.log("Opening modal:", modalId);
   const modal = document.getElementById(modalId);
-  if (modal) {
-    // Prevent body scroll but allow modal to scroll
-    document.body.style.overflow = 'hidden';
-    modal.classList.remove('hidden');
+  if (!modal) return;
 
-    // Force reflow before adding active class for animation
-    modal.offsetWidth;
+  document.body.style.overflow = 'hidden';
+  modal.classList.remove('hidden');
 
-    // Add active class to trigger animation
-    modal.classList.add('active');
+  modal.offsetWidth; // Force reflow before animation
 
-    // Get the modal content element for scrolling
-    const modalContent = modal.querySelector('.modal-content');
-    if (modalContent) {
-      // Reset scroll position to top
-      modalContent.scrollTop = 0;
-    }
+  modal.classList.add('active');
 
-    // Set up modal for proper scrolling
-    setupModalScrolling(modal);
-
-    // Add escape key listener
-    document.addEventListener('keydown', function escapeHandler(e) {
-      if (e.key === 'Escape') {
-        closeModal(modalId);
-        document.removeEventListener('keydown', escapeHandler);
-      }
-    });
-    
-    // Log modal dimensions - debugging
-    console.log("Modal dimensions:", {
-      windowHeight: window.innerHeight,
-      modalHeight: modal.offsetHeight,
-      containerHeight: modal.querySelector('.modal-container')?.offsetHeight,
-      contentHeight: modalContent?.offsetHeight
-    });
-  } else {
-    console.error("Modal not found:", modalId);
+  const modalContent = modal.querySelector('.modal-content');
+  if (modalContent) {
+    modalContent.scrollTop = 0;
   }
+
+  setupModalScrolling(modal);
+
+  document.addEventListener('keydown', function escapeHandler(e) {
+    if (e.key === 'Escape') {
+      closeModal(modalId);
+      document.removeEventListener('keydown', escapeHandler);
+    }
+  });
 }
 
 function setupModalScrolling(modal) {
@@ -133,16 +115,10 @@ function setupModalScrolling(modal) {
     modalContent.offsetHeight; // Force reflow
     modalContent.style.display = 'block';
     
-    console.log("Modal content setup for scrolling", {
-      modalId: modal.id,
-      contentHeight: modalContent.scrollHeight,
-      availableHeight: modalContent.clientHeight
-    });
   }, 50);
 }
 
 function closeModal(modalId) {
-  console.log("Closing modal:", modalId);
   const modal = document.getElementById(modalId);
   if (modal) {
     modal.classList.remove('active');
@@ -193,6 +169,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+// Throttle helper for scroll events
+const throttleScroll = (callback, wait) => {
+  let last = 0;
+  return () => {
+    const now = Date.now();
+    if (now - last >= wait) {
+      callback();
+      last = now;
+    }
+  };
+};
 
 // Animate books on Reading List page when they come into view
 document.addEventListener('DOMContentLoaded', function() {
