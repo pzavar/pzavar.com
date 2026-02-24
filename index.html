@@ -17,7 +17,7 @@
   <meta name="twitter:image" content="https://pzavar.com/headshot.JPG">
   <link rel="icon" href="ph.png" type="image/png">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
@@ -234,17 +234,14 @@
   <!-- Hero Section -->
   <section id="home" class="min-h-screen flex items-center relative overflow-hidden pt-20">
     <div class="video-container absolute top-0 left-0 w-full h-full z-0">
-      <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover opacity-60">
-        <source src="video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <video id="hero-video" autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover opacity-60"></video>
       <div class="video-fade"></div>
     </div>
     <div class="hero-blob"></div>
     <div class="hero-blob"
       style="left: 10%; top: 50%; background: linear-gradient(45deg, rgba(129, 140, 248, 0.1), rgba(56, 189, 248, 0.1));">
     </div>
-    <div class="w-full max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
+    <div class="w-full max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16 z-10 relative">
       <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
         <div class="w-full md:w-3/5 mb-8 md:mb-0">
           <h4 class="text-blue-400 font-medium mb-2">Hi there, I'm</h4>
@@ -254,9 +251,7 @@
           <h2 class="text-lg sm:text-xl md:text-2xl font-light mb-6 text-gray-300">Former Implementation Consultant Manager | UCLA
             CS | UW MSIS</h2>
           <p class="text-base sm:text-lg mb-8 text-gray-100">
-            I am passionate about leveraging technology to solve customer challenges, drawn towards strong product
-            development environments. I have a strong background in software development, with a focus on building
-            scalable, reliable, and maintainable software solutions.
+            Leading delivery of Louisiana's $12B tax platform at Fast Enterprises. Research Assistant at UW Foster building OrgSim, an LLM-powered agentic simulation system. CS from UCLA, MSIS from UW Foster (Top 10%).
           </p>
           <div class="flex flex-wrap gap-4">
             <a href="#about"
@@ -279,10 +274,10 @@
           </div>
         </div>
       </div>
-      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
-        <p class="text-sm text-gray-400 mb-2">Scroll down</p>
-        <div class="mouse-scroll"></div>
-      </div>
+    </div>
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center z-10">
+      <p class="text-sm text-gray-400 mb-2">Scroll down</p>
+      <div class="mouse-scroll"></div>
     </div>
   </section>
 
@@ -302,11 +297,11 @@
               </li>
               <li class="flex items-start">
                 <span class="text-blue-400 mr-3"><i class="fas fa-briefcase"></i></span>
-                <span>Former Implementation Consultant Team Manager @ FAST Enterprises</span>
+                <span>Implementation Consultant Manager @FAST Enterprises</span>
               </li>
               <li class="flex items-start">
                 <span class="text-blue-400 mr-3"><i class="fas fa-graduation-cap"></i></span>
-                <span>M.S. in Information Systems @ University of Washington, Michael G. Foster School of Business
+                <span>M.S. in Information Systems @University of Washington, Michael G. Foster School of Business
                   '25</span>
               </li>
               <li class="flex items-start">
@@ -339,6 +334,14 @@
             <a href="https://www.linkedin.com/in/pzavar/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"
               class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-800 text-white hover:bg-blue-600 transition-colors duration-300">
               <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/pzavar" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"
+              class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-800 text-white hover:bg-gray-600 transition-colors duration-300">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://x.com/phzavar" target="_blank" rel="noopener noreferrer" aria-label="X profile"
+              class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-800 text-white hover:bg-gray-600 transition-colors duration-300">
+              <i class="fab fa-x-twitter"></i>
             </a>
             <a href="mailto:parham.zavar@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Send email"
               class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-800 text-white hover:bg-red-500 transition-colors duration-300">
@@ -1029,10 +1032,7 @@
   <!-- Education Section -->
   <section id="education" class="py-24 gradient-bg relative overflow-hidden">
     <div class="video-container absolute top-0 left-0 w-full h-full z-0">
-      <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover opacity-60">
-        <source src="video1.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <video id="edu-video" autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover opacity-60"></video>
       <div class="video-fade"></div>
     </div>
     <div class="container mx-auto px-6 relative z-10">
@@ -1251,7 +1251,7 @@
 
       <!-- Left Side Image -->
       <div
-        class="hidden md:block absolute top-1/2 opacity-85"
+        class="hidden md:block absolute top-1/2 opacity-75"
         style="left: 25%; transform: translate(-100%, -50%); max-height: 420px;">
         <div class="floating" style="height: 100%;">
           <img loading="lazy" src="ocean.png" alt="Ocean"
@@ -1261,7 +1261,7 @@
 
       <!-- Right Side Image -->
       <div
-        class="hidden md:block absolute top-1/2 opacity-85"
+        class="hidden md:block absolute top-1/2 opacity-75"
         style="right: 25%; transform: translate(100%, -50%); max-height: 420px;">
         <div class="floating" style="height: 100%; animation-delay: 1s;">
           <img loading="lazy" src="desert.png" alt="Desert"
@@ -1278,20 +1278,19 @@
               <a href="mailto:parham.zavar@gmail.com" target="_blank" rel="noopener noreferrer"
                 class="hover:text-blue-400 transition-colors">parham.zavar@gmail.com</a>
             </li>
-            <li class="flex items-start">
-              <span class="text-blue-400 mr-4 mt-1"><i class="fab fa-github"></i></span>
-              <a href="https://github.com/pzavar" target="_blank" rel="noopener noreferrer"
-                class="hover:text-blue-400 transition-colors">github.com/pzavar</a>
-            </li>
           </ul>
           <div class="mt-8 flex justify-center space-x-4">
             <a href="https://www.linkedin.com/in/pzavar/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"
               class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-700 text-white hover:bg-blue-600 transition-colors duration-300">
               <i class="fab fa-linkedin-in"></i>
             </a>
-            <a href="https://x.com/phzavar" target="_blank" rel="noopener noreferrer" aria-label="Twitter profile"
-              class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-700 text-white hover:bg-blue-400 transition-colors duration-300">
-              <i class="fab fa-twitter"></i>
+            <a href="https://github.com/pzavar" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"
+              class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-700 text-white hover:bg-gray-600 transition-colors duration-300">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://x.com/phzavar" target="_blank" rel="noopener noreferrer" aria-label="X profile"
+              class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-700 text-white hover:bg-gray-600 transition-colors duration-300">
+              <i class="fab fa-x-twitter"></i>
             </a>
           </div>
         </div>

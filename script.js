@@ -1,4 +1,41 @@
 
+// Lazy-load hero video after DOM is ready so page content renders first
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(function() {
+    const heroVideo = document.getElementById('hero-video');
+    if (heroVideo) {
+      const source = document.createElement('source');
+      source.src = 'video.mp4';
+      source.type = 'video/mp4';
+      heroVideo.appendChild(source);
+      heroVideo.load();
+    }
+  }, 200);
+});
+
+// Lazy-load education section video only when user scrolls near it
+document.addEventListener('DOMContentLoaded', function() {
+  const educationSection = document.getElementById('education');
+  if (educationSection && 'IntersectionObserver' in window) {
+    const eduVideoObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          const eduVideo = document.getElementById('edu-video');
+          if (eduVideo && eduVideo.children.length === 0) {
+            const source = document.createElement('source');
+            source.src = 'video1.mp4';
+            source.type = 'video/mp4';
+            eduVideo.appendChild(source);
+            eduVideo.load();
+          }
+          eduVideoObserver.disconnect();
+        }
+      });
+    }, { rootMargin: '300px 0px' });
+    eduVideoObserver.observe(educationSection);
+  }
+});
+
 // Mobile menu functionality
 document.addEventListener('DOMContentLoaded', function() {
   const mobileMenuButton = document.getElementById('mobile-menu-button');
