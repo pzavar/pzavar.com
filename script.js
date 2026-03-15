@@ -9,6 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
       source.type = 'video/mp4';
       heroVideo.appendChild(source);
       heroVideo.load();
+      heroVideo.addEventListener('canplay', function() {
+        const p = heroVideo.play();
+        if (p !== undefined) p.catch(function() {});
+      }, { once: true });
     }
   }, 200);
 });
@@ -27,6 +31,10 @@ document.addEventListener('DOMContentLoaded', function() {
             source.type = 'video/mp4';
             eduVideo.appendChild(source);
             eduVideo.load();
+            eduVideo.addEventListener('canplay', function() {
+              const p = eduVideo.play();
+              if (p !== undefined) p.catch(function() {});
+            }, { once: true });
           }
           eduVideoObserver.disconnect();
         }
