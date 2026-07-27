@@ -70,6 +70,17 @@ h1, h2, h3, h4, h5, h6 {
   animation: skillAnimation 1.5s ease-out forwards;
 }
 
+.skill-pill {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  cursor: default;
+}
+
+.skill-pill:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.12);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.35);
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
