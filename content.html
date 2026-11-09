@@ -20,7 +20,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <style></style>
 </head>
 
 <body class="overflow-x-hidden">
@@ -62,378 +61,293 @@
     </div>
   </header>
 
-  <!-- Reading List Section -->
-  <section class="pt-32 pb-24 gradient-bg min-h-screen">
-    <div class="container mx-auto px-6">
-      <h2 class="text-4xl font-bold mb-2 text-center">My <span class="gradient-text">Reading List</span></h2>
-      <div class="h-1 w-20 bg-gradient-to-r from-blue-400 to-indigo-500 mx-auto mb-16"></div>
+  <main>
+    <section class="v2-hero compact">
+      <div class="wrap">
+        <p class="eyebrow">Reading list · 29 books</p>
+        <h1 class="page-title">Books that shaped my thinking</h1>
+        <p class="page-lede">Business, technology, history, philosophy, and a few great stories.</p>
+      </div>
+    </section>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        <!-- Six Habits of Highly Effective Sales Engineers -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img loading="lazy" src="6habits.jpeg" alt="Six Habits of Highly Effective Sales Engineers" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6 bg-gradient-to-b from-gray-800 to-gray-900">
-            <h3 class="text-xl font-bold mb-2 text-white">Six Habits of Highly Effective Sales Engineers</h3>
-            <p class="text-blue-300 mb-3">Chris White</p>
-            <p class="text-sm text-white">A guide to improving technical sales skills and performance.</p>
-          </div>
-        </div>
+    <section class="v2-section" style="padding-top:48px">
+      <div class="wrap">
+        <div class="books">
+          <article class="card book-card">
+            <div class="book-cover"><img loading="lazy" src="6habits.jpeg" alt="Six Habits of Highly Effective Sales Engineers"></div>
+            <div class="book-info">
+              <h3>Six Habits of Highly Effective Sales Engineers</h3>
+              <p class="book-author">Chris White</p>
+              <p class="book-desc">A guide to improving technical sales skills and performance.</p>
+            </div>
+          </article>
 
-        <!-- Nihilism -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img loading="lazy" src="nihilism.jpg" alt="Nihilism" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6 bg-gradient-to-b from-gray-800 to-gray-900">
-            <h3 class="text-xl font-bold mb-2 text-white">Nihilism</h3>
-            <p class="text-blue-300 mb-3">Nolen Gertz</p>
-            <p class="text-sm text-white">A philosophical exploration of nihilism and its implications in contemporary culture.</p>
-          </div>
-        </div>
-        
-        
-        
-        <!-- Steve Jobs -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img loading="lazy" src="books/stevejobs.jpg" alt="Steve Jobs" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6 bg-gradient-to-b from-gray-800 to-gray-900">
-            <h3 class="text-xl font-bold mb-2 text-white">Steve Jobs</h3>
-            <p class="text-blue-300 mb-3">Walter Isaacson</p>
-            <p class="text-sm text-white">The exclusive biography of the innovative genius and controversial Apple founder.</p>
-          </div>
-        </div>
+          <article class="card book-card">
+            <div class="book-cover"><img loading="lazy" src="nihilism.jpg" alt="Nihilism"></div>
+            <div class="book-info">
+              <h3>Nihilism</h3>
+              <p class="book-author">Nolen Gertz</p>
+              <p class="book-desc">A philosophical exploration of nihilism and its implications in contemporary culture.</p>
+            </div>
+          </article>
 
-        <!-- The Signal and the Noise -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img loading="lazy" src="books/signal.jpg" alt="The Signal and the Noise" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6 bg-gradient-to-b from-gray-800 to-gray-900">
-            <h3 class="text-xl font-bold mb-2 text-white">The Signal and the Noise</h3>
-            <p class="text-blue-300 mb-3">Nate Silver</p>
-            <p class="text-sm text-white">Why so many predictions fail—but some don't.</p>
-          </div>
-        </div>
+          <article class="card book-card">
+            <div class="book-cover"><img loading="lazy" src="books/stevejobs.jpg" alt="Steve Jobs"></div>
+            <div class="book-info">
+              <h3>Steve Jobs</h3>
+              <p class="book-author">Walter Isaacson</p>
+              <p class="book-desc">The exclusive biography of the innovative genius and controversial Apple founder.</p>
+            </div>
+          </article>
 
-        <!-- How to Win Friends and Influence People -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img loading="lazy" src="books/winfriends.jpg" alt="How to Win Friends and Influence People" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">How to Win Friends and Influence People</h3>
-            <p class="text-gray-400 mb-3">Dale Carnegie</p>
-            <p class="text-sm text-gray-300">The timeless guide to building relationships and influencing others.</p>
-          </div>
-        </div>
+          <article class="card book-card">
+            <div class="book-cover"><img loading="lazy" src="books/signal.jpg" alt="The Signal and the Noise"></div>
+            <div class="book-info">
+              <h3>The Signal and the Noise</h3>
+              <p class="book-author">Nate Silver</p>
+              <p class="book-desc">Why so many predictions fail—but some don't.</p>
+            </div>
+          </article>
 
-        <!-- Why We Sleep -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img loading="lazy" src="books/sleep.jpg" alt="Why We Sleep" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Why We Sleep</h3>
-            <p class="text-gray-400 mb-3">Matthew Walker</p>
-            <p class="text-sm text-gray-300">Unlocking the power of sleep and dreams.</p>
-          </div>
-        </div>
+          <article class="card book-card">
+            <div class="book-cover"><img loading="lazy" src="books/winfriends.jpg" alt="How to Win Friends and Influence People"></div>
+            <div class="book-info">
+              <h3>How to Win Friends and Influence People</h3>
+              <p class="book-author">Dale Carnegie</p>
+              <p class="book-desc">The timeless guide to building relationships and influencing others.</p>
+            </div>
+          </article>
 
-        <!-- Meditations -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img loading="lazy" src="books/meditations.jpg" alt="Meditations" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Meditations</h3>
-            <p class="text-gray-400 mb-3">Marcus Aurelius</p>
-            <p class="text-sm text-gray-300">Personal writings of the Roman Emperor on Stoic philosophy and self-improvement.</p>
-          </div>
-        </div>
+          <article class="card book-card">
+            <div class="book-cover"><img loading="lazy" src="books/sleep.jpg" alt="Why We Sleep"></div>
+            <div class="book-info">
+              <h3>Why We Sleep</h3>
+              <p class="book-author">Matthew Walker</p>
+              <p class="book-desc">Unlocking the power of sleep and dreams.</p>
+            </div>
+          </article>
 
-        <!-- Shoe Dog -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img loading="lazy" src="books/nike.jpg" alt="Shoe Dog" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Shoe Dog</h3>
-            <p class="text-gray-400 mb-3">Phil Knight</p>
-            <p class="text-sm text-gray-300">A memoir by the creator of Nike about creating an iconic brand.</p>
-          </div>
-        </div>
+          <article class="card book-card">
+            <div class="book-cover"><img loading="lazy" src="books/meditations.jpg" alt="Meditations"></div>
+            <div class="book-info">
+              <h3>Meditations</h3>
+              <p class="book-author">Marcus Aurelius</p>
+              <p class="book-desc">Personal writings of the Roman Emperor on Stoic philosophy and self-improvement.</p>
+            </div>
+          </article>
 
-        <!-- Breathe -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img loading="lazy" src="books/breath.jpeg" alt="Breathe" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Breathe</h3>
-            <p class="text-gray-400 mb-3">James Nestor</p>
-            <p class="text-sm text-gray-300">A New Science of a Lost Art - exploring how the way we breathe affects our health.</p>
-          </div>
-        </div>
+          <article class="card book-card">
+            <div class="book-cover"><img loading="lazy" src="books/nike.jpg" alt="Shoe Dog"></div>
+            <div class="book-info">
+              <h3>Shoe Dog</h3>
+              <p class="book-author">Phil Knight</p>
+              <p class="book-desc">A memoir by the creator of Nike about creating an iconic brand.</p>
+            </div>
+          </article>
 
-        <!-- The Defining Decade -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img loading="lazy" src="books/definingdecade.jpg" alt="The Defining Decade" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">The Defining Decade</h3>
-            <p class="text-gray-400 mb-3">Meg Jay</p>
-            <p class="text-sm text-gray-300">Why your twenties matter—and how to make the most of them now.</p>
-          </div>
-        </div>
+          <article class="card book-card">
+            <div class="book-cover"><img loading="lazy" src="books/breath.jpeg" alt="Breathe"></div>
+            <div class="book-info">
+              <h3>Breathe</h3>
+              <p class="book-author">James Nestor</p>
+              <p class="book-desc">A New Science of a Lost Art - exploring how the way we breathe affects our health.</p>
+            </div>
+          </article>
 
-        <!-- The Lean Product Playbook -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img loading="lazy" src="books/lean.jpg" alt="The Lean Product Playbook" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">The Lean Product Playbook</h3>
-            <p class="text-gray-400 mb-3">Dan Olsen</p>
-            <p class="text-sm text-gray-300">How to Innovate with Minimum Viable Products and Rapid Customer Feedback.</p>
-          </div>
-        </div>
+          <article class="card book-card">
+            <div class="book-cover"><img loading="lazy" src="books/definingdecade.jpg" alt="The Defining Decade"></div>
+            <div class="book-info">
+              <h3>The Defining Decade</h3>
+              <p class="book-author">Meg Jay</p>
+              <p class="book-desc">Why your twenties matter—and how to make the most of them now.</p>
+            </div>
+          </article>
 
-        <!-- Animal Farm -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img loading="lazy" src="books/animalfarm.jpg" alt="Animal Farm" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Animal Farm</h3>
-            <p class="text-gray-400 mb-3">George Orwell</p>
-            <p class="text-sm text-gray-300">An allegorical novella about the Russian Revolution and the rise of Stalinism.</p>
-          </div>
-        </div>
+          <article class="card book-card">
+            <div class="book-cover"><img loading="lazy" src="books/lean.jpg" alt="The Lean Product Playbook"></div>
+            <div class="book-info">
+              <h3>The Lean Product Playbook</h3>
+              <p class="book-author">Dan Olsen</p>
+              <p class="book-desc">How to Innovate with Minimum Viable Products and Rapid Customer Feedback.</p>
+            </div>
+          </article>
 
-        <!-- The Art of War -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img loading="lazy" src="books/artofwar.jpg" alt="The Art of War" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">The Art of War</h3>
-            <p class="text-gray-400 mb-3">Sun Tzu</p>
-            <p class="text-sm text-gray-300">An ancient Chinese military treatise that has influenced both Eastern and Western military thinking.</p>
-          </div>
-        </div>
+          <article class="card book-card">
+            <div class="book-cover"><img loading="lazy" src="books/animalfarm.jpg" alt="Animal Farm"></div>
+            <div class="book-info">
+              <h3>Animal Farm</h3>
+              <p class="book-author">George Orwell</p>
+              <p class="book-desc">An allegorical novella about the Russian Revolution and the rise of Stalinism.</p>
+            </div>
+          </article>
 
-        <!-- The Subtle Art of Not Giving a F*ck -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img loading="lazy" src="books/subtle.jpg" alt="The Subtle Art of Not Giving a F*ck" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">The Subtle Art of Not Giving a F*ck</h3>
-            <p class="text-gray-400 mb-3">Mark Manson</p>
-            <p class="text-sm text-gray-300">A counterintuitive approach to living a good life by focusing on what truly matters.</p>
-          </div>
-        </div>
+          <article class="card book-card">
+            <div class="book-cover"><img loading="lazy" src="books/artofwar.jpg" alt="The Art of War"></div>
+            <div class="book-info">
+              <h3>The Art of War</h3>
+              <p class="book-author">Sun Tzu</p>
+              <p class="book-desc">An ancient Chinese military treatise that has influenced both Eastern and Western military thinking.</p>
+            </div>
+          </article>
 
-        <!-- A Short History of Nearly Everything -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img loading="lazy" src="books/shorthistory.jpg" alt="A Short History of Nearly Everything" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">A Short History of Nearly Everything</h3>
-            <p class="text-gray-400 mb-3">Bill Bryson</p>
-            <p class="text-sm text-gray-300">A humorous and accessible journey through science, from the Big Bang to the rise of civilization.</p>
-          </div>
-        </div>
+          <article class="card book-card">
+            <div class="book-cover"><img loading="lazy" src="books/subtle.jpg" alt="The Subtle Art of Not Giving a F*ck"></div>
+            <div class="book-info">
+              <h3>The Subtle Art of Not Giving a F*ck</h3>
+              <p class="book-author">Mark Manson</p>
+              <p class="book-desc">A counterintuitive approach to living a good life by focusing on what truly matters.</p>
+            </div>
+          </article>
 
-        <!-- Einstein -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img loading="lazy" src="books/einstein.jpg" alt="Einstein" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Einstein</h3>
-            <p class="text-gray-400 mb-3">Walter Isaacson</p>
-            <p class="text-sm text-gray-300">The life and universe of the world's most famous scientist.</p>
-          </div>
-        </div>
+          <article class="card book-card">
+            <div class="book-cover"><img loading="lazy" src="books/shorthistory.jpg" alt="A Short History of Nearly Everything"></div>
+            <div class="book-info">
+              <h3>A Short History of Nearly Everything</h3>
+              <p class="book-author">Bill Bryson</p>
+              <p class="book-desc">A humorous and accessible journey through science, from the Big Bang to the rise of civilization.</p>
+            </div>
+          </article>
 
-        <!-- George Washington -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img loading="lazy" src="books/washington.jpeg" alt="George Washington" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">George Washington</h3>
-            <p class="text-gray-400 mb-3">David O. Stewart</p>
-            <p class="text-sm text-gray-300">The political rise of America's founding father.</p>
-          </div>
-        </div>
+          <article class="card book-card">
+            <div class="book-cover"><img loading="lazy" src="books/einstein.jpg" alt="Einstein"></div>
+            <div class="book-info">
+              <h3>Einstein</h3>
+              <p class="book-author">Walter Isaacson</p>
+              <p class="book-desc">The life and universe of the world's most famous scientist.</p>
+            </div>
+          </article>
 
-        <!-- How to Talk to Anyone -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img loading="lazy" src="howtotalktoanyone.jpg" alt="How to Talk to Anyone" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6 bg-gradient-to-b from-gray-800 to-gray-900">
-            <h3 class="text-xl font-bold mb-2 text-white">How to Talk to Anyone</h3>
-            <p class="text-blue-300 mb-3">Leil Lowndes</p>
-            <p class="text-sm text-white">92 little tricks for big success in relationships. A guide to effective social skills and communication.</p>
-          </div>
-        </div>
+          <article class="card book-card">
+            <div class="book-cover"><img loading="lazy" src="books/washington.jpeg" alt="George Washington"></div>
+            <div class="book-info">
+              <h3>George Washington</h3>
+              <p class="book-author">David O. Stewart</p>
+              <p class="book-desc">The political rise of America's founding father.</p>
+            </div>
+          </article>
 
-        <!-- Outliers -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img loading="lazy" src="books/outliers.jpg" alt="Outliers" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Outliers</h3>
-            <p class="text-gray-400 mb-3">Malcolm Gladwell</p>
-            <p class="text-sm text-gray-300">The Story of Success - examining the factors that contribute to high levels of success.</p>
-          </div>
-        </div>
+          <article class="card book-card">
+            <div class="book-cover"><img loading="lazy" src="howtotalktoanyone.jpg" alt="How to Talk to Anyone"></div>
+            <div class="book-info">
+              <h3>How to Talk to Anyone</h3>
+              <p class="book-author">Leil Lowndes</p>
+              <p class="book-desc">92 little tricks for big success in relationships. A guide to effective social skills and communication.</p>
+            </div>
+          </article>
 
-        <!-- Zero to One -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img loading="lazy" src="books/zero.jpg" alt="Zero to One" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Zero to One</h3>
-            <p class="text-gray-400 mb-3">Peter Thiel</p>
-            <p class="text-sm text-gray-300">Notes on startups, or how to build the future.</p>
-          </div>
-        </div>
+          <article class="card book-card">
+            <div class="book-cover"><img loading="lazy" src="books/outliers.jpg" alt="Outliers"></div>
+            <div class="book-info">
+              <h3>Outliers</h3>
+              <p class="book-author">Malcolm Gladwell</p>
+              <p class="book-desc">The Story of Success - examining the factors that contribute to high levels of success.</p>
+            </div>
+          </article>
 
-        <!-- The Alchemist -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img loading="lazy" src="books/alchemist.jpg" alt="The Alchemist" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">The Alchemist</h3>
-            <p class="text-gray-400 mb-3">Paulo Coelho</p>
-            <p class="text-sm text-gray-300">A philosophical novel about following your dreams and listening to your heart.</p>
-          </div>
-        </div>
+          <article class="card book-card">
+            <div class="book-cover"><img loading="lazy" src="books/zero.jpg" alt="Zero to One"></div>
+            <div class="book-info">
+              <h3>Zero to One</h3>
+              <p class="book-author">Peter Thiel</p>
+              <p class="book-desc">Notes on startups, or how to build the future.</p>
+            </div>
+          </article>
 
-        <!-- Sherlock Holmes -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img loading="lazy" src="books/sherlock.jpg" alt="Sherlock Holmes" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Sherlock Holmes</h3>
-            <p class="text-gray-400 mb-3">Arthur Conan Doyle</p>
-            <p class="text-sm text-gray-300">Classic detective stories featuring the brilliant and eccentric detective Sherlock Holmes.</p>
-          </div>
-        </div>
+          <article class="card book-card">
+            <div class="book-cover"><img loading="lazy" src="books/alchemist.jpg" alt="The Alchemist"></div>
+            <div class="book-info">
+              <h3>The Alchemist</h3>
+              <p class="book-author">Paulo Coelho</p>
+              <p class="book-desc">A philosophical novel about following your dreams and listening to your heart.</p>
+            </div>
+          </article>
 
-        <!-- Red Rising -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img loading="lazy" src="books/redrising.jpg" alt="Red Rising" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Red Rising</h3>
-            <p class="text-gray-400 mb-3">Pierce Brown</p>
-            <p class="text-sm text-gray-300">On a color-caste Mars, a lowborn miner infiltrates the ruling Golds to bring their Society down from within.</p>
-          </div>
-        </div>
+          <article class="card book-card">
+            <div class="book-cover"><img loading="lazy" src="books/sherlock.jpg" alt="Sherlock Holmes"></div>
+            <div class="book-info">
+              <h3>Sherlock Holmes</h3>
+              <p class="book-author">Arthur Conan Doyle</p>
+              <p class="book-desc">Classic detective stories featuring the brilliant and eccentric detective Sherlock Holmes.</p>
+            </div>
+          </article>
 
-        <!-- Golden Son -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img loading="lazy" src="books/goldenson.jpg" alt="Golden Son" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Golden Son</h3>
-            <p class="text-gray-400 mb-3">Pierce Brown</p>
-            <p class="text-sm text-gray-300">Darrow climbs higher in the Society's ranks as the rebellion he serves pushes toward open war.</p>
-          </div>
-        </div>
+          <article class="card book-card">
+            <div class="book-cover"><img loading="lazy" src="books/redrising.jpg" alt="Red Rising"></div>
+            <div class="book-info">
+              <h3>Red Rising</h3>
+              <p class="book-author">Pierce Brown</p>
+              <p class="book-desc">On a color-caste Mars, a lowborn miner infiltrates the ruling Golds to bring their Society down from within.</p>
+            </div>
+          </article>
 
-        <!-- Morning Star -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img loading="lazy" src="books/morningstar.jpg" alt="Morning Star" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Morning Star</h3>
-            <p class="text-gray-400 mb-3">Pierce Brown</p>
-            <p class="text-sm text-gray-300">The conclusion of the original Red Rising trilogy, as Darrow leads the revolution against the Society.</p>
-          </div>
-        </div>
+          <article class="card book-card">
+            <div class="book-cover"><img loading="lazy" src="books/goldenson.jpg" alt="Golden Son"></div>
+            <div class="book-info">
+              <h3>Golden Son</h3>
+              <p class="book-author">Pierce Brown</p>
+              <p class="book-desc">Darrow climbs higher in the Society's ranks as the rebellion he serves pushes toward open war.</p>
+            </div>
+          </article>
 
-        <!-- Iron Gold -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img loading="lazy" src="books/irongold.jpg" alt="Iron Gold" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Iron Gold</h3>
-            <p class="text-gray-400 mb-3">Pierce Brown</p>
-            <p class="text-sm text-gray-300">Ten years after the revolution, Darrow and a new cast of characters face the cost of the war that broke the Society.</p>
-          </div>
-        </div>
+          <article class="card book-card">
+            <div class="book-cover"><img loading="lazy" src="books/morningstar.jpg" alt="Morning Star"></div>
+            <div class="book-info">
+              <h3>Morning Star</h3>
+              <p class="book-author">Pierce Brown</p>
+              <p class="book-desc">The conclusion of the original Red Rising trilogy, as Darrow leads the revolution against the Society.</p>
+            </div>
+          </article>
 
-        <!-- The Fellowship of the Ring -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img loading="lazy" src="books/fellowship.jpg" alt="The Fellowship of the Ring" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">The Fellowship of the Ring</h3>
-            <p class="text-gray-400 mb-3">J.R.R. Tolkien</p>
-            <p class="text-sm text-gray-300">Frodo and the Fellowship set out from the Shire on a quest to destroy the One Ring.</p>
-          </div>
-        </div>
+          <article class="card book-card">
+            <div class="book-cover"><img loading="lazy" src="books/irongold.jpg" alt="Iron Gold"></div>
+            <div class="book-info">
+              <h3>Iron Gold</h3>
+              <p class="book-author">Pierce Brown</p>
+              <p class="book-desc">Ten years after the revolution, Darrow and a new cast of characters face the cost of the war that broke the Society.</p>
+            </div>
+          </article>
 
-        <!-- The Two Towers -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img loading="lazy" src="books/twotowers.jpg" alt="The Two Towers" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">The Two Towers</h3>
-            <p class="text-gray-400 mb-3">J.R.R. Tolkien</p>
-            <p class="text-sm text-gray-300">With the Fellowship broken, its members fight separate battles as Frodo and Sam press on toward Mordor.</p>
-          </div>
-        </div>
+          <article class="card book-card">
+            <div class="book-cover"><img loading="lazy" src="books/fellowship.jpg" alt="The Fellowship of the Ring"></div>
+            <div class="book-info">
+              <h3>The Fellowship of the Ring</h3>
+              <p class="book-author">J.R.R. Tolkien</p>
+              <p class="book-desc">Frodo and the Fellowship set out from the Shire on a quest to destroy the One Ring.</p>
+            </div>
+          </article>
 
-        <!-- The Return of the King -->
-        <div class="book-card bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-          <div class="h-64 overflow-hidden">
-            <img loading="lazy" src="books/returnoftheking.jpg" alt="The Return of the King" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">The Return of the King</h3>
-            <p class="text-gray-400 mb-3">J.R.R. Tolkien</p>
-            <p class="text-sm text-gray-300">The War of the Ring reaches its end as Frodo and Sam make their final climb to Mount Doom.</p>
-          </div>
+          <article class="card book-card">
+            <div class="book-cover"><img loading="lazy" src="books/twotowers.jpg" alt="The Two Towers"></div>
+            <div class="book-info">
+              <h3>The Two Towers</h3>
+              <p class="book-author">J.R.R. Tolkien</p>
+              <p class="book-desc">With the Fellowship broken, its members fight separate battles as Frodo and Sam press on toward Mordor.</p>
+            </div>
+          </article>
+
+          <article class="card book-card">
+            <div class="book-cover"><img loading="lazy" src="books/returnoftheking.jpg" alt="The Return of the King"></div>
+            <div class="book-info">
+              <h3>The Return of the King</h3>
+              <p class="book-author">J.R.R. Tolkien</p>
+              <p class="book-desc">The War of the Ring reaches its end as Frodo and Sam make their final climb to Mount Doom.</p>
+            </div>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer class="py-8 bg-gray-900">
-    <div class="container mx-auto px-6">
-      <div class="flex flex-col md:flex-row justify-between items-center">
-        <p class="text-gray-400 mb-4 md:mb-0">© 2026 Parham Hajzavar. All rights reserved.</p>
-        <div class="flex space-x-4">
-          <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
-          <a href="demos.html" class="text-gray-400 hover:text-white transition-colors">Demos</a>
-          <a href="essays.html" class="text-gray-400 hover:text-white transition-colors">Writing</a>
-          <a href="content.html" class="text-gray-400 hover:text-white transition-colors">Reading List</a>
-          <a href="index.html#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
-        </div>
+  <footer class="py-8" style="border-top:1px solid var(--border)">
+    <div class="wrap flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="faint text-sm">© 2026 Parham Hajzavar</p>
+      <div class="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm">
+        <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
+        <a href="demos.html" class="text-gray-400 hover:text-white transition-colors">Demos</a>
+        <a href="essays.html" class="text-gray-400 hover:text-white transition-colors">Writing</a>
+        <a href="content.html" class="text-gray-400 hover:text-white transition-colors">Reading List</a>
+        <a href="index.html#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
       </div>
     </div>
   </footer>

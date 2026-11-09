@@ -21,34 +21,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <style>
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Inter', system-ui, sans-serif;
-    }
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-    }
-    .prose {
-      max-width: 65ch;
-      color: #f8fafc;
-    }
-    .prose h4 {
-      color: #38bdf8;
-      margin-top: 1.5rem;
-      margin-bottom: 0.75rem;
-    }
-    .prose p {
-      margin-bottom: 1rem;
-    }
-    .prose ul {
-      margin-bottom: 1rem;
-      list-style-type: disc;
-      padding-left: 1.25rem;
-    }
-    .prose li {
-      margin-bottom: 0.5rem;
-    }
-  </style>
 </head>
 
 <body>
@@ -90,24 +62,21 @@
     </div>
   </header>
 
-  <!-- Essay Content -->
-  <section class="pt-32 pb-24 gradient-bg min-h-screen">
-    <div class="container mx-auto px-6">
-      <div class="max-w-4xl mx-auto">
-        <!-- Essay Header -->
-        <div class="mb-10">
-          <a href="essays.html" class="inline-flex items-center text-blue-400 hover:text-blue-300 mb-6">
-            <i class="fas fa-arrow-left mr-2"></i> Back to Essays
-          </a>
-          <h1 class="text-4xl md:text-5xl font-bold mb-4">Lessons from Implementing Government Digital Services</h1>
-          <div class="flex items-center text-gray-400 mb-8">
-            <span class="mr-4"><i class="far fa-calendar-alt mr-2"></i> May 22, 2024</span>
-            <span><i class="far fa-clock mr-2"></i> 6 min read</span>
-          </div>
+  <main>
+    <section class="v2-hero compact">
+      <div class="wrap">
+        <div class="article-col">
+          <a href="essays.html" class="back-link"><i class="fas fa-arrow-left"></i>All writing</a>
+          <h1 class="article-title mt-8">Lessons from Implementing Government Digital Services</h1>
+          <div class="article-meta"><span>May 22, 2024</span><span>·</span><span>6 min read</span></div>
         </div>
-        
-        <!-- Essay Content -->
-        <div class="prose prose-lg prose-invert max-w-none bg-gray-800 p-8 rounded-xl shadow-xl">
+      </div>
+    </section>
+
+    <section class="v2-section" style="padding-top:48px">
+      <div class="wrap">
+        <article class="article-col article-body">
+
           <p class="mb-4">
             My experience working on Iowa's GovConnect platform taught me valuable lessons about digital transformation in the public sector. In this essay, I share insights on overcoming bureaucratic challenges and delivering citizen-centric digital services.
           </p>
@@ -140,30 +109,24 @@
           <p class="mb-4">
             The future of government digital services lies in creating seamless, integrated experiences that work across agencies. Citizens don't think in terms of different departments—they just need to accomplish tasks. The next generation of government platforms will need to break down these traditional silos to truly put citizens at the center.
           </p>
-        </div>
-        
-        <!-- Back to Essays button -->
-        <div class="mt-10 text-center">
-          <a href="essays.html" class="inline-block px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-md transition-all">
-            <i class="fas fa-arrow-left mr-2"></i> Back to Essays
-          </a>
+        </article>
+        <div class="article-col article-end">
+          <a href="essays.html" class="btn btn-ghost"><i class="fas fa-arrow-left"></i>Back to all writing</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer class="py-8 bg-gray-900">
-    <div class="container mx-auto px-6">
-      <div class="flex flex-col md:flex-row justify-between items-center">
-        <p class="text-gray-400 mb-4 md:mb-0">© 2026 Parham Hajzavar. All rights reserved.</p>
-        <div class="flex space-x-4">
-          <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
-          <a href="demos.html" class="text-gray-400 hover:text-white transition-colors">Demos</a>
-          <a href="essays.html" class="text-gray-400 hover:text-white transition-colors">Writing</a>
-          <a href="content.html" class="text-gray-400 hover:text-white transition-colors">Reading List</a>
-          <a href="index.html#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
-        </div>
+  <footer class="py-8" style="border-top:1px solid var(--border)">
+    <div class="wrap flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="faint text-sm">© 2026 Parham Hajzavar</p>
+      <div class="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm">
+        <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
+        <a href="demos.html" class="text-gray-400 hover:text-white transition-colors">Demos</a>
+        <a href="essays.html" class="text-gray-400 hover:text-white transition-colors">Writing</a>
+        <a href="content.html" class="text-gray-400 hover:text-white transition-colors">Reading List</a>
+        <a href="index.html#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
       </div>
     </div>
   </footer>

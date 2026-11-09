@@ -20,52 +20,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <style>
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Inter', system-ui, sans-serif;
-    }
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-    }
-    .prose {
-      max-width: 65ch;
-      color: #f8fafc;
-    }
-    .prose h4 {
-      color: #38bdf8;
-      margin-top: 1.5rem;
-      margin-bottom: 0.75rem;
-    }
-    .prose p {
-      margin-bottom: 1rem;
-    }
-    .prose ul {
-      margin-bottom: 1rem;
-      list-style-type: disc;
-      padding-left: 1.25rem;
-    }
-    .prose li {
-      margin-bottom: 0.5rem;
-    }
-    .prose figure {
-      margin: 2rem 0;
-    }
-    .prose figure img {
-      margin: 0 auto;
-      max-width: 100%;
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    }
-    .prose figure figcaption {
-      text-align: center;
-      font-size: 0.875rem;
-      color: #94a3b8;
-      margin-top: 0.5rem;
-    }
-    .essay-content {
-      max-width: 80ch; /* Increased width for essay content */
-    }
-  </style>
 </head>
 
 <body>
@@ -107,24 +61,21 @@
     </div>
   </header>
 
-  <!-- Essay Content -->
-  <section class="pt-32 pb-24 gradient-bg min-h-screen">
-    <div class="container mx-auto px-6">
-      <div class="max-w-4xl mx-auto">
-        <!-- Essay Header -->
-        <div class="mb-10">
-          <a href="essays.html" class="inline-flex items-center text-blue-400 hover:text-blue-300 mb-6">
-            <i class="fas fa-arrow-left mr-2"></i> Back to Essays
-          </a>
-          <h1 class="text-4xl md:text-5xl font-bold mb-4">AI: From Sci-Fi to Daily Reality</h1>
-          <div class="flex items-center text-gray-400 mb-8">
-            <span class="mr-4"><i class="far fa-calendar-alt mr-2"></i> February 15, 2025</span>
-            <span><i class="far fa-clock mr-2"></i> 8 min read</span>
-          </div>
+  <main>
+    <section class="v2-hero compact">
+      <div class="wrap">
+        <div class="article-col">
+          <a href="essays.html" class="back-link"><i class="fas fa-arrow-left"></i>All writing</a>
+          <h1 class="article-title mt-8">AI: From Sci-Fi to Daily Reality</h1>
+          <div class="article-meta"><span>February 15, 2025</span><span>·</span><span>8 min read</span></div>
         </div>
+      </div>
+    </section>
 
-        <!-- Essay Content -->
-        <div class="essay-content max-w-4xl mx-auto">
+    <section class="v2-section" style="padding-top:48px">
+      <div class="wrap">
+        <article class="article-col article-body">
+
           <p class="mb-4">
             A little over half a decade ago, I had my first taste of machine learning (ML) when I enrolled in an introductory course during my computer science undergraduate degree. It turned out to be almost entirely mathematical, and my rusty differential equations and linear algebra skills made the course challenging and dry. While I learned about fundamental data mining techniques, I didn't feel ready to apply them to my classes, work, and personal life. I assumed that the benefits of artificial intelligence (AI) were reserved for companies who could afford vast server rooms, teams of specialized engineers, a plethora of proprietary datasets, and complex algorithms far removed from everyday life. I am ecstatic to admit that I was wrong; well, half-wrong. In 2018, many of the technologies that power today's futuristic AI products like ChatGPT existed, but were largely inaccessible to the public, and I was right that it was restricted to a tiny fraction of the software development industry, let alone the masses. Today, ChatGPT is available in 188 countries [1] and the underlying technology is improving at an unprecedented rate.
           </p>
@@ -166,30 +117,24 @@
           <p class="mb-4">
             Looking forward, 2025 has already been a year full of AI product ingenuity, such as Deep Seek alongside a myriad of AI startups doing incredible things. However, only about 300 million people worldwide actively use the most popular AI assistant, ChatGPT. While that number may seem large, that is only about 3.7% of people. In the next couple of years, I estimate that this number will double within the next couple of years as more individuals and companies learn to trust and benefit from AI in their day-to-day tasks. As NVIDIA and its competitors keep pushing the boundaries of what is possible in the hardware realm, there is also a healthy competition between software companies building models that continue to improve their answers. Newer models are able to perform deep research tasks that are at the PhD level. It can even do tasks for you like ordering food for you! We are approaching the age of artificial general intelligence (AGI) and eventually artificial super intelligence (ASI), which will drastically change society for the better by making it more efficient and innovative. Beyond 2027, well, I would argue that anyone who thinks they can accurately predict what the world will look like then is either naive or a time-traveler. The future of AI isn't about replacing human creativity and intelligence – it is about amplifying them. We do not have to wait until a distant future to harness this potential because the tools are here now, and each of us can improve one area of our lives with AI today, to try new approaches to old tasks.
           </p>
-        </div>
-
-        <!-- Back to Essays button -->
-        <div class="mt-10 text-center">
-          <a href="essays.html" class="inline-block px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-md transition-all">
-            <i class="fas fa-arrow-left mr-2"></i> Back to Essays
-          </a>
+        </article>
+        <div class="article-col article-end">
+          <a href="essays.html" class="btn btn-ghost"><i class="fas fa-arrow-left"></i>Back to all writing</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer class="py-8 bg-gray-900">
-    <div class="container mx-auto px-6">
-      <div class="flex flex-col md:flex-row justify-between items-center">
-        <p class="text-gray-400 mb-4 md:mb-0">© 2026 Parham Hajzavar. All rights reserved.</p>
-        <div class="flex space-x-4">
-          <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
-          <a href="demos.html" class="text-gray-400 hover:text-white transition-colors">Demos</a>
-          <a href="essays.html" class="text-gray-400 hover:text-white transition-colors">Writing</a>
-          <a href="content.html" class="text-gray-400 hover:text-white transition-colors">Reading List</a>
-          <a href="index.html#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
-        </div>
+  <footer class="py-8" style="border-top:1px solid var(--border)">
+    <div class="wrap flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="faint text-sm">© 2026 Parham Hajzavar</p>
+      <div class="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm">
+        <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
+        <a href="demos.html" class="text-gray-400 hover:text-white transition-colors">Demos</a>
+        <a href="essays.html" class="text-gray-400 hover:text-white transition-colors">Writing</a>
+        <a href="content.html" class="text-gray-400 hover:text-white transition-colors">Reading List</a>
+        <a href="index.html#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
       </div>
     </div>
   </footer>

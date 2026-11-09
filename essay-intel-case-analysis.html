@@ -20,37 +20,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <style>
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Inter', system-ui, sans-serif;
-    }
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-    }
-    .prose {
-      max-width: 65ch;
-      color: #f8fafc;
-    }
-    .prose h4 {
-      color: #38bdf8;
-      margin-top: 1.5rem;
-      margin-bottom: 0.75rem;
-    }
-    .prose p {
-      margin-bottom: 1rem;
-    }
-    .prose ul {
-      margin-bottom: 1rem;
-      list-style-type: disc;
-      padding-left: 1.25rem;
-    }
-    .prose li {
-      margin-bottom: 0.5rem;
-    }
-    .essay-content {
-      max-width: 80ch; /* Increased max-width for wider display */
-    }
-  </style>
 </head>
 
 <body>
@@ -92,24 +61,21 @@
     </div>
   </header>
 
-  <!-- Essay Content -->
-  <section class="pt-32 pb-24 gradient-bg min-h-screen">
-    <div class="container mx-auto px-6">
-      <div class="max-w-4xl mx-auto">
-        <!-- Essay Header -->
-        <div class="mb-10">
-          <a href="essays.html" class="inline-flex items-center text-blue-400 hover:text-blue-300 mb-6">
-            <i class="fas fa-arrow-left mr-2"></i> Back to Essays
-          </a>
-          <h1 class="text-4xl md:text-5xl font-bold mb-4">Case Study: Intel's Success & Competition, From 1968-2003</h1>
-          <div class="flex items-center text-gray-400 mb-8">
-            <span class="mr-4"><i class="far fa-calendar-alt mr-2"></i> June 28, 2024</span>
-            <span><i class="far fa-clock mr-2"></i> 8 min read</span>
-          </div>
+  <main>
+    <section class="v2-hero compact">
+      <div class="wrap">
+        <div class="article-col">
+          <a href="essays.html" class="back-link"><i class="fas fa-arrow-left"></i>All writing</a>
+          <h1 class="article-title mt-8">Case Study: Intel's Success & Competition, From 1968-2003</h1>
+          <div class="article-meta"><span>June 28, 2024</span><span>·</span><span>8 min read</span></div>
         </div>
+      </div>
+    </section>
 
-        <!-- Essay Content -->
-        <div class="essay-content prose prose-lg prose-invert max-w-none bg-gray-800 p-8 rounded-xl shadow-xl">
+    <section class="v2-section" style="padding-top:48px">
+      <div class="wrap">
+        <article class="article-col article-body">
+
           <p class="mb-4">
             Intel Corporation between 1968 and 2003 was the most dominant force in the semiconductor industry and enjoyed the greatest market share. During this period, it also faced numerous pressures from competition, rapid technological advancements, and managing its more aspirational, venture-focused segments. Despite the challenges it faced, its executives have continuously focused on innovation, strategic product pivots, and responses to market and technological changes, and diversified Intel's interests to transform it into a computing behemoth worldwide. That alongside its robust defense of its intellectual property enabled Intel to sustain its growth and remain a key player in the global technology sector. This case analysis explores Intel's strategies in its rise and global success through the perspective of Porter's Five Competitive Forces.
           </p>
@@ -147,30 +113,24 @@
           <p class="mb-4">
             Intel faced a wide array of challenges from its inception up to the post-dot-com era of computing across the various business sectors it operated in. Its executives made it part of the company culture to be constantly innovating and investing in the future, whether that is in its core Client Computing Group (CCG) business segment or in avant-garde technologies like Wi-Fi. It sometimes meant that capital and resources got split too thinly, but casting its investment and acquisition net that wide also allowed Intel to be aware of the greatest new technologies being developed, and how it could benefit from them in its long-term strategy. It stayed ahead of the curve with marketing programs that differentiated it from others and correctly identified Microsoft to be the company with which it should most closely partner to turn the PC industry horizontal. It never stopped innovating, and it expected the same of its suppliers and buyers. As such, it controlled the barriers to entry for microprocessors and kept the threat of customers switching to alternatives low.
           </p>
-        </div>
-
-        <!-- Back to Essays button -->
-        <div class="mt-10 text-center">
-          <a href="essays.html" class="inline-block px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-md transition-all">
-            <i class="fas fa-arrow-left mr-2"></i> Back to Essays
-          </a>
+        </article>
+        <div class="article-col article-end">
+          <a href="essays.html" class="btn btn-ghost"><i class="fas fa-arrow-left"></i>Back to all writing</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer class="py-8 bg-gray-900">
-    <div class="container mx-auto px-6">
-      <div class="flex flex-col md:flex-row justify-between items-center">
-        <p class="text-gray-400 mb-4 md:mb-0">© 2026 Parham Hajzavar. All rights reserved.</p>
-        <div class="flex space-x-4">
-          <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
-          <a href="demos.html" class="text-gray-400 hover:text-white transition-colors">Demos</a>
-          <a href="essays.html" class="text-gray-400 hover:text-white transition-colors">Writing</a>
-          <a href="content.html" class="text-gray-400 hover:text-white transition-colors">Reading List</a>
-          <a href="index.html#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
-        </div>
+  <footer class="py-8" style="border-top:1px solid var(--border)">
+    <div class="wrap flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="faint text-sm">© 2026 Parham Hajzavar</p>
+      <div class="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm">
+        <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
+        <a href="demos.html" class="text-gray-400 hover:text-white transition-colors">Demos</a>
+        <a href="essays.html" class="text-gray-400 hover:text-white transition-colors">Writing</a>
+        <a href="content.html" class="text-gray-400 hover:text-white transition-colors">Reading List</a>
+        <a href="index.html#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
       </div>
     </div>
   </footer>
