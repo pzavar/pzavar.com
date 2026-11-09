@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parham Hajzavar | Demos</title>
+  <meta name="description" content="Recorded solution demos by Parham Hajzavar, including AeroWave Claims Concierge: an Agentforce claims agent built with Data 360, Service Cloud, Flow, and Slack.">
+  <meta property="og:title" content="Parham Hajzavar | Demos">
+  <meta property="og:description" content="AeroWave Claims Concierge: an Agentforce claims agent built with Data 360, Service Cloud, Flow, and Slack.">
+  <meta property="og:image" content="https://pzavar.com/headshot.JPG">
+  <meta property="og:url" content="https://pzavar.com/demos.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="ph.png" type="image/png">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .gradient-text {
+      background: linear-gradient(90deg, #38bdf8 0%, #818cf8 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gradient-bg {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
+    .nav-link {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #38bdf8 0%, #818cf8 100%);
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+    .panel {
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      border-radius: 0.75rem;
+    }
+    .flow-node {
+      background: #0f172a;
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      border-radius: 0.6rem;
+      padding: 0.75rem 1rem;
+      text-align: center;
+    }
+    .flow-node.tool {
+      border-color: rgba(129, 140, 248, 0.4);
+    }
+    .flow-node.good {
+      border-color: rgba(52, 211, 153, 0.5);
+    }
+    .flow-node.review {
+      border-color: rgba(251, 191, 36, 0.5);
+    }
+    .flow-node .label {
+      display: block;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #94a3b8;
+      margin-bottom: 0.15rem;
+    }
+    .flow-arrow {
+      color: #64748b;
+      text-align: center;
+      padding: 0.4rem 0;
+    }
+  </style>
+</head>
+
+<body class="overflow-x-hidden">
+  <!-- Fixed Navbar -->
+  <header class="fixed top-0 left-0 w-full z-50 glassmorphism transition-all duration-300 py-4">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <a href="index.html" class="text-xl font-bold gradient-text">PH</a>
+      <nav class="hidden md:flex items-center space-x-5 lg:space-x-8 xl:space-x-10">
+        <a href="index.html#about" class="nav-link text-gray-300 hover:text-white">About</a>
+        <a href="index.html#experience" class="nav-link text-gray-300 hover:text-white">Experience</a>
+        <a href="index.html#projects" class="nav-link text-gray-300 hover:text-white">Projects</a>
+        <a href="demos.html" class="nav-link active text-white">Demos</a>
+        <a href="index.html#education" class="nav-link text-gray-300 hover:text-white">Education</a>
+        <a href="index.html#skills" class="nav-link text-gray-300 hover:text-white">Skills</a>
+        <a href="content.html" class="nav-link text-gray-300 hover:text-white">Reading List</a>
+        <a href="essays.html" class="nav-link text-gray-300 hover:text-white">Essays</a>
+        <a href="index.html#contact"
+          class="py-2 px-5 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full text-white font-medium hover:shadow-lg hover:from-blue-500 hover:to-indigo-600 transition-all duration-300">Contact</a>
+      </nav>
+      <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none" aria-label="Open menu">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+      <div id="mobile-menu" class="md:hidden fixed inset-0 bg-gray-900 bg-opacity-95 z-40 transform translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="flex flex-col h-full bg-gray-900 shadow-2xl">
+          <div class="flex justify-end p-6 bg-gray-900 border-b border-gray-800">
+            <button id="close-menu-button" class="text-white focus:outline-none" aria-label="Close menu">
+              <i class="fas fa-times text-xl"></i>
+            </button>
+          </div>
+          <div class="flex flex-col items-center space-y-8 mt-10 py-6 px-4 bg-gray-900 bg-opacity-100">
+            <a href="index.html#about" class="text-xl text-gray-300 hover:text-white">About</a>
+            <a href="index.html#experience" class="text-xl text-gray-300 hover:text-white">Experience</a>
+            <a href="index.html#projects" class="text-xl text-gray-300 hover:text-white">Projects</a>
+            <a href="demos.html" class="text-xl text-white">Demos</a>
+            <a href="index.html#education" class="text-xl text-gray-300 hover:text-white">Education</a>
+            <a href="index.html#skills" class="text-xl text-gray-300 hover:text-white">Skills</a>
+            <a href="content.html" class="text-xl text-gray-300 hover:text-white">Reading List</a>
+            <a href="essays.html" class="text-xl text-gray-300 hover:text-white">Essays</a>
+            <a href="index.html#contact" class="py-2 px-5 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full text-white font-medium hover:shadow-lg hover:from-blue-500 hover:to-indigo-600 transition-all duration-300">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-32 pb-24 gradient-bg min-h-screen">
+    <div class="container mx-auto px-6">
+      <!-- Intro -->
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold mb-2">Solution <span class="gradient-text">Demos</span></h1>
+        <div class="h-1 w-20 bg-gradient-to-r from-blue-400 to-indigo-500 mx-auto mb-6"></div>
+        <p class="text-lg text-gray-300 leading-relaxed">
+          Recorded walkthroughs of solutions I've designed and built, set up the way I'd present them to a customer:
+          the business problem, the solution, and the design decisions behind it.
+        </p>
+      </div>
+
+      <!-- AeroWave Claims Concierge -->
+      <article id="aerowave" class="max-w-5xl mx-auto">
+        <div class="flex flex-wrap items-end justify-between gap-4 mb-6">
+          <div>
+            <p class="text-sm uppercase tracking-widest text-blue-400 mb-2">Featured demo · Sep 2026</p>
+            <h2 class="text-3xl md:text-4xl font-bold">AeroWave Claims Concierge</h2>
+            <p class="text-gray-400 mt-1">Built on the Salesforce Platform</p>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs font-medium bg-blue-900 text-blue-300 rounded-full px-3 py-1">Agentforce</span>
+            <span class="text-xs font-medium bg-indigo-900 text-indigo-300 rounded-full px-3 py-1">Data 360</span>
+            <span class="text-xs font-medium bg-blue-900 text-blue-300 rounded-full px-3 py-1">Service Cloud</span>
+            <span class="text-xs font-medium bg-indigo-900 text-indigo-300 rounded-full px-3 py-1">Flow</span>
+            <span class="text-xs font-medium bg-blue-900 text-blue-300 rounded-full px-3 py-1">Slack</span>
+            <span class="text-xs font-medium bg-indigo-900 text-indigo-300 rounded-full px-3 py-1">Enhanced Chat</span>
+          </div>
+        </div>
+
+        <button type="button" class="video-facade"
+          data-embed="https://drive.google.com/file/d/1G4OOu3WghzgVlYHx068BLNAj4snvwYGG/preview"
+          data-title="AeroWave Claims Concierge demo" aria-label="Play the AeroWave Claims Concierge demo">
+          <span class="play-btn"><i class="fas fa-play"></i></span>
+          <span class="facade-title">Watch the demo</span>
+          <span class="facade-sub">Agentforce · Data 360 · Service Cloud · Slack</span>
+        </button>
+        <p class="text-sm text-gray-400 mt-3">
+          Video not loading?
+          <a href="https://drive.google.com/file/d/1G4OOu3WghzgVlYHx068BLNAj4snvwYGG/view" target="_blank"
+            rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300">Open it in Google Drive <i
+              class="fas fa-external-link-alt ml-1"></i></a>
+        </p>
+
+        <!-- Problem / What you'll see -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+          <div class="panel p-6">
+            <h3 class="text-xl font-bold mb-3 gradient-text">The business problem</h3>
+            <p class="text-gray-300 leading-relaxed">
+              Before a flight-delay claim gets paid, someone has to confirm who the customer is, confirm the flight was
+              actually disrupted, and check for fraud. When the customer's loyalty and booking records live in separate
+              systems, that work is slow and manual, and customers wait for an answer.
+            </p>
+          </div>
+          <div class="panel p-6">
+            <h3 class="text-xl font-bold mb-3 gradient-text">What you'll see</h3>
+            <ol class="space-y-3 text-gray-300">
+              <li class="flex"><span class="text-blue-400 font-bold mr-3">1</span><span>An <b>Agentforce claims agent</b>
+                  verifies the customer, checks flight status, and pays clean claims in seconds.</span></li>
+              <li class="flex"><span class="text-blue-400 font-bold mr-3">2</span><span><b>Data 360 identity
+                    resolution</b> unifies loyalty and booking records from 5 source systems. Weak matches go to a
+                  Service Cloud case with an agent-written reviewer brief.</span></li>
+              <li class="flex"><span class="text-blue-400 font-bold mr-3">3</span><span>A <b>Slack review loop</b> where
+                  reviewers pull in the fraud team, approve or deny the claim, and the decision is written back to the
+                  case and the customer's status reply.</span></li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Architecture -->
+        <div class="panel p-6 md:p-8 mt-6">
+          <h3 class="text-xl font-bold mb-6 gradient-text">How it fits together</h3>
+          <div class="max-w-3xl mx-auto">
+            <div class="flow-node"><span class="label">Channel</span>Customer starts a claim in <b>Enhanced Chat</b></div>
+            <div class="flow-arrow"><i class="fas fa-arrow-down"></i></div>
+            <div class="flow-node"><span class="label">Agent</span><b>Agentforce</b> claims agent</div>
+            <div class="flow-arrow"><i class="fas fa-arrow-down"></i></div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div class="flow-node tool"><span class="label">Verify</span><b>Data 360</b> identity resolution across 5
+                sources</div>
+              <div class="flow-node tool"><span class="label">Check</span>Flight status lookup</div>
+              <div class="flow-node tool"><span class="label">Decide</span><b>Flow</b> scoring &amp; payout logic</div>
+            </div>
+            <div class="flow-arrow"><i class="fas fa-code-branch"></i></div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div class="flow-node good self-start"><span class="label">Clean claim</span>Paid in seconds</div>
+              <div>
+                <div class="flow-node review"><span class="label">Weak match or risk</span><b>Service Cloud</b> case +
+                  agent-written reviewer brief</div>
+                <div class="flow-arrow"><i class="fas fa-arrow-down"></i></div>
+                <div class="flow-node review"><span class="label">Human review</span><b>Slack</b>: reviewer + fraud team
+                  approve or deny</div>
+                <div class="flow-arrow"><i class="fas fa-arrow-down"></i></div>
+                <div class="flow-node review"><span class="label">Close the loop</span>Decision written to the case and
+                  the customer's status</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Design decisions -->
+        <h3 class="text-2xl font-bold mt-12 mb-6">Design decisions</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="panel p-6">
+            <i class="fas fa-user-shield text-2xl text-blue-400 mb-3"></i>
+            <h4 class="text-lg font-bold mb-2">The agent never reveals the rules</h4>
+            <p class="text-gray-300">Scoring and payout logic live in Flow, not in the agent's prompt, so the agent
+              never exposes scores or thresholds that a bad actor could learn to game.</p>
+          </div>
+          <div class="panel p-6">
+            <i class="fas fa-fingerprint text-2xl text-blue-400 mb-3"></i>
+            <h4 class="text-lg font-bold mb-2">One customer, five systems</h4>
+            <p class="text-gray-300">Identity resolution in Data 360 gives the agent a single view of the customer. When
+              the match is weak, the agent hands off to a human instead of guessing.</p>
+          </div>
+          <div class="panel p-6">
+            <i class="fab fa-slack text-2xl text-blue-400 mb-3"></i>
+            <h4 class="text-lg font-bold mb-2">Review where people already work</h4>
+            <p class="text-gray-300">Reviewers approve or deny in Slack, with the fraud team a mention away. The decision
+              flows back to the case and the customer automatically, so no one has to re-key it.</p>
+          </div>
+        </div>
+
+        <!-- Discovery -->
+        <div class="panel p-6 md:p-8 mt-6">
+          <h3 class="text-xl font-bold mb-2 gradient-text">What I'd ask a real customer first</h3>
+          <p class="text-gray-400 mb-5">The demo shows one design. In a real engagement, discovery decides the
+            thresholds, data sources, and handoffs.</p>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 text-gray-300 list-disc list-outside pl-5">
+            <li>How many claims come in, how long does a decision take today, and where do claims stall?</li>
+            <li>Who has payout authority, and above what amount must a human approve?</li>
+            <li>Which systems hold booking and loyalty data, and how reliably do customer records match across them?</li>
+            <li>Which fraud signals do you already trust, and who owns the threshold decisions?</li>
+            <li>What policy or regulatory rules govern refunds and compensation in your markets?</li>
+            <li>Which channels do customers use today, and which one should the agent start in?</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- CTA -->
+      <div class="max-w-3xl mx-auto text-center mt-20">
+        <h2 class="text-2xl md:text-3xl font-bold mb-3">Want a walkthrough for your <span class="gradient-text">use case</span>?</h2>
+        <p class="text-gray-300 mb-6">I'm happy to walk through the build, the tradeoffs, or how I'd adapt it.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="mailto:parham.zavar@gmail.com"
+            class="py-3 px-8 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full text-white font-medium hover:shadow-lg hover:from-blue-500 hover:to-indigo-600 transition-all duration-300"><i
+              class="fas fa-envelope mr-2"></i>Email me</a>
+          <a href="https://www.linkedin.com/in/pzavar/" target="_blank" rel="noopener noreferrer"
+            class="py-3 px-8 border-2 border-blue-400 text-blue-400 rounded-full font-medium hover:bg-blue-400 hover:text-white transition-all duration-300"><i
+              class="fab fa-linkedin-in mr-2"></i>LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-8 bg-gray-900">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 mb-4 md:mb-0">© 2026 Parham Hajzavar. All rights reserved.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
+          <a href="index.html#about" class="text-gray-400 hover:text-white transition-colors">About</a>
+          <a href="index.html#experience" class="text-gray-400 hover:text-white transition-colors">Experience</a>
+          <a href="index.html#projects" class="text-gray-400 hover:text-white transition-colors">Projects</a>
+          <a href="demos.html" class="text-gray-400 hover:text-white transition-colors">Demos</a>
+          <a href="essays.html" class="text-gray-400 hover:text-white transition-colors">Essays</a>
+          <a href="index.html#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

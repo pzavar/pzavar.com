@@ -637,3 +637,62 @@ img {
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
+/* Click-to-load video embed (demos). Shows a poster until clicked, then swaps in the iframe
+   so third-party players don't slow down first paint. */
+.video-facade {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(56, 189, 248, 0.25), transparent 60%),
+    radial-gradient(ellipse at 80% 90%, rgba(129, 140, 248, 0.25), transparent 55%),
+    #0b1222;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+  padding: 1.5rem;
+  color: #f8fafc;
+  font: inherit;
+}
+.video-facade:focus-visible {
+  outline: 3px solid #38bdf8;
+  outline-offset: 3px;
+}
+.video-facade .play-btn {
+  width: 76px;
+  height: 76px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #38bdf8, #818cf8);
+  box-shadow: 0 0 40px rgba(56, 189, 248, 0.45);
+  transition: transform 0.2s ease;
+  font-size: 1.6rem;
+  padding-left: 6px;
+}
+.video-facade:hover .play-btn {
+  transform: scale(1.08);
+}
+.video-facade .facade-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.video-facade .facade-sub {
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
+.video-frame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 0.75rem;
+  background: #000;
+}

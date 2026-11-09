@@ -278,3 +278,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 16));
   }
 });
+
+// Click-to-load video embeds: <button class="video-facade" data-embed="URL" data-title="..."> becomes an iframe on click
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.video-facade[data-embed]').forEach(function(facade) {
+    facade.addEventListener('click', function() {
+      const iframe = document.createElement('iframe');
+      iframe.src = facade.dataset.embed;
+      iframe.title = facade.dataset.title || 'Demo video';
+      iframe.className = 'video-frame';
+      iframe.allow = 'autoplay; fullscreen; picture-in-picture';
+      iframe.allowFullscreen = true;
+      facade.replaceWith(iframe);
+    });
+  });
+});
