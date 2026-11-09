@@ -802,7 +802,7 @@ section[id], div[id] { scroll-margin-top: 80px; }
 .case-body { padding: 24px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
 .case-body h3 { font-size: 1.25rem; font-weight: 700; line-height: 1.3; }
 .case-row { display: grid; grid-template-columns: 92px 1fr; gap: 12px; font-size: 0.95rem; line-height: 1.55; }
-.case-row dt { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); padding-top: 3px; }
+.case-row dt { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); padding-top: 3px; }
 .case-row dd { color: #cbd5e1; }
 .case-result { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: 8px 18px; }
 .case-result span { color: var(--good); font-weight: 600; font-size: 0.95rem; }
@@ -840,7 +840,7 @@ section[id], div[id] { scroll-margin-top: 80px; }
 .cred .issuer { color: var(--muted); font-size: 0.875rem; margin-top: 2px; }
 .cred a { color: var(--accent); font-size: 0.85rem; font-weight: 600; }
 .cred a:hover { color: #7dd3fc; }
-.badge-progress { font-family: var(--mono); font-size: 0.72rem; color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.4); border-radius: 9999px; padding: 2px 8px; }
+.badge-progress { font-family: var(--mono); font-size: 0.75rem; color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.4); border-radius: 9999px; padding: 2px 8px; }
 
 /* Skills */
 .skill-group h3 { font-weight: 700; font-size: 1.05rem; display: flex; align-items: center; gap: 10px; }
@@ -932,4 +932,14 @@ section[id], div[id] { scroll-margin-top: 80px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-video { display: none; }
+}
+
+/* ---------- Touch-friendly targets on phones ---------- */
+@media (max-width: 767px) {
+  footer a { display: inline-block; padding: 12px 4px; }
+  .cred a, .proj-link, .back-link, .essay-row .more { display: inline-block; padding-top: 10px; padding-bottom: 10px; }
+  #mobile-menu a { padding: 6px 12px; }
+}
+@media (max-width: 480px) {
+  .case-row { grid-template-columns: 1fr; gap: 2px; }
 }
