@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function() {
       iframe.src = facade.dataset.embed;
       iframe.title = facade.dataset.title || 'Demo video';
       iframe.className = 'video-frame';
-      iframe.allow = 'autoplay; fullscreen; picture-in-picture';
+      iframe.allow = 'autoplay; encrypted-media; fullscreen; picture-in-picture';
       iframe.allowFullscreen = true;
       facade.replaceWith(iframe);
     });
