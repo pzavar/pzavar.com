@@ -1,49 +1,3 @@
-
-// Lazy-load hero video after DOM is ready so page content renders first
-document.addEventListener('DOMContentLoaded', function() {
-  setTimeout(function() {
-    const heroVideo = document.getElementById('hero-video');
-    if (heroVideo) {
-      const source = document.createElement('source');
-      source.src = 'video.mp4';
-      source.type = 'video/mp4';
-      heroVideo.appendChild(source);
-      heroVideo.load();
-      heroVideo.addEventListener('canplay', function() {
-        const p = heroVideo.play();
-        if (p !== undefined) p.catch(function() {});
-      }, { once: true });
-    }
-  }, 200);
-});
-
-// Lazy-load education section video only when user scrolls near it
-document.addEventListener('DOMContentLoaded', function() {
-  const educationSection = document.getElementById('education');
-  if (educationSection && 'IntersectionObserver' in window) {
-    const eduVideoObserver = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          const eduVideo = document.getElementById('edu-video');
-          if (eduVideo && eduVideo.children.length === 0) {
-            const source = document.createElement('source');
-            source.src = 'video1.mp4';
-            source.type = 'video/mp4';
-            eduVideo.appendChild(source);
-            eduVideo.load();
-            eduVideo.addEventListener('canplay', function() {
-              const p = eduVideo.play();
-              if (p !== undefined) p.catch(function() {});
-            }, { once: true });
-          }
-          eduVideoObserver.disconnect();
-        }
-      });
-    }, { rootMargin: '300px 0px' });
-    eduVideoObserver.observe(educationSection);
-  }
-});
-
 // Mobile menu functionality
 document.addEventListener('DOMContentLoaded', function() {
   const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -245,37 +199,6 @@ document.addEventListener('DOMContentLoaded', function() {
       card.style.opacity = '0';
       observer.observe(card);
     });
-  }
-
-  // Education section video parallax effect
-  const educationSection = document.getElementById('education');
-  if (educationSection) {
-    window.addEventListener('scroll', throttleScroll(function() {
-      const rect = educationSection.getBoundingClientRect();
-      const isVisible =
-        rect.top < window.innerHeight &&
-        rect.bottom > 0;
-
-      if (isVisible) {
-        const videoContainer = educationSection.querySelector('.video-container');
-        if (videoContainer) {
-          // Calculate how far into the section we've scrolled (0 to 1)
-          const scrollProgress = Math.min(
-            Math.max(0, (window.innerHeight - rect.top) / (window.innerHeight + rect.height)),
-            1
-          );
-
-          // Apply subtle scale effect similar to main video
-          const scale = 1 + (scrollProgress * 0.1);
-          // Apply subtle parallax effect
-          const translateY = scrollProgress * -30; // Negative value moves it upward as you scroll down
-
-          requestAnimationFrame(() => {
-            videoContainer.style.transform = `scale(${scale}) translateY(${translateY}px)`;
-          });
-        }
-      }
-    }, 16));
   }
 });
 
