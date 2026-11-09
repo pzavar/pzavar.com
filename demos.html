@@ -18,15 +18,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    .gradient-text {
-      background: linear-gradient(90deg, #38bdf8 0%, #818cf8 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .gradient-bg {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    }
     .nav-link {
       position: relative;
       transition: all 0.3s ease;
@@ -45,13 +36,8 @@
     .nav-link.active::after {
       width: 100%;
     }
-    .panel {
-      background: rgba(30, 41, 59, 0.7);
-      border: 1px solid rgba(148, 163, 184, 0.15);
-      border-radius: 0.75rem;
-    }
     .flow-node {
-      background: #0f172a;
+      background: var(--bg);
       border: 1px solid rgba(56, 189, 248, 0.35);
       border-radius: 0.6rem;
       padding: 0.75rem 1rem;
@@ -72,6 +58,7 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: #94a3b8;
+      font-family: var(--mono);
       margin-bottom: 0.15rem;
     }
     .flow-arrow {
@@ -119,33 +106,32 @@
     </div>
   </header>
 
-  <main class="pt-32 pb-24 gradient-bg min-h-screen">
-    <div class="container mx-auto px-6">
-      <!-- Intro -->
-      <div class="max-w-3xl mx-auto text-center mb-16">
-        <h1 class="text-4xl md:text-5xl font-bold mb-2">Solution <span class="gradient-text">Demos</span></h1>
-        <div class="h-1 w-20 bg-gradient-to-r from-blue-400 to-indigo-500 mx-auto mb-6"></div>
-        <p class="text-lg text-gray-300 leading-relaxed">
+  <main>
+    <!-- Intro -->
+    <section class="v2-hero" style="padding-bottom:48px">
+      <div class="wrap">
+        <p class="eyebrow">Demos</p>
+        <h1 class="hero-title mt-4" style="font-size:clamp(2.4rem,5vw,3.6rem)">Solution demos</h1>
+        <p class="hero-body mt-5" style="max-width:680px">
           Recorded walkthroughs of solutions I've designed and built, set up the way I'd present them to a customer:
           the business problem, the solution, and the design decisions behind it.
         </p>
       </div>
+    </section>
 
-      <!-- AeroWave Claims Concierge -->
-      <article id="aerowave" class="max-w-5xl mx-auto">
+    <!-- AeroWave Claims Concierge -->
+    <section class="v2-section" style="padding-top:56px">
+      <article id="aerowave" class="wrap">
         <div class="flex flex-wrap items-end justify-between gap-4 mb-6">
           <div>
-            <p class="text-sm uppercase tracking-widest text-blue-400 mb-2">Featured demo · Sep 2026</p>
-            <h2 class="text-3xl md:text-4xl font-bold">AeroWave Claims Concierge</h2>
-            <p class="text-gray-400 mt-1">Built on the Salesforce Platform</p>
+            <p class="eyebrow">Featured demo · Sep 2026</p>
+            <h2 class="text-3xl md:text-4xl font-bold mt-3">AeroWave Claims Concierge</h2>
+            <p class="muted mt-1">Built on the Salesforce Platform</p>
           </div>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-xs font-medium bg-blue-900 text-blue-300 rounded-full px-3 py-1">Agentforce</span>
-            <span class="text-xs font-medium bg-indigo-900 text-indigo-300 rounded-full px-3 py-1">Data 360</span>
-            <span class="text-xs font-medium bg-blue-900 text-blue-300 rounded-full px-3 py-1">Service Cloud</span>
-            <span class="text-xs font-medium bg-indigo-900 text-indigo-300 rounded-full px-3 py-1">Flow</span>
-            <span class="text-xs font-medium bg-blue-900 text-blue-300 rounded-full px-3 py-1">Slack</span>
-            <span class="text-xs font-medium bg-indigo-900 text-indigo-300 rounded-full px-3 py-1">Enhanced Chat</span>
+          <div class="chips">
+            <span class="chip accent">Agentforce</span><span class="chip accent">Data 360</span><span
+              class="chip accent">Service Cloud</span><span class="chip accent">Flow</span><span
+              class="chip accent">Slack</span><span class="chip accent">Enhanced Chat</span>
           </div>
         </div>
 
@@ -156,41 +142,41 @@
           <span class="facade-title">Watch the demo</span>
           <span class="facade-sub">Agentforce · Data 360 · Service Cloud · Slack</span>
         </button>
-        <p class="text-sm text-gray-400 mt-3">
+        <p class="faint text-sm mt-3">
           Video not loading?
           <a href="https://drive.google.com/file/d/1G4OOu3WghzgVlYHx068BLNAj4snvwYGG/view" target="_blank"
             rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300">Open it in Google Drive <i
-              class="fas fa-external-link-alt ml-1"></i></a>
+              class="fas fa-arrow-up-right-from-square ml-1"></i></a>
         </p>
 
         <!-- Problem / What you'll see -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-          <div class="panel p-6">
-            <h3 class="text-xl font-bold mb-3 gradient-text">The business problem</h3>
-            <p class="text-gray-300 leading-relaxed">
+          <div class="card p-6">
+            <p class="eyebrow mb-3">The business problem</p>
+            <p class="leading-relaxed" style="color:#cbd5e1">
               Before a flight-delay claim gets paid, someone has to confirm who the customer is, confirm the flight was
               actually disrupted, and check for fraud. When the customer's loyalty and booking records live in separate
               systems, that work is slow and manual, and customers wait for an answer.
             </p>
           </div>
-          <div class="panel p-6">
-            <h3 class="text-xl font-bold mb-3 gradient-text">What you'll see</h3>
-            <ol class="space-y-3 text-gray-300">
-              <li class="flex"><span class="text-blue-400 font-bold mr-3">1</span><span>An <b>Agentforce claims agent</b>
-                  verifies the customer, checks flight status, and pays clean claims in seconds.</span></li>
-              <li class="flex"><span class="text-blue-400 font-bold mr-3">2</span><span><b>Data 360 identity
+          <div class="card p-6">
+            <p class="eyebrow mb-3">What you'll see</p>
+            <ol class="space-y-3" style="color:#cbd5e1">
+              <li class="flex gap-3"><span class="eyebrow pt-1">01</span><span>An <b class="text-white">Agentforce claims
+                    agent</b> verifies the customer, checks flight status, and pays clean claims in seconds.</span></li>
+              <li class="flex gap-3"><span class="eyebrow pt-1">02</span><span><b class="text-white">Data 360 identity
                     resolution</b> unifies loyalty and booking records from 5 source systems. Weak matches go to a
                   Service Cloud case with an agent-written reviewer brief.</span></li>
-              <li class="flex"><span class="text-blue-400 font-bold mr-3">3</span><span>A <b>Slack review loop</b> where
-                  reviewers pull in the fraud team, approve or deny the claim, and the decision is written back to the
-                  case and the customer's status reply.</span></li>
+              <li class="flex gap-3"><span class="eyebrow pt-1">03</span><span>A <b class="text-white">Slack review
+                    loop</b> where reviewers pull in the fraud team, approve or deny the claim, and the decision is
+                  written back to the case and the customer's status reply.</span></li>
             </ol>
           </div>
         </div>
 
         <!-- Architecture -->
-        <div class="panel p-6 md:p-8 mt-6">
-          <h3 class="text-xl font-bold mb-6 gradient-text">How it fits together</h3>
+        <div class="card p-6 md:p-8 mt-6">
+          <p class="eyebrow mb-6">How it fits together</p>
           <div class="max-w-3xl mx-auto">
             <div class="flow-node"><span class="label">Channel</span>Customer starts a claim in <b>Enhanced Chat</b></div>
             <div class="flow-arrow"><i class="fas fa-arrow-down"></i></div>
@@ -220,34 +206,37 @@
         </div>
 
         <!-- Design decisions -->
-        <h3 class="text-2xl font-bold mt-12 mb-6">Design decisions</h3>
+        <div class="section-head mt-16" style="margin-bottom:24px">
+          <p class="eyebrow">Design decisions</p>
+          <h2>Why it's built this way.</h2>
+        </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="panel p-6">
-            <i class="fas fa-user-shield text-2xl text-blue-400 mb-3"></i>
-            <h4 class="text-lg font-bold mb-2">The agent never reveals the rules</h4>
-            <p class="text-gray-300">Scoring and payout logic live in Flow, not in the agent's prompt, so the agent
+          <div class="card p-6">
+            <div class="cred-icon mb-4"><i class="fas fa-user-shield"></i></div>
+            <h3 class="text-lg font-bold mb-2">The agent never reveals the rules</h3>
+            <p class="muted leading-relaxed">Scoring and payout logic live in Flow, not in the agent's prompt, so the agent
               never exposes scores or thresholds that a bad actor could learn to game.</p>
           </div>
-          <div class="panel p-6">
-            <i class="fas fa-fingerprint text-2xl text-blue-400 mb-3"></i>
-            <h4 class="text-lg font-bold mb-2">One customer, five systems</h4>
-            <p class="text-gray-300">Identity resolution in Data 360 gives the agent a single view of the customer. When
-              the match is weak, the agent hands off to a human instead of guessing.</p>
+          <div class="card p-6">
+            <div class="cred-icon mb-4"><i class="fas fa-fingerprint"></i></div>
+            <h3 class="text-lg font-bold mb-2">One customer, five systems</h3>
+            <p class="muted leading-relaxed">Identity resolution in Data 360 gives the agent a single view of the customer.
+              When the match is weak, the agent hands off to a human instead of guessing.</p>
           </div>
-          <div class="panel p-6">
-            <i class="fab fa-slack text-2xl text-blue-400 mb-3"></i>
-            <h4 class="text-lg font-bold mb-2">Review where people already work</h4>
-            <p class="text-gray-300">Reviewers approve or deny in Slack, with the fraud team a mention away. The decision
-              flows back to the case and the customer automatically, so no one has to re-key it.</p>
+          <div class="card p-6">
+            <div class="cred-icon mb-4"><i class="fab fa-slack"></i></div>
+            <h3 class="text-lg font-bold mb-2">Review where people already work</h3>
+            <p class="muted leading-relaxed">Reviewers approve or deny in Slack, with the fraud team a mention away. The
+              decision flows back to the case and the customer automatically, so no one has to re-key it.</p>
           </div>
         </div>
 
         <!-- Discovery -->
-        <div class="panel p-6 md:p-8 mt-6">
-          <h3 class="text-xl font-bold mb-2 gradient-text">What I'd ask a real customer first</h3>
-          <p class="text-gray-400 mb-5">The demo shows one design. In a real engagement, discovery decides the
-            thresholds, data sources, and handoffs.</p>
-          <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 text-gray-300 list-disc list-outside pl-5">
+        <div class="card p-6 md:p-8 mt-6">
+          <p class="eyebrow mb-2">What I'd ask a real customer first</p>
+          <p class="muted mb-5">The demo shows one design. In a real engagement, discovery decides the thresholds, data
+            sources, and handoffs.</p>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 list-disc list-outside pl-5" style="color:#cbd5e1">
             <li>How many claims come in, how long does a decision take today, and where do claims stall?</li>
             <li>Who has payout authority, and above what amount must a human approve?</li>
             <li>Which systems hold booking and loyalty data, and how reliably do customer records match across them?</li>
@@ -257,35 +246,36 @@
           </ul>
         </div>
       </article>
+    </section>
 
-      <!-- CTA -->
-      <div class="max-w-3xl mx-auto text-center mt-20">
-        <h2 class="text-2xl md:text-3xl font-bold mb-3">Want a walkthrough for your <span class="gradient-text">use case</span>?</h2>
-        <p class="text-gray-300 mb-6">I'm happy to walk through the build, the tradeoffs, or how I'd adapt it.</p>
-        <div class="flex flex-wrap justify-center gap-4">
-          <a href="mailto:parham.zavar@gmail.com"
-            class="py-3 px-8 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full text-white font-medium hover:shadow-lg hover:from-blue-500 hover:to-indigo-600 transition-all duration-300"><i
-              class="fas fa-envelope mr-2"></i>Email me</a>
-          <a href="https://www.linkedin.com/in/pzavar/" target="_blank" rel="noopener noreferrer"
-            class="py-3 px-8 border-2 border-blue-400 text-blue-400 rounded-full font-medium hover:bg-blue-400 hover:text-white transition-all duration-300"><i
-              class="fab fa-linkedin-in mr-2"></i>LinkedIn</a>
+    <!-- CTA -->
+    <section class="v2-section alt">
+      <div class="wrap">
+        <div class="card cta">
+          <p class="eyebrow">Get in touch</p>
+          <h2 class="text-3xl md:text-4xl font-bold mt-3">Want a walkthrough for your use case?</h2>
+          <p class="muted text-lg mt-4 max-w-xl mx-auto">I'm happy to walk through the build, the tradeoffs, or how I'd
+            adapt it.</p>
+          <div class="flex flex-wrap justify-center gap-3 mt-8">
+            <a href="mailto:parham.zavar@gmail.com" class="btn btn-primary"><i class="fas fa-envelope"></i>Email me</a>
+            <a href="https://www.linkedin.com/in/pzavar/" target="_blank" rel="noopener noreferrer"
+              class="btn btn-ghost"><i class="fab fa-linkedin-in"></i>LinkedIn</a>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   </main>
 
   <!-- Footer -->
-  <footer class="py-8 bg-gray-900">
-    <div class="container mx-auto px-6">
-      <div class="flex flex-col md:flex-row justify-between items-center">
-        <p class="text-gray-400 mb-4 md:mb-0">© 2026 Parham Hajzavar. All rights reserved.</p>
-        <div class="flex flex-wrap justify-center gap-4">
-          <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
-          <a href="demos.html" class="text-gray-400 hover:text-white transition-colors">Demos</a>
-          <a href="essays.html" class="text-gray-400 hover:text-white transition-colors">Writing</a>
-          <a href="content.html" class="text-gray-400 hover:text-white transition-colors">Reading List</a>
-          <a href="index.html#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
-        </div>
+  <footer class="py-8" style="border-top:1px solid var(--border)">
+    <div class="wrap flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="faint text-sm">© 2026 Parham Hajzavar</p>
+      <div class="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm">
+        <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
+        <a href="demos.html" class="text-gray-400 hover:text-white transition-colors">Demos</a>
+        <a href="essays.html" class="text-gray-400 hover:text-white transition-colors">Writing</a>
+        <a href="content.html" class="text-gray-400 hover:text-white transition-colors">Reading List</a>
+        <a href="index.html#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
       </div>
     </div>
   </footer>
