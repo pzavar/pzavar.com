@@ -216,3 +216,44 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+// Hero background video. The still image (.hero-still) is always shown first; the video is attached only
+// after the page has finished loading, and never on phones, with "reduce motion" on, or with data saver on.
+(function() {
+  var video = document.getElementById('hero-video');
+  if (!video || !video.dataset.src) return;
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var phone = window.matchMedia('(max-width: 767px)');
+  var saveData = navigator.connection && navigator.connection.saveData;
+
+  function start() {
+    if (reduceMotion.matches || phone.matches || saveData) return;
+    video.src = video.dataset.src;
+    video.addEventListener('playing', function() { video.classList.add('is-playing'); }, { once: true });
+    var p = video.play();
+    if (p && p.catch) p.catch(function() {}); // autoplay blocked: the still image stays
+
+    // Pause while the hero is off screen
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function(entries) {
+        var visible = entries[0].isIntersecting;
+        if (visible && !reduceMotion.matches) { var q = video.play(); if (q && q.catch) q.catch(function() {}); }
+        else { video.pause(); }
+      }).observe(video.closest('section') || video);
+    }
+  }
+
+  // Stop if the visitor turns on "reduce motion" while the page is open
+  if (reduceMotion.addEventListener) {
+    reduceMotion.addEventListener('change', function(e) {
+      if (e.matches) { video.pause(); video.classList.remove('is-playing'); }
+    });
+  }
+
+  function schedule() {
+    if ('requestIdleCallback' in window) requestIdleCallback(start, { timeout: 1500 });
+    else setTimeout(start, 300);
+  }
+  if (document.readyState === 'complete') schedule();
+  else window.addEventListener('load', schedule);
+})();

@@ -87,7 +87,16 @@
 
   <main>
     <!-- Hero -->
-    <section id="home" class="v2-hero">
+    <section id="home" class="v2-hero has-media">
+      <!-- Background: still image first; script.js swaps in the looping video after load (desktop, motion allowed) -->
+      <div class="hero-media" aria-hidden="true">
+        <img class="hero-still" src="img/hero-poster.jpg"
+          srcset="img/hero-poster-sm.jpg 768w, img/hero-poster.jpg 1280w" sizes="100vw" alt="" width="1280"
+          height="720" fetchpriority="high">
+        <video id="hero-video" class="hero-video" muted loop playsinline preload="none"
+          data-src="video.mp4"></video>
+        <div class="hero-scrim"></div>
+      </div>
       <div class="wrap">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div class="lg:col-span-7">
